@@ -1,0 +1,25 @@
+{
+    "cos482App": {
+        "alunoMestrado" : {
+            "home": {
+                "title": "Aluno Mestrados",
+                "createLabel": "Create a new Aluno Mestrado",
+                "createOrEditLabel": "Create or edit a Aluno Mestrado",
+                "search": "Search for Aluno Mestrado"
+            },
+            "created": "A new Aluno Mestrado is created with identifier {{ param }}",
+            "updated": "A Aluno Mestrado is updated with identifier {{ param }}",
+            "deleted": "A Aluno Mestrado is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Aluno Mestrado {{ id }}?"
+            },
+            "detail": {
+                "title": "Aluno Mestrado"
+            },
+            "diplomaGraduacao": "Diploma Graduacao",
+            "certidadoConclusao": "Certidado Conclusao",
+            "certidaoColacao": "Certidao Colacao",
+            "aluno": "Aluno"
+        }
+    }
+}

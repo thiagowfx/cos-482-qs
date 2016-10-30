@@ -37,5 +37,41 @@
            timeToLiveSeconds="3600">
     </cache>
     
+    <cache name="br.ufrj.cos482.domain.Usuario"
+                               timeToLiveSeconds="3600">
+                        </cache>
+                        
+    <cache name="br.ufrj.cos482.domain.Professor"
+                               timeToLiveSeconds="3600">
+                        </cache>
+                        
+    <cache name="br.ufrj.cos482.domain.DocumentoIdentificacao"
+                               timeToLiveSeconds="3600">
+                        </cache>
+                        
+    <cache name="br.ufrj.cos482.domain.DocumentoSistema"
+                               timeToLiveSeconds="3600">
+                        </cache>
+                        
+    <cache name="br.ufrj.cos482.domain.SecretarioAcademico"
+                               timeToLiveSeconds="3600">
+                        </cache>
+                        
+    <cache name="br.ufrj.cos482.domain.AlunoMestrado"
+                               timeToLiveSeconds="3600">
+                        </cache>
+                        
+    <cache name="br.ufrj.cos482.domain.AlunoDoutorado"
+                               timeToLiveSeconds="3600">
+                        </cache>
+                        
+    <cache name="br.ufrj.cos482.domain.Aluno"
+                               timeToLiveSeconds="3600">
+                        </cache>
+                        
+    <cache name="br.ufrj.cos482.domain.Aluno.orientadors"
+                               timeToLiveSeconds="3600">
+                        </cache>
+                        
     <!-- jhipster-needle-ehcache-add-entry -->
 </ehcache>

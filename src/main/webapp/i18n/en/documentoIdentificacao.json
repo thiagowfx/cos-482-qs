@@ -1,0 +1,23 @@
+{
+    "cos482App": {
+        "documentoIdentificacao" : {
+            "home": {
+                "title": "Documento Identificacaos",
+                "createLabel": "Create a new Documento Identificacao",
+                "createOrEditLabel": "Create or edit a Documento Identificacao",
+                "search": "Search for Documento Identificacao"
+            },
+            "created": "A new Documento Identificacao is created with identifier {{ param }}",
+            "updated": "A Documento Identificacao is updated with identifier {{ param }}",
+            "deleted": "A Documento Identificacao is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Documento Identificacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Documento Identificacao"
+            },
+            "tipo": "Tipo",
+            "valor": "Valor"
+        }
+    }
+}

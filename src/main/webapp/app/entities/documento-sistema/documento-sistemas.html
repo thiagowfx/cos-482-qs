@@ -1,0 +1,66 @@
+<div>
+    <h2 data-translate="cos482App.documentoSistema.home.title">Documento Sistemas</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="documento-sistema.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="cos482App.documentoSistema.home.createLabel">
+                        Create new Documento Sistema
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="cos482App.documentoSistema.tipo">Tipo</span></th>
+                    <th><span data-translate="cos482App.documentoSistema.formato">Formato</span></th>
+                    <th><span data-translate="cos482App.documentoSistema.timestampEnvio">Timestamp Envio</span></th>
+                    <th><span data-translate="cos482App.documentoSistema.status">Status</span></th>
+                    <th><span data-translate="cos482App.documentoSistema.escopo">Escopo</span></th>
+                    <th><span data-translate="cos482App.documentoSistema.caminho">Caminho</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="documentoSistema in vm.documentoSistemas track by documentoSistema.id">
+                    <td><a ui-sref="documento-sistema-detail({id:documentoSistema.id})">{{documentoSistema.id}}</a></td>
+                    <td>{{documentoSistema.tipo}}</td>
+                    <td>{{documentoSistema.formato}}</td>
+                    <td>{{documentoSistema.timestampEnvio | date:'medium'}}</td>
+                    <td data-translate="{{'cos482App.StatusDocumento.' + documentoSistema.status}}">{{documentoSistema.status}}</td>
+                    <td>{{documentoSistema.escopo}}</td>
+                    <td>{{documentoSistema.caminho}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="documento-sistema-detail({id:documentoSistema.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="documento-sistema.edit({id:documentoSistema.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="documento-sistema.delete({id:documentoSistema.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

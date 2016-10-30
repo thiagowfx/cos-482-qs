@@ -1,0 +1,52 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "declaracaoConclusao",
+            "otherEntityName": "documentoSistema",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "aluno"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "historicoGradaucao",
+            "otherEntityName": "documentoSistema",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "aluno"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "usuario",
+            "otherEntityName": "usuario",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "orientador",
+            "otherEntityName": "professor",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "matricula",
+            "fieldType": "StatusMatricula",
+            "fieldValues": "ATIVA,INATIVA,SUSPENSA,TRANCADA"
+        }
+    ],
+    "changelogDate": "20161030103959",
+    "entityTableName": "aluno",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularSuffix": "mySuffix"
+}

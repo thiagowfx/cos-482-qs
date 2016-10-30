@@ -1,0 +1,9 @@
+{
+    "cos482App": {
+        "StatusConta" : {
+            "null": "",
+            "ATIVA": "ATIVA",
+            "INATIVA": "INATIVA"
+        }
+    }
+}

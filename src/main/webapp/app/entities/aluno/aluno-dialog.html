@@ -1,0 +1,63 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAlunoLabel" data-translate="cos482App.aluno.home.createOrEditLabel">Create or edit a Aluno</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.aluno.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.aluno.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cos482App.aluno.dre" for="field_dre">Dre</label>
+            <input type="text" class="form-control" name="dre" id="field_dre"
+                    ng-model="vm.aluno.dre"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cos482App.aluno.matricula" for="field_matricula">Matricula</label>
+            <select class="form-control" name="matricula" ng-model="vm.aluno.matricula" id="field_matricula">
+                <option value="ATIVA" data-translate="cos482App.StatusMatricula.ATIVA">ATIVA</option>
+                <option value="INATIVA" data-translate="cos482App.StatusMatricula.INATIVA">INATIVA</option>
+                <option value="SUSPENSA" data-translate="cos482App.StatusMatricula.SUSPENSA">SUSPENSA</option>
+                <option value="TRANCADA" data-translate="cos482App.StatusMatricula.TRANCADA">TRANCADA</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="cos482App.aluno.declaracaoConclusao" for="field_declaracaoConclusao">Declaracao Conclusao</label>
+            <select class="form-control" id="field_declaracaoConclusao" name="declaracaoConclusao" ng-model="vm.aluno.declaracaoConclusaoId" ng-options="documentoSistema.id as documentoSistema.id for documentoSistema in vm.declaracaoconclusaos | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="cos482App.aluno.historicoGradaucao" for="field_historicoGradaucao">Historico Gradaucao</label>
+            <select class="form-control" id="field_historicoGradaucao" name="historicoGradaucao" ng-model="vm.aluno.historicoGradaucaoId" ng-options="documentoSistema.id as documentoSistema.id for documentoSistema in vm.historicogradaucaos | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="cos482App.aluno.usuario" for="field_usuario">Usuario</label>
+            <select class="form-control" id="field_usuario" name="usuario" ng-model="vm.aluno.usuarioId" ng-options="usuario.id as usuario.id for usuario in vm.usuarios"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="cos482App.aluno.orientador" for="field_orientador">Orientador</label>
+            <select class="form-control" id="field_orientador" multiple name="orientador" ng-model="vm.aluno.orientadors" ng-options="professor as professor.id for professor in vm.professors track by professor.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

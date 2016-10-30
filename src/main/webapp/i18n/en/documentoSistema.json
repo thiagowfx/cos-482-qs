@@ -1,0 +1,27 @@
+{
+    "cos482App": {
+        "documentoSistema" : {
+            "home": {
+                "title": "Documento Sistemas",
+                "createLabel": "Create a new Documento Sistema",
+                "createOrEditLabel": "Create or edit a Documento Sistema",
+                "search": "Search for Documento Sistema"
+            },
+            "created": "A new Documento Sistema is created with identifier {{ param }}",
+            "updated": "A Documento Sistema is updated with identifier {{ param }}",
+            "deleted": "A Documento Sistema is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Documento Sistema {{ id }}?"
+            },
+            "detail": {
+                "title": "Documento Sistema"
+            },
+            "tipo": "Tipo",
+            "formato": "Formato",
+            "timestampEnvio": "Timestamp Envio",
+            "status": "Status",
+            "escopo": "Escopo",
+            "caminho": "Caminho"
+        }
+    }
+}

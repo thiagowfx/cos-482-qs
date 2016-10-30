@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="cos482App.alunoDoutorado.detail.title">Aluno Doutorado</span> {{vm.alunoDoutorado.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="cos482App.alunoDoutorado.ataDissertacao">Ata Dissertacao</span></dt>
+        <dd>
+            <a ui-sref="documento-sistema-detail({id:vm.alunoDoutorado.ataDissertacaoId})">{{vm.alunoDoutorado.ataDissertacaoId}}</a>
+        </dd>
+        <dt><span data-translate="cos482App.alunoDoutorado.certidaoConclusao">Certidao Conclusao</span></dt>
+        <dd>
+            <a ui-sref="documento-sistema-detail({id:vm.alunoDoutorado.certidaoConclusaoId})">{{vm.alunoDoutorado.certidaoConclusaoId}}</a>
+        </dd>
+        <dt><span data-translate="cos482App.alunoDoutorado.diplomaMestrado">Diploma Mestrado</span></dt>
+        <dd>
+            <a ui-sref="documento-sistema-detail({id:vm.alunoDoutorado.diplomaMestradoId})">{{vm.alunoDoutorado.diplomaMestradoId}}</a>
+        </dd>
+        <dt><span data-translate="cos482App.alunoDoutorado.aluno">Aluno</span></dt>
+        <dd>
+            <a ui-sref="aluno-detail({id:vm.alunoDoutorado.alunoId})">{{vm.alunoDoutorado.alunoId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="aluno-doutorado-detail.edit({id:vm.alunoDoutorado.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

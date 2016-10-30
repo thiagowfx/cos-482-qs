@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "tipo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "formato",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timestampEnvio",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "StatusDocumento",
+            "fieldValues": "PENDETE,ENVIADO,ACEITO"
+        },
+        {
+            "fieldName": "escopo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "caminho",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161030103551",
+    "entityTableName": "documento_sistema",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularSuffix": "mySuffix"
+}

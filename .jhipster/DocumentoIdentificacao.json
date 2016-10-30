@@ -1,0 +1,20 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "tipo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valor",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161030103550",
+    "entityTableName": "documento_identificacao",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularSuffix": "mySuffix"
+}

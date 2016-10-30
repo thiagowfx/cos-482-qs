@@ -1,0 +1,10 @@
+{
+    "cos482App": {
+        "StatusDocumento" : {
+            "null": "",
+            "PENDETE": "PENDETE",
+            "ENVIADO": "ENVIADO",
+            "ACEITO": "ACEITO"
+        }
+    }
+}

@@ -1,0 +1,75 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myUsuarioLabel" data-translate="cos482App.usuario.home.createOrEditLabel">Create or edit a Usuario</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.usuario.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.usuario.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cos482App.usuario.nome" for="field_nome">Nome</label>
+            <input type="text" class="form-control" name="nome" id="field_nome"
+                    ng-model="vm.usuario.nome"
+                    required />
+            <div ng-show="editForm.nome.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nome.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="cos482App.usuario.conta" for="field_conta">Conta</label>
+            <select class="form-control" name="conta" ng-model="vm.usuario.conta" id="field_conta">
+                <option value="ATIVA" data-translate="cos482App.StatusConta.ATIVA">ATIVA</option>
+                <option value="INATIVA" data-translate="cos482App.StatusConta.INATIVA">INATIVA</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="cos482App.usuario.cpf" for="field_cpf">Cpf</label>
+            <select class="form-control" id="field_cpf" name="cpf" ng-model="vm.usuario.cpfId" ng-options="documentoIdentificacao.id as documentoIdentificacao.id for documentoIdentificacao in vm.cpfs | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="cos482App.usuario.rg" for="field_rg">Rg</label>
+            <select class="form-control" id="field_rg" name="rg" ng-model="vm.usuario.rgId" ng-options="documentoIdentificacao.id as documentoIdentificacao.id for documentoIdentificacao in vm.rgs | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="cos482App.usuario.tituloDeEleitor" for="field_tituloDeEleitor">Titulo De Eleitor</label>
+            <select class="form-control" id="field_tituloDeEleitor" name="tituloDeEleitor" ng-model="vm.usuario.tituloDeEleitorId" ng-options="documentoIdentificacao.id as documentoIdentificacao.id for documentoIdentificacao in vm.titulodeeleitors | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="cos482App.usuario.dispensaMilitar" for="field_dispensaMilitar">Dispensa Militar</label>
+            <select class="form-control" id="field_dispensaMilitar" name="dispensaMilitar" ng-model="vm.usuario.dispensaMilitarId" ng-options="documentoIdentificacao.id as documentoIdentificacao.id for documentoIdentificacao in vm.dispensamilitars | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="cos482App.usuario.passaporte" for="field_passaporte">Passaporte</label>
+            <select class="form-control" id="field_passaporte" name="passaporte" ng-model="vm.usuario.passaporteId" ng-options="documentoIdentificacao.id as documentoIdentificacao.id for documentoIdentificacao in vm.passaportes | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
