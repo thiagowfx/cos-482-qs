@@ -57,6 +57,12 @@ Performance tests are run by [Gatling]() and written in Scala. They're located i
     ./mvnw gatling:execute
 
     
+## Updating CRUD
+CRUD was generated using the JDL-Studio which generated the file 'jhipster-jdl.jh' located on the root directory. The CRUD can be update with:
+
+    yo jhipster:import-jdl jhipster-jdl.jh
+
+
 ## Continuous Integration
 
 To setup this project in Jenkins, use the following configuration:
