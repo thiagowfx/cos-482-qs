@@ -1,3 +1,4 @@
+// https://jhipster.github.io/jdl-studio/
 
 entity Usuario { 
 	id Integer required 
