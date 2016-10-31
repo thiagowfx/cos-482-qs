@@ -1,0 +1,87 @@
+
+entity Usuario { 
+	id Integer required 
+	nome String required 
+	conta StatusConta 
+} 
+entity Aluno { 
+	dre String 
+	matricula StatusMatricula 
+} 
+entity SecretarioAcademico { 
+} 
+entity AlunoMestrado { 
+} 
+entity AlunoDoutorado { 
+} 
+entity Professor { 
+	id Integer required 
+	nome String 
+	siape String 
+} 
+entity DocumentoIdentificacao { 
+	id Integer required 
+	tipo String 
+	valor String 
+} 
+entity DocumentoSistema { 
+	id Integer required
+	tipo String 
+	formato String
+	timestampEnvio ZonedDateTime 
+	status StatusDocumento 
+	escopo Integer
+	caminho String 
+} 
+enum StatusConta { 
+	ATIVA, INATIVA
+} 
+enum StatusMatricula { 
+	ATIVA, INATIVA, SUSPENSA, TRANCADA
+} 
+enum StatusDocumento { 
+	PENDETE, ENVIADO, ACEITO
+} 
+relationship OneToOne { 
+	Usuario{cpf} to DocumentoIdentificacao, 
+	Usuario{rg} to DocumentoIdentificacao, 
+	Usuario{tituloDeEleitor} to DocumentoIdentificacao, 
+	Usuario{dispensaMilitar} to DocumentoIdentificacao, 
+	Usuario{passaporte} to DocumentoIdentificacao,
+
+	Usuario{systemUser} to User, 
+	
+	Aluno{declaracaoConclusao} to DocumentoSistema, 
+	Aluno{historicoGradaucao} to DocumentoSistema, 
+	
+    AlunoMestrado {diplomaGraduacao} to DocumentoSistema, 
+	AlunoMestrado{certidadoConclusao} to DocumentoSistema, 
+	AlunoMestrado{certidaoColacao} to DocumentoSistema, 
+	
+    AlunoDoutorado{ataDissertacao} to DocumentoSistema, 
+	AlunoDoutorado{certidaoConclusao} to DocumentoSistema, 
+	AlunoDoutorado{diplomaMestrado} to DocumentoSistema 
+} 
+relationship ManyToOne { 
+	Aluno{usuario} to Usuario, 
+	
+    SecretarioAcademico{usuario} to Usuario, 
+	
+    AlunoMestrado{aluno} to Aluno, 
+	
+    AlunoDoutorado{aluno} to Aluno 
+} 
+relationship ManyToMany { 
+	Aluno{orientador} to Professor 
+}
+
+
+// Set pagination options
+paginate Usuario with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with mySuffix

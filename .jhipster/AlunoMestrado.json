@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "diplomaGraduacao",
+            "otherEntityName": "documentoSistema",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "alunoMestrado"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "certidadoConclusao",
+            "otherEntityName": "documentoSistema",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "alunoMestrado"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "certidaoColacao",
+            "otherEntityName": "documentoSistema",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "alunoMestrado"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "aluno",
+            "otherEntityName": "aluno",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20161030202615",
+    "entityTableName": "aluno_mestrado",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularSuffix": "mySuffix"
+}

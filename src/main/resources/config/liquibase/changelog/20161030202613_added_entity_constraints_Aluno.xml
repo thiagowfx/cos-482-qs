@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Aluno.
+    -->
+    <changeSet id="20161030202613-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="declaracao_conclusao_id"
+                                 baseTableName="aluno"
+                                 constraintName="fk_aluno_declaracao_conclusao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documento_sistema"/>
+
+        <addForeignKeyConstraint baseColumnNames="historico_gradaucao_id"
+                                 baseTableName="aluno"
+                                 constraintName="fk_aluno_historico_gradaucao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documento_sistema"/>
+
+        <addForeignKeyConstraint baseColumnNames="usuario_id"
+                                 baseTableName="aluno"
+                                 constraintName="fk_aluno_usuario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="usuario"/>
+
+        <addForeignKeyConstraint baseColumnNames="alunos_id"
+                                 baseTableName="aluno_orientador"
+                                 constraintName="fk_aluno_orientador_alunos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="aluno"/>
+        <addForeignKeyConstraint baseColumnNames="orientadors_id"
+                                 baseTableName="aluno_orientador"
+                                 constraintName="fk_aluno_orientador_orientadors_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="professor"/>
+        
+    </changeSet>
+</databaseChangeLog>

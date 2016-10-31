@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="cos482App.usuario.detail.title">Usuario</span> {{vm.usuario.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="cos482App.usuario.nome">Nome</span></dt>
+        <dd>
+            <span>{{vm.usuario.nome}}</span>
+        </dd>
+        <dt><span data-translate="cos482App.usuario.conta">Conta</span></dt>
+        <dd>
+            <span data-translate="{{'cos482App.StatusConta.' + vm.usuario.conta}}">{{vm.usuario.conta}}</span>
+        </dd>
+        <dt><span data-translate="cos482App.usuario.cpf">Cpf</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.usuario.cpfId})">{{vm.usuario.cpfId}}</a>
+        </dd>
+        <dt><span data-translate="cos482App.usuario.rg">Rg</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.usuario.rgId})">{{vm.usuario.rgId}}</a>
+        </dd>
+        <dt><span data-translate="cos482App.usuario.tituloDeEleitor">Titulo De Eleitor</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.usuario.tituloDeEleitorId})">{{vm.usuario.tituloDeEleitorId}}</a>
+        </dd>
+        <dt><span data-translate="cos482App.usuario.dispensaMilitar">Dispensa Militar</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.usuario.dispensaMilitarId})">{{vm.usuario.dispensaMilitarId}}</a>
+        </dd>
+        <dt><span data-translate="cos482App.usuario.passaporte">Passaporte</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.usuario.passaporteId})">{{vm.usuario.passaporteId}}</a>
+        </dd>
+        <dt><span data-translate="cos482App.usuario.systemUser">System User</span></dt>
+        <dd>
+            {{vm.usuario.systemUserId}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="usuario-detail.edit({id:vm.usuario.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

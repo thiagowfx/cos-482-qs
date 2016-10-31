@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="cos482App.documentoSistema.detail.title">Documento Sistema</span> {{vm.documentoSistema.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="cos482App.documentoSistema.tipo">Tipo</span></dt>
+        <dd>
+            <span>{{vm.documentoSistema.tipo}}</span>
+        </dd>
+        <dt><span data-translate="cos482App.documentoSistema.formato">Formato</span></dt>
+        <dd>
+            <span>{{vm.documentoSistema.formato}}</span>
+        </dd>
+        <dt><span data-translate="cos482App.documentoSistema.timestampEnvio">Timestamp Envio</span></dt>
+        <dd>
+            <span>{{vm.documentoSistema.timestampEnvio | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="cos482App.documentoSistema.status">Status</span></dt>
+        <dd>
+            <span data-translate="{{'cos482App.StatusDocumento.' + vm.documentoSistema.status}}">{{vm.documentoSistema.status}}</span>
+        </dd>
+        <dt><span data-translate="cos482App.documentoSistema.escopo">Escopo</span></dt>
+        <dd>
+            <span>{{vm.documentoSistema.escopo}}</span>
+        </dd>
+        <dt><span data-translate="cos482App.documentoSistema.caminho">Caminho</span></dt>
+        <dd>
+            <span>{{vm.documentoSistema.caminho}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="documento-sistema-detail.edit({id:vm.documentoSistema.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Usuario.
+    -->
+    <changeSet id="20161030202612-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="cpf_id"
+                                 baseTableName="usuario"
+                                 constraintName="fk_usuario_cpf_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documento_identificacao"/>
+
+        <addForeignKeyConstraint baseColumnNames="rg_id"
+                                 baseTableName="usuario"
+                                 constraintName="fk_usuario_rg_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documento_identificacao"/>
+
+        <addForeignKeyConstraint baseColumnNames="titulo_de_eleitor_id"
+                                 baseTableName="usuario"
+                                 constraintName="fk_usuario_titulo_de_eleitor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documento_identificacao"/>
+
+        <addForeignKeyConstraint baseColumnNames="dispensa_militar_id"
+                                 baseTableName="usuario"
+                                 constraintName="fk_usuario_dispensa_militar_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documento_identificacao"/>
+
+        <addForeignKeyConstraint baseColumnNames="passaporte_id"
+                                 baseTableName="usuario"
+                                 constraintName="fk_usuario_passaporte_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documento_identificacao"/>
+
+        <addForeignKeyConstraint baseColumnNames="system_user_id"
+                                 baseTableName="usuario"
+                                 constraintName="fk_usuario_system_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+    </changeSet>
+</databaseChangeLog>

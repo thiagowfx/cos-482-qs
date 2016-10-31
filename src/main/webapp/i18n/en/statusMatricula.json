@@ -1,0 +1,11 @@
+{
+    "cos482App": {
+        "StatusMatricula" : {
+            "null": "",
+            "ATIVA": "ATIVA",
+            "INATIVA": "INATIVA",
+            "SUSPENSA": "SUSPENSA",
+            "TRANCADA": "TRANCADA"
+        }
+    }
+}

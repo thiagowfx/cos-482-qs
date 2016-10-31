@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity AlunoDoutorado.
+    -->
+    <changeSet id="20161030202616-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="ata_dissertacao_id"
+                                 baseTableName="aluno_doutorado"
+                                 constraintName="fk_aluno_doutorado_ata_dissertacao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documento_sistema"/>
+
+        <addForeignKeyConstraint baseColumnNames="certidao_conclusao_id"
+                                 baseTableName="aluno_doutorado"
+                                 constraintName="fk_aluno_doutorado_certidao_conclusao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documento_sistema"/>
+
+        <addForeignKeyConstraint baseColumnNames="diploma_mestrado_id"
+                                 baseTableName="aluno_doutorado"
+                                 constraintName="fk_aluno_doutorado_diploma_mestrado_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documento_sistema"/>
+
+        <addForeignKeyConstraint baseColumnNames="aluno_id"
+                                 baseTableName="aluno_doutorado"
+                                 constraintName="fk_aluno_doutorado_aluno_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="aluno"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,25 @@
+{
+    "cos482App": {
+        "alunoDoutorado" : {
+            "home": {
+                "title": "Aluno Doutorados",
+                "createLabel": "Create a new Aluno Doutorado",
+                "createOrEditLabel": "Create or edit a Aluno Doutorado",
+                "search": "Search for Aluno Doutorado"
+            },
+            "created": "A new Aluno Doutorado is created with identifier {{ param }}",
+            "updated": "A Aluno Doutorado is updated with identifier {{ param }}",
+            "deleted": "A Aluno Doutorado is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Aluno Doutorado {{ id }}?"
+            },
+            "detail": {
+                "title": "Aluno Doutorado"
+            },
+            "ataDissertacao": "Ata Dissertacao",
+            "certidaoConclusao": "Certidao Conclusao",
+            "diplomaMestrado": "Diploma Mestrado",
+            "aluno": "Aluno"
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "ataDissertacao",
+            "otherEntityName": "documentoSistema",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "alunoDoutorado"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "certidaoConclusao",
+            "otherEntityName": "documentoSistema",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "alunoDoutorado"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "diplomaMestrado",
+            "otherEntityName": "documentoSistema",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "alunoDoutorado"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "aluno",
+            "otherEntityName": "aluno",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20161030202616",
+    "entityTableName": "aluno_doutorado",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularSuffix": "mySuffix"
+}

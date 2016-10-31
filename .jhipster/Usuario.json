@@ -1,0 +1,73 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cpf",
+            "otherEntityName": "documentoIdentificacao",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usuario"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "rg",
+            "otherEntityName": "documentoIdentificacao",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usuario"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "tituloDeEleitor",
+            "otherEntityName": "documentoIdentificacao",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usuario"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "dispensaMilitar",
+            "otherEntityName": "documentoIdentificacao",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usuario"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "passaporte",
+            "otherEntityName": "documentoIdentificacao",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usuario"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "systemUser",
+            "otherEntityName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usuario"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "conta",
+            "fieldType": "StatusConta",
+            "fieldValues": "ATIVA,INATIVA"
+        }
+    ],
+    "changelogDate": "20161030202612",
+    "entityTableName": "usuario",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "angularSuffix": "mySuffix"
+}

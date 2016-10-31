@@ -1,0 +1,50 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAlunoMestradoLabel" data-translate="cos482App.alunoMestrado.home.createOrEditLabel">Create or edit a Aluno Mestrado</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.alunoMestrado.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.alunoMestrado.id" readonly />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="cos482App.alunoMestrado.diplomaGraduacao" for="field_diplomaGraduacao">Diploma Graduacao</label>
+            <select class="form-control" id="field_diplomaGraduacao" name="diplomaGraduacao" ng-model="vm.alunoMestrado.diplomaGraduacaoId" ng-options="documentoSistema.id as documentoSistema.id for documentoSistema in vm.diplomagraduacaos | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="cos482App.alunoMestrado.certidadoConclusao" for="field_certidadoConclusao">Certidado Conclusao</label>
+            <select class="form-control" id="field_certidadoConclusao" name="certidadoConclusao" ng-model="vm.alunoMestrado.certidadoConclusaoId" ng-options="documentoSistema.id as documentoSistema.id for documentoSistema in vm.certidadoconclusaos | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="cos482App.alunoMestrado.certidaoColacao" for="field_certidaoColacao">Certidao Colacao</label>
+            <select class="form-control" id="field_certidaoColacao" name="certidaoColacao" ng-model="vm.alunoMestrado.certidaoColacaoId" ng-options="documentoSistema.id as documentoSistema.id for documentoSistema in vm.certidaocolacaos | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="cos482App.alunoMestrado.aluno" for="field_aluno">Aluno</label>
+            <select class="form-control" id="field_aluno" name="aluno" ng-model="vm.alunoMestrado.alunoId" ng-options="aluno.id as aluno.id for aluno in vm.alunos"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
