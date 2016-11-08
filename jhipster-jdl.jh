@@ -33,6 +33,10 @@ entity DocumentoSistema {
 	escopo Integer
 	caminho String 
 } 
+entity LogDoSistema {
+	timestampFuncao ZonedDateTime
+	funcao Funcoes
+}
 enum StatusConta { 
 	ATIVA, INATIVA
 } 
@@ -42,6 +46,9 @@ enum StatusMatricula {
 enum StatusDocumento { 
 	PENDETE, ENVIADO, ACEITO
 } 
+enum Funcoes {
+	CADASTRAR_ALUNO, DESCADASTRAR_ALUNO, CADASTRAR_PROFESSOR, DESCADASTRAR_PROFESSOR, CADASTRAR_SECRETARIO, DESCADASTRAR_SECRETARIO, EMITIR_DIPLOMA, VALIDAR_DOCUMENTO, VERIFICAR_INFORMACOES_ALUNO, ATUALIZAR_MATRICULA, ENVIAR_DOCUMENTO_MESTRADO, REMOVER_DOCUMENTO_MESTRADO, ENVIAR_DOCUMENTO_DOUTORADO, REMOVER_DOCUMENTO_DOUTORADO
+}
 relationship OneToOne { 
 	Usuario{cpf} to DocumentoIdentificacao, 
 	Usuario{rg} to DocumentoIdentificacao, 
@@ -69,7 +76,9 @@ relationship ManyToOne {
 	
     AlunoMestrado{aluno} to Aluno, 
 	
-    AlunoDoutorado{aluno} to Aluno 
+    AlunoDoutorado{aluno} to Aluno,
+
+	LogDoSistema{usuario} to Usuario 
 } 
 relationship ManyToMany { 
 	Aluno{orientador} to Professor 

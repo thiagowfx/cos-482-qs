@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="cos482App.logDoSistema.detail.title">Log Do Sistema</span> {{vm.logDoSistema.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="cos482App.logDoSistema.timestampFuncao">Timestamp Funcao</span></dt>
+        <dd>
+            <span>{{vm.logDoSistema.timestampFuncao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="cos482App.logDoSistema.funcao">Funcao</span></dt>
+        <dd>
+            <span data-translate="{{'cos482App.Funcoes.' + vm.logDoSistema.funcao}}">{{vm.logDoSistema.funcao}}</span>
+        </dd>
+        <dt><span data-translate="cos482App.logDoSistema.usuario">Usuario</span></dt>
+        <dd>
+            <a ui-sref="usuario-detail({id:vm.logDoSistema.usuarioId})">{{vm.logDoSistema.usuarioId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="log-do-sistema-detail.edit({id:vm.logDoSistema.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

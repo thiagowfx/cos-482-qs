@@ -13,11 +13,13 @@
     <include file="classpath:config/liquibase/changelog/20161030202617_added_entity_Professor.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20161030202618_added_entity_DocumentoIdentificacao.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20161030202619_added_entity_DocumentoSistema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161108204316_added_entity_LogDoSistema.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="classpath:config/liquibase/changelog/20161030202612_added_entity_constraints_Usuario.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20161030202613_added_entity_constraints_Aluno.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20161030202614_added_entity_constraints_SecretarioAcademico.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20161030202615_added_entity_constraints_AlunoMestrado.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20161030202616_added_entity_constraints_AlunoDoutorado.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161108204316_added_entity_constraints_LogDoSistema.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

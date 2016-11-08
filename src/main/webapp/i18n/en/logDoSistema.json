@@ -1,0 +1,24 @@
+{
+    "cos482App": {
+        "logDoSistema" : {
+            "home": {
+                "title": "Log Do Sistemas",
+                "createLabel": "Create a new Log Do Sistema",
+                "createOrEditLabel": "Create or edit a Log Do Sistema",
+                "search": "Search for Log Do Sistema"
+            },
+            "created": "A new Log Do Sistema is created with identifier {{ param }}",
+            "updated": "A Log Do Sistema is updated with identifier {{ param }}",
+            "deleted": "A Log Do Sistema is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Log Do Sistema {{ id }}?"
+            },
+            "detail": {
+                "title": "Log Do Sistema"
+            },
+            "timestampFuncao": "Timestamp Funcao",
+            "funcao": "Funcao",
+            "usuario": "Usuario"
+        }
+    }
+}

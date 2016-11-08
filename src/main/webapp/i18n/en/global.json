@@ -15,6 +15,7 @@
                 "professor": "Professor",
                 "documentoIdentificacao": "Documento Identificacao",
                 "documentoSistema": "Documento Sistema",
+                "logDoSistema": "Log Do Sistema",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
