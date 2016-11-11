@@ -10,7 +10,7 @@
     function UserManagementController(Principal, User, ParseLinks, AlertService, $state, pagingParams, paginationConstants, JhiLanguageService) {
         var vm = this;
 
-        vm.authorities = ['ROLE_USER', 'ROLE_ADMIN', 'ROLE_SECRETARIO_ACADEMICO'];
+        vm.authorities = ['ROLE_USER', 'ROLE_ADMIN', 'ROLE_SECRETARIO_ACADEMICO', 'ROLE_ALUNO'];
         vm.currentAccount = null;
         vm.languages = null;
         vm.loadAll = loadAll;
