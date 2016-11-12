@@ -29,6 +29,8 @@
                 "emitir_diploma": "Emitir Diploma",
                 "enviar_documento_doutorado": "Enviar Documento de Doutorado",
                 "enviar_documento_mestrado": "Enviar Documento de Mestrado",
+                "remover_documento_doutorado": "Remover Documento de Doutorado",
+                "remover_documento_mestrado": "Remover Documento de Mestrado",
                 "validar_documento": "Validar Documento",
                 "verificar_informacoes_aluno": "Verificar Informações do Aluno"
             },

@@ -11,7 +11,9 @@ public final class AuthoritiesConstants {
 
     public static final String SECRETARIO_ACADEMICO = "ROLE_SECRETARIO_ACADEMICO";
 
-    public static final String ALUNO = "ROLE_ALUNO";
+    public static final String ALUNO_DOUTORADO = "ROLE_ALUNO_DOUTORADO";
+
+    public static final String ALUNO_MESTRADO = "ROLE_ALUNO_MESTRADO";
 
     public static final String ANONYMOUS = "ROLE_ANONYMOUS";
 
