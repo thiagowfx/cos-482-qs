@@ -18,10 +18,10 @@
                 "logDoSistema": "Log Do Sistema",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
-            "secretario": {
-                "main": "Secretario's Operations",
-                "cadastrar_aluno": "Sign up student",
-                "cadastrar_professor": "Sign up professor"
+            "operations": {
+                "main": "Operations",
+                "cadastrar_aluno": "Cadastrar aluno",
+                "cadastrar_professor": "Cadastrar professor"
             },
             "account": {
                 "main": "Account",
