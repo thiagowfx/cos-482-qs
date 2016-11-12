@@ -41,6 +41,24 @@
                                 <span data-translate="global.menu.operations.cadastrar_professor"></span>
                             </a>
                         </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="emitir-diploma" ng-click="vm.collapseNavbar()" has-authority="ROLE_SECRETARIO_ACADEMICO">
+                                <span class="glyphicon glyphicon-print"></span>&nbsp;
+                                <span data-translate="global.menu.operations.emitir_diploma"></span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="validar-documento" ng-click="vm.collapseNavbar()" has-authority="ROLE_SECRETARIO_ACADEMICO">
+                                <span class="glyphicon glyphicon-ok"></span>&nbsp;
+                                <span data-translate="global.menu.operations.validar_documento"></span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="verificar-informacoes-aluno" ng-click="vm.collapseNavbar()" has-authority="ROLE_SECRETARIO_ACADEMICO">
+                                <span class="glyphicon glyphicon-book"></span>&nbsp;
+                                <span data-translate="global.menu.operations.verificar_informacoes_aluno"></span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->

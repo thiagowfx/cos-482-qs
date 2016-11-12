@@ -21,7 +21,10 @@
             "operations": {
                 "main": "Operations",
                 "cadastrar_aluno": "Cadastrar aluno",
-                "cadastrar_professor": "Cadastrar professor"
+                "cadastrar_professor": "Cadastrar professor",
+                "emitir_diploma": "Emitir Diploma",
+                "validar_documento": "Validar Documento",
+                "verificar_informacoes_aluno": "Verificar Informações do Aluno"
             },
             "account": {
                 "main": "Account",
