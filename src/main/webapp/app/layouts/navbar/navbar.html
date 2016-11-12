@@ -48,6 +48,12 @@
                             </a>
                         </li>
                         <li ui-sref-active="active">
+                            <a ui-sref="cadastrar-secretario" ng-click="vm.collapseNavbar()" has-authority="ROLE_SECRETARIO_ACADEMICO">
+                                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;
+                                <span data-translate="global.menu.operations.cadastrar_secretario"></span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
                             <a ui-sref="descadastrar-aluno" ng-click="vm.collapseNavbar()" has-authority="ROLE_SECRETARIO_ACADEMICO">
                                 <span class="glyphicon glyphicon-minus-sign"></span>&nbsp;
                                 <span data-translate="global.menu.operations.descadastrar_aluno"></span>
@@ -103,7 +109,7 @@
                         </li>
                         <li ui-sref-active="active">
                             <a ui-sref="verificar-informacoes-aluno" ng-click="vm.collapseNavbar()" has-authority="ROLE_SECRETARIO_ACADEMICO">
-                                <span class="glyphicon glyphicon-file"></span>&nbsp;
+                                <span class="glyphicon glyphicon-info-sign"></span>&nbsp;
                                 <span data-translate="global.menu.operations.verificar_informacoes_aluno"></span>
                             </a>
                         </li>
