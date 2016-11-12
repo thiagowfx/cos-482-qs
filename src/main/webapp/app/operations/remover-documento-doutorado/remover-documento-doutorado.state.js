@@ -12,7 +12,7 @@
             parent: 'operations',
             url: '/remover-documento-doutorado',
             data: {
-                authorities: ['ROLE_SECRETARIO_ACADEMICO']
+                authorities: ['ROLE_ALUNO_DOUTORADO']
             },
             views: {
                 'content@': {
