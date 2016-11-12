@@ -20,9 +20,15 @@
             },
             "operations": {
                 "main": "Operations",
-                "cadastrar_aluno": "Cadastrar aluno",
-                "cadastrar_professor": "Cadastrar professor",
+                "atualizar_matricula": "Atualizar Matrícula",
+                "cadastrar_aluno": "Cadastrar Aluno",
+                "cadastrar_professor": "Cadastrar Professor",
+                "descadastrar_aluno": "Descadastrar Aluno",
+                "descadastrar_professor": "Descadastrar Professor",
+                "descadastrar_secretario": "Descadastrar Secretário Acadêmico",
                 "emitir_diploma": "Emitir Diploma",
+                "enviar_documento_doutorado": "Enviar Documento de Doutorado",
+                "enviar_documento_mestrado": "Enviar Documento de Mestrado",
                 "validar_documento": "Validar Documento",
                 "verificar_informacoes_aluno": "Verificar Informações do Aluno"
             },
