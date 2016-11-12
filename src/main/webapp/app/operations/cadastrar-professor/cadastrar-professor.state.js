@@ -8,16 +8,16 @@
     stateConfig.$inject = ['$stateProvider'];
 
     function stateConfig($stateProvider) {
-        $stateProvider.state('cadastrar-aluno', {
+        $stateProvider.state('cadastrar-professor', {
             parent: 'operations',
-            url: '/cadastrar-aluno',
+            url: '/cadastrar-professor',
             data: {
                 authorities: ['ROLE_SECRETARIO_ACADEMICO']
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/operations/cadastrar-aluno/cadastrar-aluno.html',
-                    controller: 'CadastrarAlunoController',
+                    templateUrl: 'app/operations/cadastrar-professor/cadastrar-professor.html',
+                    controller: 'CadastrarProfessorController',
                     controllerAs: 'vm'
                 }
             },
