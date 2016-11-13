@@ -102,6 +102,9 @@
         },
         "ribbon": {
             "dev":"Development"
+        },
+        "common": {
+            "submit": "Submit"
         }
     },
     "entity": {

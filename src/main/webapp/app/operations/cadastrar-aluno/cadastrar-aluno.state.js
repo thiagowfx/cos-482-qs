@@ -17,12 +17,13 @@
             views: {
                 'content@': {
                     templateUrl: 'app/operations/cadastrar-aluno/cadastrar-aluno.html',
-                    controller: 'CadastrarAlunoController',
+                    // controller: 'CadastrarAlunoController',
                     controllerAs: 'vm'
                 }
             },
             resolve: {
                 mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                    $translatePartialLoader.addPart('cadastrar-aluno');
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
