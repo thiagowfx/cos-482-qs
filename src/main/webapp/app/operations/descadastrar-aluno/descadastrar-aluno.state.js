@@ -17,13 +17,14 @@
             views: {
                 'content@': {
                     templateUrl: 'app/operations/descadastrar-aluno/descadastrar-aluno.html',
-                    controller: 'DescadastrarAlunoController',
+                    //controller: 'DescadastrarAlunoController',
                     controllerAs: 'vm'
                 }
             },
             resolve: {
                 mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                    $translatePartialLoader.addPart('global');
+                	$translatePartialLoader.addPart('descadastrar-aluno');
+                	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
             }
