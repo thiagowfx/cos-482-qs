@@ -1,6 +1,6 @@
 {
-    "cadastrar-aluno" : {
-        "subtitle":  "Preencha os dados do(a) aluno(a)",
+    "cadastrar-professor" : {
+        "subtitle":  "Preencha os dados do(a) professor(a)",
         "email": "*e-mail",
         "name": "*Nome Completo",
         "password": "*Senha",
@@ -10,6 +10,6 @@
         "titulo": "*Título de Eleitor",
         "passport": "*Passaporte",
         "dispensa": "Dispensa Militar",
-        "dre": "*DRE"
+        "siape": "*SIAPE"
     }
 }

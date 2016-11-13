@@ -17,13 +17,14 @@
             views: {
                 'content@': {
                     templateUrl: 'app/operations/cadastrar-professor/cadastrar-professor.html',
-                    controller: 'CadastrarProfessorController',
+                    //controller: 'CadastrarProfessorController',
                     controllerAs: 'vm'
                 }
             },
             resolve: {
                 mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                    $translatePartialLoader.addPart('global');
+                	$translatePartialLoader.addPart('cadastrar-professor');
+                	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
             }
