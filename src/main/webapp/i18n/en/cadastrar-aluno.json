@@ -1,8 +1,15 @@
 {
     "cadastrar-aluno" : {
         "subtitle":  "Preencha os dados do aluno",
-        "dre": "DRE",
-        "email": "e-mail",
-        "nome": "Nome Completo"
+        "email": "*e-mail",
+        "name": "*Nome Completo",
+        "password": "*Senha",
+        "repeat-password": "*Confirmar Senha",
+        "cpf": "*CPF",
+        "rg": "*RG",
+        "titulo": "*Título de Eleitor",
+        "passport": "*Passaporte",
+        "dispensa": "Dispensa Militar",
+        "dre": "*DRE"
     }
 }
