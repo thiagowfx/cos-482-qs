@@ -1,6 +1,8 @@
 {
     "cadastrar-aluno" : {
-        "subtitle":  "Preencha os dados do aluno.",
-        "dre": "DRE"
+        "subtitle":  "Preencha os dados do aluno",
+        "dre": "DRE",
+        "email": "e-mail",
+        "nome": "Nome Completo"
     }
 }
