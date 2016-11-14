@@ -17,13 +17,14 @@
             views: {
                 'content@': {
                     templateUrl: 'app/operations/descadastrar-secretario/descadastrar-secretario.html',
-                    controller: 'DescadastrarSecretarioController',
+                    //controller: 'DescadastrarSecretarioController',
                     controllerAs: 'vm'
                 }
             },
             resolve: {
                 mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                    $translatePartialLoader.addPart('global');
+                	$translatePartialLoader.addPart('descadastrar-secretario');
+                	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
             }

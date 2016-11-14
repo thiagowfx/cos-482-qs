@@ -17,13 +17,14 @@
             views: {
                 'content@': {
                     templateUrl: 'app/operations/descadastrar-professor/descadastrar-professor.html',
-                    controller: 'DescadastrarProfessorController',
+                    //controller: 'DescadastrarProfessorController',
                     controllerAs: 'vm'
                 }
             },
             resolve: {
                 mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                    $translatePartialLoader.addPart('global');
+                	$translatePartialLoader.addPart('descadastrar-professor');
+                	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
             }
