@@ -17,13 +17,14 @@
             views: {
                 'content@': {
                     templateUrl: 'app/operations/verificar-informacoes-aluno/verificar-informacoes-aluno.html',
-                    controller: 'VerificarInformacoesAlunoController',
+                    //controller: 'VerificarInformacoesAlunoController',
                     controllerAs: 'vm'
                 }
             },
             resolve: {
                 mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                    $translatePartialLoader.addPart('global');
+                	$translatePartialLoader.addPart('verificar-informacoes');
+                	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
             }
