@@ -104,7 +104,9 @@
             "dev":"Development"
         },
         "common": {
-            "submit": "Enviar"
+            "submit": "Enviar",
+            "save": "Salvar",
+            "cancel": "Cancelar"
         }
     },
     "entity": {

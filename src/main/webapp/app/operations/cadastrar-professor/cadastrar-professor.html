@@ -7,23 +7,26 @@
         <div class="col-md-12">
             <form class="form-horizontal">
             	<div class="form-group">
-                    <label data-translate="cadastrar-professor.name" class="control-label col-sm-2" for="name"></label>
+                    <label data-translate="cadastrar-professor.name" class="control-label col-sm-2" for="cadastrar-professor-name"></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="name" placeholder="João da Silva">
+                        <input type="text" class="form-control" id="cadastrar-professor-name" placeholder="João da Silva">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label data-translate="cadastrar-professor.siape" class="control-label col-sm-2" for="siape"></label>
+                    <label data-translate="cadastrar-professor.siape" class="control-label col-sm-2" for="cadastrar-professor-siape"></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="siape" placeholder="1234567">
+                        <input type="text" class="form-control" id="cadastrar-professor-siape" placeholder="1234567">
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                    <button data-translate="global.common.submit" type="submit" class="btn btn-default"></button>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="global.common.cancel"></span>
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="global.common.save"></span>
+                    </button>
                 </div>
             </form>
         </div>
