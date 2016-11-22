@@ -1,15 +1,7 @@
 {
     "cadastrar-professor" : {
-        "subtitle":  "Preencha os dados do(a) professor(a)",
-        "email": "*e-mail",
-        "name": "*Nome Completo",
-        "password": "*Senha",
-        "repeat-password": "*Confirmar Senha",
-        "cpf": "*CPF",
-        "rg": "*RG",
-        "titulo": "*Título de Eleitor",
-        "passport": "*Passaporte",
-        "dispensa": "Dispensa Militar",
-        "siape": "*SIAPE"
+        "subtitle":  "Preencha os dados do professor",
+        "name": "Nome Completo",
+        "siape": "Matrícula SIAPE"
     }
 }
