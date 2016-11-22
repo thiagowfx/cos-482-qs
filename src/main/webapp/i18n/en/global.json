@@ -106,7 +106,8 @@
         "common": {
             "submit": "Enviar",
             "save": "Salvar",
-            "cancel": "Cancelar"
+            "cancel": "Cancelar",
+            "delete": "Deletar"
         }
     },
     "entity": {
