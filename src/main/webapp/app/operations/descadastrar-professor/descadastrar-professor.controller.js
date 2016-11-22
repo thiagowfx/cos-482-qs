@@ -5,11 +5,12 @@
         .module('cos482App')
         .controller('DescadastrarProfessorController', DescadastrarProfessorController);
 
-    DescadastrarProfessorController.$inject = ['$scope', '$state', 'Professor'];
+    DescadastrarProfessorController.$inject = ['$window', '$scope', '$state', '$translate', 'Professor'];
 
-    function DescadastrarProfessorController ($scope, $state, Professor) {
+    function DescadastrarProfessorController ($window, $scope, $state, $translate, Professor) {
         var vm = this;
 
+        vm.deleteProfessor = deleteProfessor;
         vm.professors = [];
 
         loadAll();
@@ -18,6 +19,13 @@
             Professor.query(function(result) {
                 vm.professors = result;
             });
+        }
+
+        function deleteProfessor(id) {
+            Professor.delete({id: id},
+                function () {
+                    $window.alert($translate.instant('descadastrar-professor.alert.success'));
+                });
         }
     }
 })();

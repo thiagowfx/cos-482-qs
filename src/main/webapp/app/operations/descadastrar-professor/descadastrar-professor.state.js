@@ -30,30 +30,6 @@
                     return $translate.refresh();
                 }]
             }
-        })
-        .state('descadastrar-professor.delete', {
-            parent: 'descadastrar-professor',
-            url: '/{id}/delete',
-            data: {
-                authorities: ['ROLE_SECRETARIO_ACADEMICO', 'ROLE_ADMIN']
-            },
-            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
-                $uibModal.open({
-                    templateUrl: 'app/entities/descadastrar-professor/descadastrar-professor-delete-dialog.html',
-                    controller: 'DescadastrarProfessorDeleteController',
-                    controllerAs: 'vm',
-                    size: 'md',
-                    resolve: {
-                        entity: ['Professor', function(Professor) {
-                            return Professor.get({id : $stateParams.id}).$promise;
-                        }]
-                    }
-                }).result.then(function() {
-                    $state.go('descadastrar-professor', null, { reload: 'descadastrar-professor' });
-                }, function() {
-                    $state.go('^');
-                });
-            }]
         });
     }
 })();
