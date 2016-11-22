@@ -2,6 +2,10 @@
     "cadastrar-professor": {
         "subtitle":  "Preencha os dados do professor",
         "name": "Nome Completo",
-        "siape": "Matrícula SIAPE"
+        "siape": "Matrícula SIAPE",
+        "alert": {
+            "success": "Professor cadastrado com sucesso!",
+            "failure": "Ocorreu um erro ao cadastrar o professor!"
+        }
     }
 }

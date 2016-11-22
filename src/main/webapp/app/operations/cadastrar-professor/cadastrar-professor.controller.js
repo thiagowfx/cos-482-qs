@@ -5,9 +5,9 @@
         .module('cos482App')
         .controller('CadastrarProfessorController', CadastrarProfessorController);
 
-    CadastrarProfessorController.$inject = ['$window', '$scope', '$state', 'entity', 'Professor'];
+    CadastrarProfessorController.$inject = ['$window', '$scope', '$state', '$translate', 'entity', 'Professor'];
 
-    function CadastrarProfessorController ($window, $scope, $state, entity, Professor) {
+    function CadastrarProfessorController ($window, $scope, $state, $translate, entity, Professor) {
         var vm = this;
 
         vm.professor = entity;
@@ -26,10 +26,12 @@
 
         function onSaveSuccess (result) {
             vm.isSaving = false;
+            $window.alert($translate.instant('cadastrar-professor.alert.success'));
             vm.clear();
         }
 
         function onSaveError () {
+            $window.alert($translate.instant('cadastrar-professor.alert.failure'));
             vm.isSaving = false;
         }
     }
