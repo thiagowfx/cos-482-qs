@@ -26,6 +26,7 @@
 
         function onSaveSuccess (result) {
             vm.isSaving = false;
+            vm.clear();
         }
 
         function onSaveError () {
