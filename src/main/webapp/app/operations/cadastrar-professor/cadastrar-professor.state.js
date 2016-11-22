@@ -27,7 +27,14 @@
                 	$translatePartialLoader.addPart('cadastrar-professor');
                 	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
-                }]
+                }],
+                entity: function () {
+                    return {
+                        nome: null,
+                        siape: null,
+                        id: null
+                    };
+                }
             }
         });
     }
