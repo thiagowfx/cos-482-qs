@@ -5,7 +5,7 @@
             <p data-translate="cadastrar-professor.subtitle" class="lead"></p>
         </div>
         <div class="col-md-12">
-            <form class="form-horizontal">
+            <form name="cadastrar-professor-form" role="form" novalidate class="form-horizontal" ng-submit="vm.save()">
             	<div class="form-group">
                     <label data-translate="cadastrar-professor.name" class="control-label col-sm-2" for="cadastrar-professor-name"></label>
                     <div class="col-sm-10">
@@ -24,7 +24,7 @@
                     <button type="button" ui-sref="home" class="btn btn-default" ng-click="vm.clear()">
                         <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="global.common.cancel"></span>
                     </button>
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" ng-disabled="vm.isSaving" class="btn btn-primary">
                         <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="global.common.save"></span>
                     </button>
                 </div>
