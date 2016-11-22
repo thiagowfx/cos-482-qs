@@ -25,6 +25,7 @@
             Professor.delete({id: id},
                 function () {
                     $window.alert($translate.instant('descadastrar-professor.alert.success'));
+                    $state.reload();
                 });
         }
     }
