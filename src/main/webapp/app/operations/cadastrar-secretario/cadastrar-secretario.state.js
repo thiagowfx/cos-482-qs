@@ -18,7 +18,7 @@
             views: {
                 'content@': {
                     templateUrl: 'app/operations/cadastrar-secretario/cadastrar-secretario.html',
-                    // controller: 'CadastrarSecretarioController',
+                    controller: 'CadastrarSecretarioController',
                     controllerAs: 'vm'
                 }
             },
@@ -27,7 +27,13 @@
                 	$translatePartialLoader.addPart('cadastrar-secretario');
                 	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
-                }]
+                }],
+                entity: function () {
+                    return {
+                        nome: null,
+                        id: null
+                    };
+                }
             }
         });
     }
