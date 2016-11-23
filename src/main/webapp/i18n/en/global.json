@@ -153,5 +153,5 @@
         "emailexists": "E-mail is already in use!",
         "idexists": "A new {{ entityName }} cannot already have an ID"
     },
-    "footer": "Copyright (C) 2016 Felipe Podolan, Matheus Guedes, Marcos Seefelder, Thiago Perrotta. Todos os direitos reservados."
+    "footer": "Criado com 💜 e ☕. Copyright (C) 2016 <b>Team Matrícula Alfa</b>: Felipe Podolan, Matheus Guedes, Marcos Seefelder, Thiago Perrotta. Todos os direitos reservados."
 }
