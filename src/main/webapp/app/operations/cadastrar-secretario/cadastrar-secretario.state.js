@@ -12,12 +12,13 @@
             parent: 'operations',
             url: '/cadastrar-secretario',
             data: {
-                authorities: ['ROLE_SECRETARIO_ACADEMICO']
+                authorities: ['ROLE_SECRETARIO_ACADEMICO'],
+                pageTitle: 'global.menu.operations.cadastrar_secretario'
             },
             views: {
                 'content@': {
                     templateUrl: 'app/operations/cadastrar-secretario/cadastrar-secretario.html',
-                    //controller: 'CadastrarSecretarioController',
+                    // controller: 'CadastrarSecretarioController',
                     controllerAs: 'vm'
                 }
             },

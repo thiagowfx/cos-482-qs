@@ -1,7 +1,7 @@
 {
     "descadastrar-professor" : {
         "subtitle": "Selecione um professor para ser descadastrado",
-        "name": "Nome",
+        "name": "Nome Completo",
         "siape": "Matrícula SIAPE",
         "professor": "Professor",
          "alert": {
