@@ -31,8 +31,8 @@
         }
 
         function onSaveError () {
-            $window.alert($translate.instant('cadastrar-professor.alert.failure'));
             vm.isSaving = false;
+            $window.alert($translate.instant('cadastrar-professor.alert.failure'));
         }
     }
 })();
