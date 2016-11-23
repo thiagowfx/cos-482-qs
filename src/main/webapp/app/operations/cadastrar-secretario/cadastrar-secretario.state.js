@@ -28,12 +28,22 @@
                 	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }],
-                entity: function () {
+                secretario_entity: function () {
                     return {
-                        nome: null,
                         id: null
                     };
+                },
+                usuario_entity: function () {
+                    return {
+                        id: null
+                    };
+                },
+                user_entity: function () {
+                    return {
+                        id: null
+                    }
                 }
+                // TODO: complete all three entities
             }
         });
     }
