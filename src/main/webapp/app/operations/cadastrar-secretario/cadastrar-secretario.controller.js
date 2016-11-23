@@ -33,11 +33,14 @@
         }
 
         function save() {
-            // TODO: uncomment these whenever we're ready
-            // vm.isSaving = true;
-            // User.save
-            // Usuario.save
-            // SecretarioAcademico.save(vm.secretario, onSaveSuccess, onSaveError);
+            vm.isSaving = true;
+
+            Usuario.save(vm.usuario, function(){}, function(){});
+            // TODO: tomar id do usuario e popula-la no secretario
+            // vm.secretario. = 42;
+            SecretarioAcademico.save(vm.secretario, onSaveSuccess, onSaveError);
+
+            // TODO: User.save
         }
 
         function onSaveSuccess (result) {

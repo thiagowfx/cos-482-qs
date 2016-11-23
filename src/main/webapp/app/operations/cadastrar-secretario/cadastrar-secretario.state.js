@@ -35,7 +35,8 @@
                 },
                 usuario_entity: function () {
                     return {
-                        id: null
+                        id: null,
+                        nome: null
                     };
                 },
                 user_entity: function () {
