@@ -1,0 +1,27 @@
+<div>
+    <h2><span data-translate="descadastrar-professor.professor"></span> {{vm.professor.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="descadastrar-professor.name"></span></dt>
+        <dd>
+            <span>{{vm.professor.nome}}</span>
+        </dd>
+        <dt><span data-translate="descadastrar-professor.siape"></span></dt>
+        <dd>
+            <span>{{vm.professor.siape}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span class="hidden-xs hidden-sm" data-translate="global.common.back"></span>
+    </button>
+
+    <button type="submit"
+            ng-click="vm.deleteProfessor(vm.professor.id)"
+            class="btn btn-danger">
+        <span class="glyphicon glyphicon-remove-circle"></span>
+        <span class="hidden-xs hidden-sm" data-translate="global.common.delete"></span>
+    </button>
+</div>

@@ -107,7 +107,9 @@
             "submit": "Enviar",
             "save": "Salvar",
             "cancel": "Cancelar",
-            "delete": "Deletar"
+            "delete": "Deletar",
+            "view": "Visualizar",
+            "back": "Voltar"
         }
     },
     "entity": {

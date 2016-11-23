@@ -3,6 +3,7 @@
         "subtitle": "Selecione um professor para ser descadastrado",
         "name": "Nome",
         "siape": "Matrícula SIAPE",
+        "professor": "Professor",
          "alert": {
             "success": "Professor descadastrado com sucesso!"
         }
