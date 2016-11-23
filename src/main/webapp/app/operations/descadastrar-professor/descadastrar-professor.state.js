@@ -13,7 +13,7 @@
             parent: 'operations',
             url: '/descadastrar-professor',
             data: {
-                authorities: ['ROLE_SECRETARIO_ACADEMICO', 'ROLE_ADMIN'],
+                authorities: ['ROLE_SECRETARIO_ACADEMICO'],
                 pageTitle: 'global.menu.operations.descadastrar_professor'
             },
             views: {
@@ -35,7 +35,7 @@
             parent: 'descadastrar-professor',
             url: '/descadastrar-professor/{id}',
             data: {
-                authorities: ['ROLE_SECRETARIO_ACADEMICO', 'ROLE_ADMIN'],
+                authorities: ['ROLE_SECRETARIO_ACADEMICO'],
                 pageTitle: 'descadastrar-professor.professor'
             },
             views: {
