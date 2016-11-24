@@ -26,7 +26,7 @@
             $window.document.getElementById('cadastrar-secretario-titulo').value = "";
             $window.document.getElementById('cadastrar-secretario-dispensa').value = "";
             $window.document.getElementById('cadastrar-secretario-passport').value = "";
-            
+
             vm.secretario = secretario_entity;
             vm.usuario = usuario_entity;
             vm.user = user_entity;
@@ -35,11 +35,12 @@
         function save() {
             vm.isSaving = true;
 
-            Usuario.save(vm.usuario, function(){}, function(){});
-            // TODO: tomar id do usuario e popula-la no secretario
-            // vm.secretario. = 42;
-            SecretarioAcademico.save(vm.secretario, onSaveSuccess, onSaveError);
+            Usuario.save(vm.usuario, function(){}, function(){}).$promise.then(function(usuario) {
+                vm.secretario.usuarioId = usuario.id;
+                SecretarioAcademico.save(vm.secretario, onSaveSuccess, onSaveError);
+            })
 
+            // TODO: documents of Usuario
             // TODO: User.save
         }
 
