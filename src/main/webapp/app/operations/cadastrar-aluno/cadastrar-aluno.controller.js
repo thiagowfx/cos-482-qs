@@ -20,7 +20,7 @@
         vm.user = user_entity;
 
         function clear() {
-        	$window.document.getElementById('cadastrar-aluno-type').value = "";
+        	$window.document.getElementById('cadastrar-aluno-type').selectedIndex = -1;
             $window.document.getElementById('cadastrar-aluno-login').value = "";
             $window.document.getElementById('cadastrar-aluno-email').value = "";
             $window.document.getElementById('cadastrar-aluno-name').value = "";
@@ -40,7 +40,7 @@
         function save() {
             vm.isSaving = true;
             
-            if($window.document.getElementById('cadastrar-aluno-type').value === 'Mestrado') {
+            if($window.document.getElementById('cadastrar-aluno-type').selectedIndex === 0) {
             	Usuario.save(vm.usuario, function(){}, function(){}).$promise.then(function(usuario) {
                     vm.aluno.usuarioId = usuario.id;
                     Aluno.save(vm.aluno, function(){}, function(){}).$promise.then(function(aluno) {
@@ -50,7 +50,7 @@
                     
                 })
             }
-            else if($window.document.getElementById('cadastrar-aluno-type').value === 'Doutorado') {
+            else if($window.document.getElementById('cadastrar-aluno-type').selectedIndex === 1) {
         		Usuario.save(vm.usuario, function(){}, function(){}).$promise.then(function(usuario) {
                     vm.aluno.usuarioId = usuario.id;
                     Aluno.save(vm.aluno, function(){}, function(){}).$promise.then(function(aluno) {
