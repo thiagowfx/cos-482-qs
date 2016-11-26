@@ -41,9 +41,9 @@
                         // TODO: conta,
                         cpfId: null,
                         rgId: null,
-                        // TODO: tituloDeEleitorId
-                        passaporteId: null
-                        // TODO: system_user_id
+                        tituloDeEleitorId: null,
+                        passaporteId: null,
+                        systemUserId: null
                     };
                 },
                 user_entity: function () {
@@ -70,6 +70,20 @@
                     return {
                         id: null,
                         tipo: "TITULO",
+                        valor: null
+                    };
+                },
+                dispensa_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "DISPENSA",
+                        valor: null
+                    };
+                },
+                passaporte_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "PASSAPORTE",
                         valor: null
                     };
                 }
