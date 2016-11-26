@@ -1,6 +1,9 @@
 {
     "cadastrar-aluno" : {
         "subtitle":  "Preencha os dados do(a) aluno(a)",
+        "type": "*Tipo",
+        "type1": "Mestrado",
+        "type2": "Doutorado",
         "email": "*e-mail",
         "name": "*Nome Completo",
         "password": "*Senha",
