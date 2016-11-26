@@ -17,7 +17,7 @@
             views: {
                 'content@': {
                     templateUrl: 'app/operations/cadastrar-aluno/cadastrar-aluno.html',
-                    // controller: 'CadastrarAlunoController',
+                    controller: 'CadastrarAlunoController',
                     controllerAs: 'vm'
                 }
             },
@@ -26,7 +26,24 @@
                     $translatePartialLoader.addPart('cadastrar-aluno');
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
-                }]
+                }],
+                aluno_entity: function () {
+                    return {
+                        id: null
+                    };
+                },
+                usuario_entity: function () {
+                    return {
+                        id: null,
+                        nome: null
+                    };
+                },
+                user_entity: function () {
+                    return {
+                        id: null
+                    }
+                }
+                // TODO: complete all three entities
             }
         });
     }

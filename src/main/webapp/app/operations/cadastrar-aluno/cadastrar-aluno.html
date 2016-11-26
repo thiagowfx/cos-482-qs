@@ -5,82 +5,85 @@
             <p data-translate="cadastrar-aluno.subtitle" class="lead"></p>
         </div>
         <div class="col-md-12">
-            <form class="form-horizontal">
+            <form name="cadastrar-aluno-form" role="form" novalidate class="form-horizontal" ng-submit="vm.save()">
             
             	<div class="form-group">
                     <label data-translate="cadastrar-aluno.name" class="control-label col-sm-2" for="name"></label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" id="name" placeholder="ex.: João da Silva">
+                    <input ng-model="vm.usuario.nome" type="text" class="form-control" id="adastrar-aluno.name" placeholder="ex.: João da Silva">
                     </div>
                 </div>
             
             	<div class="form-group">
                     <label data-translate="cadastrar-aluno.email" class="control-label col-sm-2" for="email"></label>
                     <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" placeholder="example@ufrj.br">
+                    <input type="email" class="form-control" id="adastrar-aluno.email" placeholder="example@ufrj.br">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label data-translate="cadastrar-aluno.password" class="control-label col-sm-2" for="password"></label>
                     <div class="col-sm-10">
-                    <input type="password" class="form-control" id="password" placeholder="**************">
+                    <input type="password" class="form-control" id="adastrar-aluno.password" placeholder="**************">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label data-translate="cadastrar-aluno.repeat-password" class="control-label col-sm-2" for="repeat-password"></label>
                     <div class="col-sm-10">
-                    <input type="password" class="form-control" id="repeat-password" placeholder="**************">
+                    <input type="password" class="form-control" id="adastrar-aluno.repeat-password" placeholder="**************">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label data-translate="cadastrar-aluno.cpf" class="control-label col-sm-2" for="cpf"></label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" id="cpf" placeholder="999999999">
+                    <input ng-model="vm.usuario.cpf" type="text" class="form-control" id="adastrar-aluno.cpf" placeholder="999999999">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label data-translate="cadastrar-aluno.rg" class="control-label col-sm-2" for="rg"></label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" id="rg" placeholder="999999999">
+                    <input ng-model="vm.usuario.rg" type="text" class="form-control" id="adastrar-aluno.rg" placeholder="999999999">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label data-translate="cadastrar-aluno.titulo" class="control-label col-sm-2" for="titulo"></label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" id="titulo" placeholder="999999999">
+                    <input ng-model="vm.usuario.titulo" type="text" class="form-control" id="adastrar-aluno.titulo" placeholder="999999999">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label data-translate="cadastrar-aluno.passport" class="control-label col-sm-2" for="passport"></label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" id="passport" placeholder="999999999">
+                    <input type="text" class="form-control" id="adastrar-aluno.passport" placeholder="999999999">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label data-translate="cadastrar-aluno.dispensa" class="control-label col-sm-2" for="dispensa"></label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" id="dispensa" placeholder="999999999">
+                    <input type="text" class="form-control" id="adastrar-aluno.dispensa" placeholder="999999999">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label data-translate="cadastrar-aluno.dre" class="control-label col-sm-2" for="dre"></label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" id="dre" placeholder="999999999">
+                    <input type="text" class="form-control" id="adastrar-aluno.dre" placeholder="999999999">
                     </div>
                 </div>
              	       
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                    <button data-translate="global.common.submit" type="submit" class="btn btn-default"></button>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" ui-sref="home" class="btn btn-default" ng-click="vm.clear()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="global.common.cancel"></span>
+                    </button>
+                    <button type="submit" ng-disabled="vm.isSaving" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="global.common.save"></span>
+                    </button>
                 </div>
             </form>
         </div>
