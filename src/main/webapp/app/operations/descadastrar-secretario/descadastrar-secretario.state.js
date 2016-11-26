@@ -8,16 +8,18 @@
     stateConfig.$inject = ['$stateProvider'];
 
     function stateConfig($stateProvider) {
-        $stateProvider.state('descadastrar-secretario', {
+        $stateProvider
+        .state('descadastrar-secretario', {
             parent: 'operations',
             url: '/descadastrar-secretario',
             data: {
-                authorities: ['ROLE_SECRETARIO_ACADEMICO']
+                authorities: ['ROLE_SECRETARIO_ACADEMICO'],
+                pageTitle: 'global.menu.operations.descadastrar_secretario'
             },
             views: {
                 'content@': {
                     templateUrl: 'app/operations/descadastrar-secretario/descadastrar-secretario.html',
-                    //controller: 'DescadastrarSecretarioController',
+                    controller: 'DescadastrarSecretarioController',
                     controllerAs: 'vm'
                 }
             },
