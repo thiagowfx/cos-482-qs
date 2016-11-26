@@ -1,3 +1,5 @@
+src/main/resources/.h2.server.properties
+
 ######################
 # Project Specific
 ######################
