@@ -38,7 +38,7 @@
                     return {
                         id: null,
                         nome: null,
-                        // TODO: conta (enum),
+                        conta: 0,
                         cpfId: null,
                         rgId: null,
                         tituloDeEleitorId: null,
@@ -50,7 +50,7 @@
                     return {
                         id: null,
                         login: null,
-                        // TODO passwordHash: null,
+                        passwordHash: null,
                         firstName: null,
                         lastName: null,
                         email: null
