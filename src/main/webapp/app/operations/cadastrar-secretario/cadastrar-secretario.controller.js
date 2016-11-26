@@ -5,9 +5,9 @@
         .module('cos482App')
         .controller('CadastrarSecretarioController', CadastrarSecretarioController);
 
-    CadastrarSecretarioController.$inject = ['$window', '$scope', '$state', '$translate', 'secretario_entity', 'usuario_entity', 'user_entity', 'cpf_entity', 'rg_entity', 'SecretarioAcademico', 'User', 'Usuario', 'DocumentoIdentificacao'];
+    CadastrarSecretarioController.$inject = ['$window', '$scope', '$state', '$translate', 'secretario_entity', 'usuario_entity', 'user_entity', 'cpf_entity', 'rg_entity', 'titulo_entity', 'SecretarioAcademico', 'User', 'Usuario', 'DocumentoIdentificacao'];
 
-    function CadastrarSecretarioController ($window, $scope, $state, $translate, secretario_entity, usuario_entity, user_entity, cpf_entity, rg_entity, SecretarioAcademico, User, Usuario, DocumentoIdentificacao) {
+    function CadastrarSecretarioController ($window, $scope, $state, $translate, secretario_entity, usuario_entity, user_entity, cpf_entity, rg_entity, titulo_entity, SecretarioAcademico, User, Usuario, DocumentoIdentificacao) {
         var vm = this;
 
         vm.clear = clear;
@@ -18,6 +18,7 @@
         vm.user = user_entity;
         vm.cpf = cpf_entity;
         vm.rg = rg_entity;
+        vm.titulo = titulo_entity;
 
         function clear() {
             $window.document.getElementById('cadastrar-secretario-login').value = "";
@@ -34,6 +35,7 @@
             vm.user = user_entity;
             vm.cpf = cpf_entity;
             vm.rg = rg_entity;
+            vm.titulo = titulo_entity;
         }
 
         function save() {
@@ -45,9 +47,13 @@
                 DocumentoIdentificacao.save(vm.rg, function(){}, function(){}).$promise.then(function(rg) {
                     vm.usuario.rgId = rg.id;
 
-                    Usuario.save(vm.usuario, function(){}, function(){}).$promise.then(function(usuario) {
-                        vm.secretario.usuarioId = usuario.id;
-                        SecretarioAcademico.save(vm.secretario, onSaveSuccess, onSaveError);
+                    DocumentoIdentificacao.save(vm.titulo, function(){}, function(){}).$promise.then(function(titulo) {
+                        vm.usuario.tituloDeEleitorId = titulo.id;
+
+                        Usuario.save(vm.usuario, function(){}, function(){}).$promise.then(function(usuario) {
+                            vm.secretario.usuarioId = usuario.id;
+                            SecretarioAcademico.save(vm.secretario, onSaveSuccess, onSaveError);
+                        });
                     });
                 });
             });

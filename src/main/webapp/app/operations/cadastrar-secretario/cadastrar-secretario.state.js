@@ -50,21 +50,28 @@
                     return {
                         id: null
                         // TODOs
-                    }
+                    };
                 },
                 cpf_entity: function () {
                     return {
                         id: null,
                         tipo: "CPF",
                         valor: null
-                    }
+                    };
                 },
                 rg_entity: function () {
                     return {
                         id: null,
                         tipo: "RG",
                         valor: null
-                    }
+                    };
+                },
+                titulo_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "TITULO",
+                        valor: null
+                    };
                 }
             }
         });
