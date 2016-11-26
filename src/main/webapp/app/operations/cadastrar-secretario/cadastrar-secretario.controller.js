@@ -5,9 +5,9 @@
         .module('cos482App')
         .controller('CadastrarSecretarioController', CadastrarSecretarioController);
 
-    CadastrarSecretarioController.$inject = ['$window', '$scope', '$state', '$translate', 'secretario_entity', 'usuario_entity', 'user_entity', 'SecretarioAcademico', 'User', 'Usuario'];
+    CadastrarSecretarioController.$inject = ['$window', '$scope', '$state', '$translate', 'secretario_entity', 'usuario_entity', 'user_entity', 'cpf_entity', 'SecretarioAcademico', 'User', 'Usuario', 'DocumentoIdentificacao'];
 
-    function CadastrarSecretarioController ($window, $scope, $state, $translate, secretario_entity, usuario_entity, user_entity, SecretarioAcademico, User, Usuario) {
+    function CadastrarSecretarioController ($window, $scope, $state, $translate, secretario_entity, usuario_entity, user_entity, cpf_entity, SecretarioAcademico, User, Usuario, DocumentoIdentificacao) {
         var vm = this;
 
         vm.clear = clear;
@@ -16,6 +16,7 @@
         vm.secretario = secretario_entity;
         vm.usuario = usuario_entity;
         vm.user = user_entity;
+        vm.cpf = cpf_entity;
 
         function clear() {
             $window.document.getElementById('cadastrar-secretario-login').value = "";
@@ -30,15 +31,20 @@
             vm.secretario = secretario_entity;
             vm.usuario = usuario_entity;
             vm.user = user_entity;
+            vm.cpf = cpf_entity;
         }
 
         function save() {
             vm.isSaving = true;
 
-            Usuario.save(vm.usuario, function(){}, function(){}).$promise.then(function(usuario) {
-                vm.secretario.usuarioId = usuario.id;
-                SecretarioAcademico.save(vm.secretario, onSaveSuccess, onSaveError);
-            })
+            DocumentoIdentificacao.save(vm.cpf, function(){}, function(){}).$promise.then(function(cpf) {
+                vm.usuario.cpfId = cpf.id;
+
+                Usuario.save(vm.usuario, function(){}, function(){}).$promise.then(function(usuario) {
+                    vm.secretario.usuarioId = usuario.id;
+                    SecretarioAcademico.save(vm.secretario, onSaveSuccess, onSaveError);
+                });
+            });
 
             // TODO: documents of Usuario
             // TODO: User.save

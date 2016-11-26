@@ -30,21 +30,35 @@
                 }],
                 secretario_entity: function () {
                     return {
-                        id: null
+                        id: null,
+                        usuarioId: null
                     };
                 },
                 usuario_entity: function () {
                     return {
                         id: null,
-                        nome: null
+                        nome: null,
+                        // TODO: conta,
+                        cpfId: null,
+                        rgId: null,
+                        // TODO: tituloDeEleitorId
+                        passaporteId: null
+                        // TODO: system_user_id
                     };
                 },
                 user_entity: function () {
                     return {
                         id: null
+                        // TODOs
+                    }
+                },
+                cpf_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "CPF",
+                        valor: null
                     }
                 }
-                // TODO: complete all three entities
             }
         });
     }
