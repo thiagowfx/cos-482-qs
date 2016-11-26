@@ -27,6 +27,16 @@
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }],
+                aluno_doutorado_entity: function () {
+                    return {
+                        id: null
+                    };
+                },
+                aluno_mestrado_entity: function () {
+                    return {
+                        id: null
+                    };
+                },
                 aluno_entity: function () {
                     return {
                         id: null
