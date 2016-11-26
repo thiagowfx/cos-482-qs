@@ -38,7 +38,7 @@
                     return {
                         id: null,
                         nome: null,
-                        // TODO: conta,
+                        // TODO: conta (enum),
                         cpfId: null,
                         rgId: null,
                         tituloDeEleitorId: null,
@@ -48,7 +48,12 @@
                 },
                 user_entity: function () {
                     return {
-                        id: null
+                        id: null,
+                        login: null,
+                        // TODO passwordHash: null,
+                        firstName: null,
+                        lastName: null,
+                        email: null
                         // TODOs
                     };
                 },

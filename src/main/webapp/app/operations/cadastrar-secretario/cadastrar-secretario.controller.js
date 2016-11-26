@@ -60,16 +60,19 @@
                             DocumentoIdentificacao.save(vm.passaporte, function(){}, function(){}).$promise.then(function(passaporte) {
                                 vm.usuario.passaporteId = passaporte.id;
 
-                                Usuario.save(vm.usuario, function(){}, function(){}).$promise.then(function(usuario) {
-                                    vm.secretario.usuarioId = usuario.id;
-                                    SecretarioAcademico.save(vm.secretario, onSaveSuccess, onSaveError);
+                                User.save(vm.user, function(){}, function(){}).$promise.then(function(user) {
+                                    vm.usuario.systemUserId = user.id;
+
+                                    Usuario.save(vm.usuario, function(){}, function(){}).$promise.then(function(usuario) {
+                                        vm.secretario.usuarioId = usuario.id;
+                                        SecretarioAcademico.save(vm.secretario, onSaveSuccess, onSaveError);
+                                    });
                                 });
                             });
                         });
                     });
                 });
             });
-            // TODO: User.save
         }
 
         function onSaveSuccess (result) {
