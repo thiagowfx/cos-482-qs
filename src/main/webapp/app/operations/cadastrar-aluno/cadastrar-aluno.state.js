@@ -12,7 +12,8 @@
             parent: 'operations',
             url: '/cadastrar-aluno',
             data: {
-                authorities: ['ROLE_SECRETARIO_ACADEMICO']
+                authorities: ['ROLE_SECRETARIO_ACADEMICO'],
+                pageTitle: 'global.menu.operations.cadastrar_aluno'
             },
             views: {
                 'content@': {
@@ -29,31 +30,89 @@
                 }],
                 aluno_doutorado_entity: function () {
                     return {
-                        id: null
+                        id: null,
+                        ataDissertacaoId: null,
+                        certidaoConclusaoId: null,
+                        diplomaMestradoId: null,
+                        alunoId: null
                     };
                 },
                 aluno_mestrado_entity: function () {
                     return {
-                        id: null
+                        id: null,
+                        certidadoConclusaoId: null,
+                        diplomaGraduacaoId: null,
+                        certidaoColacaoId: null,
+                        alunoId: null
                     };
                 },
                 aluno_entity: function () {
                     return {
-                        id: null
+                        id: null,
+                        dre: null,
+                        matricula: null,
+                        declaracaoConclusaoId: null,
+                        historicoGradaucaoId: null,
+                        usuarioId: null
                     };
                 },
                 usuario_entity: function () {
                     return {
                         id: null,
-                        nome: null
+                        nome: null,
+                        conta: 0,
+                        cpfId: null,
+                        rgId: null,
+                        tituloDeEleitorId: null,
+                        passaporteId: null,
+                        systemUserId: null
                     };
                 },
                 user_entity: function () {
                     return {
-                        id: null
-                    }
+                        id: null,
+                        login: null,
+                        passwordHash: null,
+                        firstName: null,
+                        lastName: null,
+                        email: null
+                    };
+                },
+                cpf_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "CPF",
+                        valor: null
+                    };
+                },
+                rg_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "RG",
+                        valor: null
+                    };
+                },
+                titulo_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "TITULO",
+                        valor: null
+                    };
+                },
+                dispensa_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "DISPENSA",
+                        valor: null
+                    };
+                },
+                passaporte_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "PASSAPORTE",
+                        valor: null
+                    };
                 }
-                // TODO: complete all three entities
             }
         });
     }
