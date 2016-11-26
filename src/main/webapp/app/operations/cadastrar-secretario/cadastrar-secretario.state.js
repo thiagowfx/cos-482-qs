@@ -54,7 +54,6 @@
                         firstName: null,
                         lastName: null,
                         email: null
-                        // TODOs
                     };
                 },
                 cpf_entity: function () {
