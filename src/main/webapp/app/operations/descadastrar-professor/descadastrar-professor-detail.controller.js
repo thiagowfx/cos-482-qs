@@ -16,12 +16,16 @@
         vm.log = log_entity;
 
         function deleteProfessor(id) {
-            Professor.delete({id: id},
-                function () {
-                    LogUseCase();
-                    $window.alert($translate.instant('descadastrar-professor.alert.success'));
-                    $state.go('^');
-                });
+            if($window.confirm($translate.instant('descadastrar-professor.confirm')))
+            {
+                Professor.delete({id: id},
+                    function () {
+                        LogUseCase();
+                        $window.alert($translate.instant('descadastrar-professor.alert.success'));
+                        $state.go('^');
+                    }
+                );
+            }
         }
 
         function LogUseCase() {

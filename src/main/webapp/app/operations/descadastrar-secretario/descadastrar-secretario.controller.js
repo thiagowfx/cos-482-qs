@@ -13,6 +13,7 @@
         vm.allSecretarios = [];
         vm.secretarioAcademicos = [];
         vm.usuarios = [];
+        vm.deleteSecretario = deleteSecretario;
 
         loadAll();
 
@@ -35,6 +36,7 @@
                                         {id: result.cpfId},
                                         function(innerResult) {
                                             vm.allSecretarios[i].cpf = innerResult.valor;
+                                            vm.allSecretarios[i].indexOnArray = vm.secretarioAcademicos.length;
                                             vm.secretarioAcademicos.push(vm.allSecretarios[i]);
                                         }
                                     );
@@ -47,6 +49,27 @@
 
 
             });
+        }
+
+        function deleteSecretario(id) {
+            console.log("DELETE");
+            if($window.confirm($translate.instant('descadastrar-secretario.confirm'))){
+                vm.secretarioAcademicos[id].usuario.conta = "INATIVA";
+                vm.isSaving = true;
+                Usuario.update(vm.secretarioAcademicos[id].usuario, onSaveSuccess, onSaveError);
+            }                 
+        }
+
+        function onSaveSuccess (result) {
+            $window.alert($translate.instant('descadastrar-secretario.alert.success'));
+            vm.isSaving = false;
+            $window.location.reload(false); 
+        }
+
+        function onSaveError () {
+            $window.alert($translate.instant('descadastrar-secretario.alert.error'));
+            vm.isSaving = false;
+            $window.location.reload(false); 
         }
     }
 })();

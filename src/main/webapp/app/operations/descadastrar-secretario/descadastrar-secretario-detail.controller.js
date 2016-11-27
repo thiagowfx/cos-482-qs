@@ -32,20 +32,22 @@
             );
         }
 
-        function deleteSecretario(id) {
-            vm.secretario.usuario.conta = "INATIVA";
-            vm.isSaving = true;
-            Usuario.update(vm.secretario.usuario, onSaveSuccess, onSaveError);
+        function deleteSecretario() {
+            if($window.confirm($translate.instant('descadastrar-secretario.confirm'))){
+                vm.secretario.usuario.conta = "INATIVA";
+                vm.isSaving = true;
+                Usuario.update(vm.secretario.usuario, onSaveSuccess, onSaveError);
+            }                 
         }
 
         function onSaveSuccess (result) {
-            console.log(result);
+            $window.alert($translate.instant('descadastrar-secretario.alert.success'));
             vm.isSaving = false;
             $state.go(vm.previousState);
         }
 
         function onSaveError () {
-            console.log("Erro ao deletar secretario academico.");
+            $window.alert($translate.instant('descadastrar-secretario.alert.error'));
             vm.isSaving = false;
             $state.go(vm.previousState);
         }
