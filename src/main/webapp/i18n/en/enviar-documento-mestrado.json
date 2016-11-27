@@ -1,5 +1,9 @@
 {
     "enviar-documento-mestrado": {
-        "subtitle":  "Selecione e envie o documento desejado"
+        "subtitle":  "Selecione e envie o documento desejado",
+        "pdf-only": "OBS.: Somente serão aceitos documentos no formato PDF.",
+        "diploma-graduacao": {
+            "name": "Diploma de Graduação"
+        }
     }
 }

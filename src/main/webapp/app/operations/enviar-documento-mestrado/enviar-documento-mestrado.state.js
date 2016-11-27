@@ -27,15 +27,7 @@
                     $translatePartialLoader.addPart('enviar-documento-mestrado');
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
-                }],
-                log_entity: function () {
-                    return {
-                        id: null,
-                        timestampFuncao: null,
-                        funcao: null,
-                        username: null
-                    };
-                }
+                }]
             }
         });
     }
