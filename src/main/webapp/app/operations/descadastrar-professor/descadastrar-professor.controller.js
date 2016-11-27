@@ -23,12 +23,14 @@
         }
 
         function deleteProfessor(id) {
-            Professor.delete({id: id},
-                function () {
-                    LogUseCase();
-                    $window.alert($translate.instant('descadastrar-professor.alert.success'));
-                    $state.reload();
-                });
+            if($window.confirm($translate.instant('descadastrar-professor.confirm'))) {
+                Professor.delete({id: id},
+                    function () {
+                        LogUseCase();
+                        $window.alert($translate.instant('descadastrar-professor.alert.success'));
+                        $state.reload();
+                    });
+            }
         }
 
         function LogUseCase() {

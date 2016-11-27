@@ -16,8 +16,7 @@
         vm.log = log_entity;
 
         function deleteProfessor(id) {
-            if($window.confirm($translate.instant('descadastrar-professor.confirm')))
-            {
+            if($window.confirm($translate.instant('descadastrar-professor.confirm'))) {
                 Professor.delete({id: id},
                     function () {
                         LogUseCase();
