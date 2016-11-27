@@ -13,14 +13,14 @@ import java.util.List;
 public interface AlunoMapper {
 
     @Mapping(source = "declaracaoConclusao.id", target = "declaracaoConclusaoId")
-    @Mapping(source = "historicoGradaucao.id", target = "historicoGradaucaoId")
+    @Mapping(source = "historicoGraduacao.id", target = "historicoGraduacaoId")
     @Mapping(source = "usuario.id", target = "usuarioId")
     AlunoDTO alunoToAlunoDTO(Aluno aluno);
 
     List<AlunoDTO> alunosToAlunoDTOs(List<Aluno> alunos);
 
     @Mapping(source = "declaracaoConclusaoId", target = "declaracaoConclusao")
-    @Mapping(source = "historicoGradaucaoId", target = "historicoGradaucao")
+    @Mapping(source = "historicoGraduacaoId", target = "historicoGraduacao")
     @Mapping(source = "usuarioId", target = "usuario")
     Aluno alunoDTOToAluno(AlunoDTO alunoDTO);
 

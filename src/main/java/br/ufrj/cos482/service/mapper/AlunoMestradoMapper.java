@@ -13,7 +13,7 @@ import java.util.List;
 public interface AlunoMestradoMapper {
 
     @Mapping(source = "diplomaGraduacao.id", target = "diplomaGraduacaoId")
-    @Mapping(source = "certidadoConclusao.id", target = "certidadoConclusaoId")
+    @Mapping(source = "certidaoConclusao.id", target = "certidaoConclusaoId")
     @Mapping(source = "certidaoColacao.id", target = "certidaoColacaoId")
     @Mapping(source = "aluno.id", target = "alunoId")
     AlunoMestradoDTO alunoMestradoToAlunoMestradoDTO(AlunoMestrado alunoMestrado);
@@ -21,7 +21,7 @@ public interface AlunoMestradoMapper {
     List<AlunoMestradoDTO> alunoMestradosToAlunoMestradoDTOs(List<AlunoMestrado> alunoMestrados);
 
     @Mapping(source = "diplomaGraduacaoId", target = "diplomaGraduacao")
-    @Mapping(source = "certidadoConclusaoId", target = "certidadoConclusao")
+    @Mapping(source = "certidaoConclusaoId", target = "certidaoConclusao")
     @Mapping(source = "certidaoColacaoId", target = "certidaoColacao")
     @Mapping(source = "alunoId", target = "aluno")
     AlunoMestrado alunoMestradoDTOToAlunoMestrado(AlunoMestradoDTO alunoMestradoDTO);

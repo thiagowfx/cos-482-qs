@@ -16,7 +16,7 @@ public class AlunoMestradoDTO implements Serializable {
 
     private Long diplomaGraduacaoId;
     
-    private Long certidadoConclusaoId;
+    private Long certidaoConclusaoId;
     
     private Long certidaoColacaoId;
     
@@ -38,12 +38,12 @@ public class AlunoMestradoDTO implements Serializable {
         this.diplomaGraduacaoId = documentoSistemaId;
     }
 
-    public Long getCertidadoConclusaoId() {
-        return certidadoConclusaoId;
+    public Long getCertidaoConclusaoId() {
+        return certidaoConclusaoId;
     }
 
-    public void setCertidadoConclusaoId(Long documentoSistemaId) {
-        this.certidadoConclusaoId = documentoSistemaId;
+    public void setCertidaoConclusaoId(Long documentoSistemaId) {
+        this.certidaoConclusaoId = documentoSistemaId;
     }
 
     public Long getCertidaoColacaoId() {

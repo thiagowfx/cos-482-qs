@@ -1,87 +1,86 @@
 
-entity Usuario { 
-	id Integer required 
-	nome String required 
-	conta StatusConta 
-} 
-entity Aluno { 
-	dre String 
-	matricula StatusMatricula 
-} 
-entity SecretarioAcademico { 
-} 
-entity AlunoMestrado { 
-} 
-entity AlunoDoutorado { 
-} 
-entity Professor { 
-	id Integer required 
-	nome String 
-	siape String 
-} 
-entity DocumentoIdentificacao { 
-	id Integer required 
-	tipo String 
-	valor String 
-} 
-entity DocumentoSistema { 
+entity Usuario {
 	id Integer required
-	tipo String 
+	nome String required
+	conta StatusConta
+}
+entity Aluno {
+	dre String
+	matricula StatusMatricula
+}
+entity SecretarioAcademico {
+}
+entity AlunoMestrado {
+}
+entity AlunoDoutorado {
+}
+entity Professor {
+	id Integer required
+	nome String
+	siape String
+}
+entity DocumentoIdentificacao {
+	id Integer required
+	tipo String
+	valor String
+}
+entity DocumentoSistema {
+	id Integer required
+	tipo String
 	formato String
-	timestampEnvio ZonedDateTime 
-	status StatusDocumento 
+	timestampEnvio ZonedDateTime
+	status StatusDocumento
 	escopo Integer
-	caminho String 
-} 
+	caminho String
+}
 entity LogDoSistema {
 	timestampFuncao ZonedDateTime
 	funcao Funcoes
+    username String
 }
-enum StatusConta { 
+enum StatusConta {
 	ATIVA, INATIVA
-} 
-enum StatusMatricula { 
+}
+enum StatusMatricula {
 	ATIVA, INATIVA, SUSPENSA, TRANCADA
-} 
-enum StatusDocumento { 
-	PENDETE, ENVIADO, ACEITO
-} 
+}
+enum StatusDocumento {
+	PENDENTE, ENVIADO, ACEITO
+}
 enum Funcoes {
 	CADASTRAR_ALUNO, DESCADASTRAR_ALUNO, CADASTRAR_PROFESSOR, DESCADASTRAR_PROFESSOR, CADASTRAR_SECRETARIO, DESCADASTRAR_SECRETARIO, EMITIR_DIPLOMA, VALIDAR_DOCUMENTO, VERIFICAR_INFORMACOES_ALUNO, ATUALIZAR_MATRICULA, ENVIAR_DOCUMENTO_MESTRADO, REMOVER_DOCUMENTO_MESTRADO, ENVIAR_DOCUMENTO_DOUTORADO, REMOVER_DOCUMENTO_DOUTORADO
 }
-relationship OneToOne { 
-	Usuario{cpf} to DocumentoIdentificacao, 
-	Usuario{rg} to DocumentoIdentificacao, 
-	Usuario{tituloDeEleitor} to DocumentoIdentificacao, 
-	Usuario{dispensaMilitar} to DocumentoIdentificacao, 
+relationship OneToOne {
+	Usuario{cpf} to DocumentoIdentificacao,
+	Usuario{rg} to DocumentoIdentificacao,
+	Usuario{tituloDeEleitor} to DocumentoIdentificacao,
+	Usuario{dispensaMilitar} to DocumentoIdentificacao,
 	Usuario{passaporte} to DocumentoIdentificacao,
 
-	Usuario{systemUser} to User, 
-	
-	Aluno{declaracaoConclusao} to DocumentoSistema, 
-	Aluno{historicoGradaucao} to DocumentoSistema, 
-	
-    AlunoMestrado {diplomaGraduacao} to DocumentoSistema, 
-	AlunoMestrado{certidadoConclusao} to DocumentoSistema, 
-	AlunoMestrado{certidaoColacao} to DocumentoSistema, 
-	
-    AlunoDoutorado{ataDissertacao} to DocumentoSistema, 
-	AlunoDoutorado{certidaoConclusao} to DocumentoSistema, 
-	AlunoDoutorado{diplomaMestrado} to DocumentoSistema 
-} 
-relationship ManyToOne { 
-	Aluno{usuario} to Usuario, 
-	
-    SecretarioAcademico{usuario} to Usuario, 
-	
-    AlunoMestrado{aluno} to Aluno, 
-	
-    AlunoDoutorado{aluno} to Aluno,
+	Usuario{systemUser} to User,
 
-	LogDoSistema{usuario} to Usuario 
-} 
-relationship ManyToMany { 
-	Aluno{orientador} to Professor 
+	Aluno{declaracaoConclusao} to DocumentoSistema,
+	Aluno{historicoGraduacao} to DocumentoSistema,
+
+    AlunoMestrado {diplomaGraduacao} to DocumentoSistema,
+	AlunoMestrado{certidaoConclusao} to DocumentoSistema,
+	AlunoMestrado{certidaoColacao} to DocumentoSistema,
+
+    AlunoDoutorado{ataDissertacao} to DocumentoSistema,
+	AlunoDoutorado{certidaoConclusao} to DocumentoSistema,
+	AlunoDoutorado{diplomaMestrado} to DocumentoSistema
+}
+relationship ManyToOne {
+	Aluno{usuario} to Usuario,
+
+    SecretarioAcademico{usuario} to Usuario,
+
+    AlunoMestrado{aluno} to Aluno,
+
+    AlunoDoutorado{aluno} to Aluno
+}
+relationship ManyToMany {
+	Aluno{orientador} to Professor
 }
 
 

@@ -5,13 +5,14 @@
         .module('cos482App')
         .controller('DescadastrarProfessorController', DescadastrarProfessorController);
 
-    DescadastrarProfessorController.$inject = ['$window', '$scope', '$state', '$translate', 'Professor'];
+    DescadastrarProfessorController.$inject = ['Principal', '$window', '$scope', '$state', '$translate', 'Professor', 'log_entity', 'LogDoSistema'];
 
-    function DescadastrarProfessorController ($window, $scope, $state, $translate, Professor) {
+    function DescadastrarProfessorController (Principal, $window, $scope, $state, $translate, Professor, log_entity, LogDoSistema) {
         var vm = this;
 
         vm.deleteProfessor = deleteProfessor;
         vm.professors = [];
+        vm.log = log_entity;
 
         loadAll();
 
@@ -24,9 +25,19 @@
         function deleteProfessor(id) {
             Professor.delete({id: id},
                 function () {
+                    LogUseCase();
                     $window.alert($translate.instant('descadastrar-professor.alert.success'));
                     $state.reload();
                 });
+        }
+
+        function LogUseCase() {
+            Principal.identity().then(function(account) {
+                vm.log.username = account.login;
+                vm.log.timestampFuncao = new Date();
+                vm.log.funcao = 3;
+                LogDoSistema.save(vm.log, function(){}, function(){});
+            });
         }
     }
 })();

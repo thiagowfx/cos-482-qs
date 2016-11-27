@@ -17,7 +17,7 @@
         {
             "fieldName": "status",
             "fieldType": "StatusDocumento",
-            "fieldValues": "PENDETE,ENVIADO,ACEITO"
+            "fieldValues": "PENDENTE,ENVIADO,ACEITO"
         },
         {
             "fieldName": "escopo",
@@ -28,7 +28,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20161030202619",
+    "changelogDate": "20161127055431",
     "entityTableName": "documento_sistema",
     "dto": "mapstruct",
     "pagination": "no",

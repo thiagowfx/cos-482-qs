@@ -22,14 +22,14 @@
         }).then(function(diplomaGraduacao) {
             vm.diplomagraduacaos.push(diplomaGraduacao);
         });
-        vm.certidadoconclusaos = DocumentoSistema.query({filter: 'alunomestrado-is-null'});
-        $q.all([vm.alunoMestrado.$promise, vm.certidadoconclusaos.$promise]).then(function() {
-            if (!vm.alunoMestrado.certidadoConclusaoId) {
+        vm.certidaoconclusaos = DocumentoSistema.query({filter: 'alunomestrado-is-null'});
+        $q.all([vm.alunoMestrado.$promise, vm.certidaoconclusaos.$promise]).then(function() {
+            if (!vm.alunoMestrado.certidaoConclusaoId) {
                 return $q.reject();
             }
-            return DocumentoSistema.get({id : vm.alunoMestrado.certidadoConclusaoId}).$promise;
-        }).then(function(certidadoConclusao) {
-            vm.certidadoconclusaos.push(certidadoConclusao);
+            return DocumentoSistema.get({id : vm.alunoMestrado.certidaoConclusaoId}).$promise;
+        }).then(function(certidaoConclusao) {
+            vm.certidaoconclusaos.push(certidaoConclusao);
         });
         vm.certidaocolacaos = DocumentoSistema.query({filter: 'alunomestrado-is-null'});
         $q.all([vm.alunoMestrado.$promise, vm.certidaocolacaos.$promise]).then(function() {

@@ -55,6 +55,8 @@ public class LogDoSistemaResourceIntTest {
 
     private static final Funcoes DEFAULT_FUNCAO = Funcoes.CADASTRAR_ALUNO;
     private static final Funcoes UPDATED_FUNCAO = Funcoes.DESCADASTRAR_ALUNO;
+    private static final String DEFAULT_USERNAME = "AAAAA";
+    private static final String UPDATED_USERNAME = "BBBBB";
 
     @Inject
     private LogDoSistemaRepository logDoSistemaRepository;
@@ -97,7 +99,8 @@ public class LogDoSistemaResourceIntTest {
     public static LogDoSistema createEntity(EntityManager em) {
         LogDoSistema logDoSistema = new LogDoSistema()
                 .timestampFuncao(DEFAULT_TIMESTAMP_FUNCAO)
-                .funcao(DEFAULT_FUNCAO);
+                .funcao(DEFAULT_FUNCAO)
+                .username(DEFAULT_USERNAME);
         return logDoSistema;
     }
 
@@ -125,6 +128,7 @@ public class LogDoSistemaResourceIntTest {
         LogDoSistema testLogDoSistema = logDoSistemas.get(logDoSistemas.size() - 1);
         assertThat(testLogDoSistema.getTimestampFuncao()).isEqualTo(DEFAULT_TIMESTAMP_FUNCAO);
         assertThat(testLogDoSistema.getFuncao()).isEqualTo(DEFAULT_FUNCAO);
+        assertThat(testLogDoSistema.getUsername()).isEqualTo(DEFAULT_USERNAME);
     }
 
     @Test
@@ -139,7 +143,8 @@ public class LogDoSistemaResourceIntTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$.[*].id").value(hasItem(logDoSistema.getId().intValue())))
                 .andExpect(jsonPath("$.[*].timestampFuncao").value(hasItem(DEFAULT_TIMESTAMP_FUNCAO_STR)))
-                .andExpect(jsonPath("$.[*].funcao").value(hasItem(DEFAULT_FUNCAO.toString())));
+                .andExpect(jsonPath("$.[*].funcao").value(hasItem(DEFAULT_FUNCAO.toString())))
+                .andExpect(jsonPath("$.[*].username").value(hasItem(DEFAULT_USERNAME.toString())));
     }
 
     @Test
@@ -154,7 +159,8 @@ public class LogDoSistemaResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(logDoSistema.getId().intValue()))
             .andExpect(jsonPath("$.timestampFuncao").value(DEFAULT_TIMESTAMP_FUNCAO_STR))
-            .andExpect(jsonPath("$.funcao").value(DEFAULT_FUNCAO.toString()));
+            .andExpect(jsonPath("$.funcao").value(DEFAULT_FUNCAO.toString()))
+            .andExpect(jsonPath("$.username").value(DEFAULT_USERNAME.toString()));
     }
 
     @Test
@@ -176,7 +182,8 @@ public class LogDoSistemaResourceIntTest {
         LogDoSistema updatedLogDoSistema = logDoSistemaRepository.findOne(logDoSistema.getId());
         updatedLogDoSistema
                 .timestampFuncao(UPDATED_TIMESTAMP_FUNCAO)
-                .funcao(UPDATED_FUNCAO);
+                .funcao(UPDATED_FUNCAO)
+                .username(UPDATED_USERNAME);
         LogDoSistemaDTO logDoSistemaDTO = logDoSistemaMapper.logDoSistemaToLogDoSistemaDTO(updatedLogDoSistema);
 
         restLogDoSistemaMockMvc.perform(put("/api/log-do-sistemas")
@@ -190,6 +197,7 @@ public class LogDoSistemaResourceIntTest {
         LogDoSistema testLogDoSistema = logDoSistemas.get(logDoSistemas.size() - 1);
         assertThat(testLogDoSistema.getTimestampFuncao()).isEqualTo(UPDATED_TIMESTAMP_FUNCAO);
         assertThat(testLogDoSistema.getFuncao()).isEqualTo(UPDATED_FUNCAO);
+        assertThat(testLogDoSistema.getUsername()).isEqualTo(UPDATED_USERNAME);
     }
 
     @Test

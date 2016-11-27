@@ -5,9 +5,9 @@
         .module('cos482App')
         .controller('LogDoSistemaDialogController', LogDoSistemaDialogController);
 
-    LogDoSistemaDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'LogDoSistema', 'Usuario'];
+    LogDoSistemaDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'LogDoSistema'];
 
-    function LogDoSistemaDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, LogDoSistema, Usuario) {
+    function LogDoSistemaDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, LogDoSistema) {
         var vm = this;
 
         vm.logDoSistema = entity;
@@ -15,7 +15,6 @@
         vm.datePickerOpenStatus = {};
         vm.openCalendar = openCalendar;
         vm.save = save;
-        vm.usuarios = Usuario.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

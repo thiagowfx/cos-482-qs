@@ -5,9 +5,9 @@
         .module('cos482App')
         .controller('CadastrarSecretarioController', CadastrarSecretarioController);
 
-    CadastrarSecretarioController.$inject = ['$window', '$scope', '$state', '$translate', 'secretario_entity', 'usuario_entity', 'user_entity', 'cpf_entity', 'rg_entity', 'titulo_entity', 'SecretarioAcademico', 'User', 'Usuario', 'DocumentoIdentificacao'];
+    CadastrarSecretarioController.$inject = ['Principal', 'log_entity', 'LogDoSistema', '$window', '$scope', '$state', '$translate', 'secretario_entity', 'usuario_entity', 'user_entity', 'cpf_entity', 'rg_entity', 'titulo_entity', 'dispensa_entity', 'passaporte_entity', 'SecretarioAcademico', 'User', 'Usuario', 'DocumentoIdentificacao'];
 
-    function CadastrarSecretarioController ($window, $scope, $state, $translate, secretario_entity, usuario_entity, user_entity, cpf_entity, rg_entity, titulo_entity, SecretarioAcademico, User, Usuario, DocumentoIdentificacao) {
+    function CadastrarSecretarioController (Principal, log_entity, LogDoSistema, $window, $scope, $state, $translate, secretario_entity, usuario_entity, user_entity, cpf_entity, rg_entity, titulo_entity, dispensa_entity, passaporte_entity, SecretarioAcademico, User, Usuario, DocumentoIdentificacao) {
         var vm = this;
 
         vm.clear = clear;
@@ -19,6 +19,9 @@
         vm.cpf = cpf_entity;
         vm.rg = rg_entity;
         vm.titulo = titulo_entity;
+        vm.dispensa = dispensa_entity;
+        vm.passaporte = passaporte_entity;
+        vm.log = log_entity;
 
         function clear() {
             $window.document.getElementById('cadastrar-secretario-login').value = "";
@@ -36,6 +39,9 @@
             vm.cpf = cpf_entity;
             vm.rg = rg_entity;
             vm.titulo = titulo_entity;
+            vm.dispensa = dispensa_entity;
+            vm.passaporte = passaporte_entity;
+            vm.log = log_entity;
         }
 
         function save() {
@@ -50,20 +56,30 @@
                     DocumentoIdentificacao.save(vm.titulo, function(){}, function(){}).$promise.then(function(titulo) {
                         vm.usuario.tituloDeEleitorId = titulo.id;
 
-                        Usuario.save(vm.usuario, function(){}, function(){}).$promise.then(function(usuario) {
-                            vm.secretario.usuarioId = usuario.id;
-                            SecretarioAcademico.save(vm.secretario, onSaveSuccess, onSaveError);
+                        DocumentoIdentificacao.save(vm.dispensa, function(){}, function(){}).$promise.then(function(dispensa) {
+                            vm.usuario.dispensaMilitarId = dispensa.id;
+
+                            DocumentoIdentificacao.save(vm.passaporte, function(){}, function(){}).$promise.then(function(passaporte) {
+                                vm.usuario.passaporteId = passaporte.id;
+
+                                User.save(vm.user, function(){}, function(){}).$promise.then(function(user) {
+                                    vm.usuario.systemUserId = user.id;
+
+                                    Usuario.save(vm.usuario, function(){}, function(){}).$promise.then(function(usuario) {
+                                        vm.secretario.usuarioId = usuario.id;
+                                        SecretarioAcademico.save(vm.secretario, onSaveSuccess, onSaveError);
+                                    });
+                                });
+                            });
                         });
                     });
                 });
             });
-
-            // TODO: documents of Usuario
-            // TODO: User.save
         }
 
         function onSaveSuccess (result) {
             vm.isSaving = false;
+            LogUseCase();
             $window.alert($translate.instant('cadastrar-secretario.alert.success'));
             vm.clear();
         }
@@ -71,6 +87,15 @@
         function onSaveError () {
             vm.isSaving = false;
             $window.alert($translate.instant('cadastrar-secretario.alert.failure'));
+        }
+
+        function LogUseCase() {
+            Principal.identity().then(function(account) {
+                vm.log.username = account.login;
+                vm.log.timestampFuncao = new Date();
+                vm.log.funcao = 4;
+                LogDoSistema.save(vm.log, function(){}, function(){});
+            });
         }
     }
 })();

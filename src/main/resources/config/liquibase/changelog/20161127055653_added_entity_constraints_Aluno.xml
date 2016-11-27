@@ -6,7 +6,7 @@
     <!--
         Added the constraints for entity Aluno.
     -->
-    <changeSet id="20161030202613-2" author="jhipster">
+    <changeSet id="20161127055653-2" author="jhipster">
         
         <addForeignKeyConstraint baseColumnNames="declaracao_conclusao_id"
                                  baseTableName="aluno"
@@ -14,9 +14,9 @@
                                  referencedColumnNames="id"
                                  referencedTableName="documento_sistema"/>
 
-        <addForeignKeyConstraint baseColumnNames="historico_gradaucao_id"
+        <addForeignKeyConstraint baseColumnNames="historico_graduacao_id"
                                  baseTableName="aluno"
-                                 constraintName="fk_aluno_historico_gradaucao_id"
+                                 constraintName="fk_aluno_historico_graduacao_id"
                                  referencedColumnNames="id"
                                  referencedTableName="documento_sistema"/>
 

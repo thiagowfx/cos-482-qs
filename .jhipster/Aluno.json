@@ -11,7 +11,7 @@
         },
         {
             "relationshipType": "one-to-one",
-            "relationshipName": "historicoGradaucao",
+            "relationshipName": "historicoGraduacao",
             "otherEntityName": "documentoSistema",
             "otherEntityField": "id",
             "ownerSide": true,
@@ -43,7 +43,7 @@
             "fieldValues": "ATIVA,INATIVA,SUSPENSA,TRANCADA"
         }
     ],
-    "changelogDate": "20161030202613",
+    "changelogDate": "20161127055653",
     "entityTableName": "aluno",
     "dto": "mapstruct",
     "pagination": "no",

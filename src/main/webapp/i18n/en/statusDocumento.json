@@ -2,7 +2,7 @@
     "cos482App": {
         "StatusDocumento" : {
             "null": "",
-            "PENDETE": "PENDETE",
+            "PENDENTE": "PENDENTE",
             "ENVIADO": "ENVIADO",
             "ACEITO": "ACEITO"
         }

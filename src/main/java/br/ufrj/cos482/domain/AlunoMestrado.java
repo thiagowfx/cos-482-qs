@@ -27,7 +27,7 @@ public class AlunoMestrado implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
-    private DocumentoSistema certidadoConclusao;
+    private DocumentoSistema certidaoConclusao;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -57,17 +57,17 @@ public class AlunoMestrado implements Serializable {
         this.diplomaGraduacao = documentoSistema;
     }
 
-    public DocumentoSistema getCertidadoConclusao() {
-        return certidadoConclusao;
+    public DocumentoSistema getCertidaoConclusao() {
+        return certidaoConclusao;
     }
 
-    public AlunoMestrado certidadoConclusao(DocumentoSistema documentoSistema) {
-        this.certidadoConclusao = documentoSistema;
+    public AlunoMestrado certidaoConclusao(DocumentoSistema documentoSistema) {
+        this.certidaoConclusao = documentoSistema;
         return this;
     }
 
-    public void setCertidadoConclusao(DocumentoSistema documentoSistema) {
-        this.certidadoConclusao = documentoSistema;
+    public void setCertidaoConclusao(DocumentoSistema documentoSistema) {
+        this.certidaoConclusao = documentoSistema;
     }
 
     public DocumentoSistema getCertidaoColacao() {

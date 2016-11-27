@@ -1,13 +1,6 @@
 {
     "fluentMethods": true,
-    "relationships": [
-        {
-            "relationshipType": "many-to-one",
-            "relationshipName": "usuario",
-            "otherEntityName": "usuario",
-            "otherEntityField": "id"
-        }
-    ],
+    "relationships": [],
     "fields": [
         {
             "fieldName": "timestampFuncao",
@@ -17,9 +10,13 @@
             "fieldName": "funcao",
             "fieldType": "Funcoes",
             "fieldValues": "CADASTRAR_ALUNO,DESCADASTRAR_ALUNO,CADASTRAR_PROFESSOR,DESCADASTRAR_PROFESSOR,CADASTRAR_SECRETARIO,DESCADASTRAR_SECRETARIO,EMITIR_DIPLOMA,VALIDAR_DOCUMENTO,VERIFICAR_INFORMACOES_ALUNO,ATUALIZAR_MATRICULA,ENVIAR_DOCUMENTO_MESTRADO,REMOVER_DOCUMENTO_MESTRADO,ENVIAR_DOCUMENTO_DOUTORADO,REMOVER_DOCUMENTO_DOUTORADO"
+        },
+        {
+            "fieldName": "username",
+            "fieldType": "String"
         }
     ],
-    "changelogDate": "20161108204316",
+    "changelogDate": "20161127052725",
     "entityTableName": "log_do_sistema",
     "dto": "mapstruct",
     "pagination": "no",

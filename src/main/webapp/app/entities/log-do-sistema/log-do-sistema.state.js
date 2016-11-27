@@ -108,6 +108,7 @@
                             return {
                                 timestampFuncao: null,
                                 funcao: null,
+                                username: null,
                                 id: null
                             };
                         }

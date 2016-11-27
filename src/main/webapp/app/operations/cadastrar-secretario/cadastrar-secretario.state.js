@@ -38,18 +38,22 @@
                     return {
                         id: null,
                         nome: null,
-                        // TODO: conta,
+                        conta: 0,
                         cpfId: null,
                         rgId: null,
-                        // TODO: tituloDeEleitorId
-                        passaporteId: null
-                        // TODO: system_user_id
+                        tituloDeEleitorId: null,
+                        passaporteId: null,
+                        systemUserId: null
                     };
                 },
                 user_entity: function () {
                     return {
-                        id: null
-                        // TODOs
+                        id: null,
+                        login: null,
+                        passwordHash: null,
+                        firstName: null,
+                        lastName: null,
+                        email: null
                     };
                 },
                 cpf_entity: function () {
@@ -71,6 +75,28 @@
                         id: null,
                         tipo: "TITULO",
                         valor: null
+                    };
+                },
+                dispensa_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "DISPENSA",
+                        valor: null
+                    };
+                },
+                passaporte_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "PASSAPORTE",
+                        valor: null
+                    };
+                },
+                log_entity: function () {
+                    return {
+                        id: null,
+                        timestampFuncao: null,
+                        funcao: null,
+                        username: null
                     };
                 }
             }

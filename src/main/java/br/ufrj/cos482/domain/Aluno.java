@@ -38,7 +38,7 @@ public class Aluno implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
-    private DocumentoSistema historicoGradaucao;
+    private DocumentoSistema historicoGraduacao;
 
     @ManyToOne
     private Usuario usuario;
@@ -97,17 +97,17 @@ public class Aluno implements Serializable {
         this.declaracaoConclusao = documentoSistema;
     }
 
-    public DocumentoSistema getHistoricoGradaucao() {
-        return historicoGradaucao;
+    public DocumentoSistema getHistoricoGraduacao() {
+        return historicoGraduacao;
     }
 
-    public Aluno historicoGradaucao(DocumentoSistema documentoSistema) {
-        this.historicoGradaucao = documentoSistema;
+    public Aluno historicoGraduacao(DocumentoSistema documentoSistema) {
+        this.historicoGraduacao = documentoSistema;
         return this;
     }
 
-    public void setHistoricoGradaucao(DocumentoSistema documentoSistema) {
-        this.historicoGradaucao = documentoSistema;
+    public void setHistoricoGraduacao(DocumentoSistema documentoSistema) {
+        this.historicoGraduacao = documentoSistema;
     }
 
     public Usuario getUsuario() {
