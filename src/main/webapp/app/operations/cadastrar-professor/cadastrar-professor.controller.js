@@ -42,7 +42,7 @@
         }
 
         function LogUseCase() {
-            // vm.log.timestampFuncao = LocalDateTime.now(); // TODO: get current time
+            vm.log.timestampFuncao = new Date();
             vm.log.funcao = 2;
             // vm.log.usuarioId = 0; // TODO: get current user
             LogDoSistema.save(vm.log, function(){}, function(){});
