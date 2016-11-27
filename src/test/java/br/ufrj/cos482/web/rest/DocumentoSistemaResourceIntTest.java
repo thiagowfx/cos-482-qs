@@ -57,7 +57,7 @@ public class DocumentoSistemaResourceIntTest {
     private static final ZonedDateTime UPDATED_TIMESTAMP_ENVIO = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
     private static final String DEFAULT_TIMESTAMP_ENVIO_STR = dateTimeFormatter.format(DEFAULT_TIMESTAMP_ENVIO);
 
-    private static final StatusDocumento DEFAULT_STATUS = StatusDocumento.PENDETE;
+    private static final StatusDocumento DEFAULT_STATUS = StatusDocumento.PENDENTE;
     private static final StatusDocumento UPDATED_STATUS = StatusDocumento.ENVIADO;
 
     private static final Integer DEFAULT_ESCOPO = 1;
