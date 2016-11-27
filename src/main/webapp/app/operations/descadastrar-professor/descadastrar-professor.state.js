@@ -33,7 +33,7 @@
                     return {
                         id: null,
                         timestampFuncao: null,
-                        funcao: null,
+                        funcao: 3,
                         username: null
                     };
                 }
@@ -66,7 +66,7 @@
                     return {
                         id: null,
                         timestampFuncao: null,
-                        funcao: null,
+                        funcao: 3,
                         username: null
                     };
                 },

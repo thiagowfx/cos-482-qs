@@ -39,7 +39,7 @@
                     return {
                         id: null,
                         timestampFuncao: null,
-                        funcao: null,
+                        funcao: 2,
                         username: null
                     };
                 }

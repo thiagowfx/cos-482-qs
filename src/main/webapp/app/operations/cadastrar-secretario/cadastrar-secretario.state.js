@@ -95,7 +95,7 @@
                     return {
                         id: null,
                         timestampFuncao: null,
-                        funcao: null,
+                        funcao: 4,
                         username: null
                     };
                 }

@@ -93,7 +93,6 @@
             Principal.identity().then(function(account) {
                 vm.log.username = account.login;
                 vm.log.timestampFuncao = new Date();
-                vm.log.funcao = 4;
                 LogDoSistema.save(vm.log, function(){}, function(){});
             });
         }
