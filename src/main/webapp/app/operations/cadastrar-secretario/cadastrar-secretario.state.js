@@ -90,6 +90,14 @@
                         tipo: "PASSAPORTE",
                         valor: null
                     };
+                },
+                log_entity: function () {
+                    return {
+                        id: null,
+                        timestampFuncao: null,
+                        funcao: null,
+                        username: null
+                    };
                 }
             }
         });
