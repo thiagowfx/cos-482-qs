@@ -22,14 +22,14 @@
         }).then(function(declaracaoConclusao) {
             vm.declaracaoconclusaos.push(declaracaoConclusao);
         });
-        vm.historicogradaucaos = DocumentoSistema.query({filter: 'aluno-is-null'});
-        $q.all([vm.aluno.$promise, vm.historicogradaucaos.$promise]).then(function() {
-            if (!vm.aluno.historicoGradaucaoId) {
+        vm.historicograduacaos = DocumentoSistema.query({filter: 'aluno-is-null'});
+        $q.all([vm.aluno.$promise, vm.historicograduacaos.$promise]).then(function() {
+            if (!vm.aluno.historicoGraduacaoId) {
                 return $q.reject();
             }
-            return DocumentoSistema.get({id : vm.aluno.historicoGradaucaoId}).$promise;
-        }).then(function(historicoGradaucao) {
-            vm.historicogradaucaos.push(historicoGradaucao);
+            return DocumentoSistema.get({id : vm.aluno.historicoGraduacaoId}).$promise;
+        }).then(function(historicoGraduacao) {
+            vm.historicograduacaos.push(historicoGraduacao);
         });
         vm.usuarios = Usuario.query();
         vm.professors = Professor.query();

@@ -16,7 +16,7 @@
     <!--
         Added the entity Aluno.
     -->
-    <changeSet id="20161030202613-1" author="jhipster">
+    <changeSet id="20161127055653-1" author="jhipster">
         <createTable tableName="aluno">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -30,7 +30,7 @@
             </column>
                         <column name="declaracao_conclusao_id" type="bigint">
                 <constraints unique="true" nullable="true" />
-            </column>            <column name="historico_gradaucao_id" type="bigint">
+            </column>            <column name="historico_graduacao_id" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>
             <column name="usuario_id" type="bigint">

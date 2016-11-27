@@ -21,7 +21,7 @@ public class AlunoDTO implements Serializable {
 
     private Long declaracaoConclusaoId;
     
-    private Long historicoGradaucaoId;
+    private Long historicoGraduacaoId;
     
     private Long usuarioId;
     
@@ -57,12 +57,12 @@ public class AlunoDTO implements Serializable {
         this.declaracaoConclusaoId = documentoSistemaId;
     }
 
-    public Long getHistoricoGradaucaoId() {
-        return historicoGradaucaoId;
+    public Long getHistoricoGraduacaoId() {
+        return historicoGraduacaoId;
     }
 
-    public void setHistoricoGradaucaoId(Long documentoSistemaId) {
-        this.historicoGradaucaoId = documentoSistemaId;
+    public void setHistoricoGraduacaoId(Long documentoSistemaId) {
+        this.historicoGraduacaoId = documentoSistemaId;
     }
 
     public Long getUsuarioId() {

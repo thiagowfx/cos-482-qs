@@ -52,7 +52,7 @@
                         dre: null,
                         matricula: null,
                         declaracaoConclusaoId: null,
-                        historicoGradaucaoId: null,
+                        historicoGraduacaoId: null,
                         usuarioId: null
                     };
                 },

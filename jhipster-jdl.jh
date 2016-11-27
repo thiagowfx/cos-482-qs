@@ -60,7 +60,7 @@ relationship OneToOne {
 	Usuario{systemUser} to User,
 
 	Aluno{declaracaoConclusao} to DocumentoSistema,
-	Aluno{historicoGradaucao} to DocumentoSistema,
+	Aluno{historicoGraduacao} to DocumentoSistema,
 
     AlunoMestrado {diplomaGraduacao} to DocumentoSistema,
 	AlunoMestrado{certidaoConclusao} to DocumentoSistema,
