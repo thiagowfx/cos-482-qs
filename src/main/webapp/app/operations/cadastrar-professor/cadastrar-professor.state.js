@@ -28,11 +28,19 @@
                 	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }],
-                entity: function () {
+                professor_entity: function () {
                     return {
                         nome: null,
                         siape: null,
                         id: null
+                    };
+                },
+                log_entity: function () {
+                    return {
+                        id: null,
+                        timestampFuncao: null,
+                        funcao: null,
+                        usuarioId: null
                     };
                 }
             }
