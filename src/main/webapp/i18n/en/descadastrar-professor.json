@@ -6,6 +6,7 @@
         "professor": "Professor",
          "alert": {
             "success": "Professor descadastrado com sucesso!"
-        }
+        },
+        "confirm" : "Deseja descadastrar esse professor?"
     }
 }
