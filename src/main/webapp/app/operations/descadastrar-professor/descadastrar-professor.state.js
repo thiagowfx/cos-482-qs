@@ -28,7 +28,15 @@
                 	$translatePartialLoader.addPart('descadastrar-professor');
                 	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
-                }]
+                }],
+                log_entity: function () {
+                    return {
+                        id: null,
+                        timestampFuncao: null,
+                        funcao: null,
+                        username: null
+                    };
+                }
             }
         })
         .state('descadastrar-professor-detail', {
@@ -51,9 +59,17 @@
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }],
-                entity: ['$stateParams', 'Professor', function($stateParams, Professor) {
+                professor_entity: ['$stateParams', 'Professor', function($stateParams, Professor) {
                     return Professor.get({id : $stateParams.id}).$promise;
                 }],
+                log_entity: function () {
+                    return {
+                        id: null,
+                        timestampFuncao: null,
+                        funcao: null,
+                        username: null
+                    };
+                },
                 previousState: ["$state", function ($state) {
                     var currentStateData = {
                         name: $state.current.name || 'descadastrar-professor',
