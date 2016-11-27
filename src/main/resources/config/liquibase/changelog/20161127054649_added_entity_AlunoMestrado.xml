@@ -16,13 +16,13 @@
     <!--
         Added the entity AlunoMestrado.
     -->
-    <changeSet id="20161030202615-1" author="jhipster">
+    <changeSet id="20161127054649-1" author="jhipster">
         <createTable tableName="aluno_mestrado">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>            <column name="diploma_graduacao_id" type="bigint">
                 <constraints unique="true" nullable="true" />
-            </column>            <column name="certidado_conclusao_id" type="bigint">
+            </column>            <column name="certidao_conclusao_id" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>            <column name="certidao_colacao_id" type="bigint">
                 <constraints unique="true" nullable="true" />

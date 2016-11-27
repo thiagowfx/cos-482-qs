@@ -63,7 +63,7 @@ relationship OneToOne {
 	Aluno{historicoGradaucao} to DocumentoSistema,
 
     AlunoMestrado {diplomaGraduacao} to DocumentoSistema,
-	AlunoMestrado{certidadoConclusao} to DocumentoSistema,
+	AlunoMestrado{certidaoConclusao} to DocumentoSistema,
 	AlunoMestrado{certidaoColacao} to DocumentoSistema,
 
     AlunoDoutorado{ataDissertacao} to DocumentoSistema,

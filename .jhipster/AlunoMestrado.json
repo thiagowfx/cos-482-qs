@@ -11,7 +11,7 @@
         },
         {
             "relationshipType": "one-to-one",
-            "relationshipName": "certidadoConclusao",
+            "relationshipName": "certidaoConclusao",
             "otherEntityName": "documentoSistema",
             "otherEntityField": "id",
             "ownerSide": true,
@@ -33,7 +33,7 @@
         }
     ],
     "fields": [],
-    "changelogDate": "20161030202615",
+    "changelogDate": "20161127054649",
     "entityTableName": "aluno_mestrado",
     "dto": "mapstruct",
     "pagination": "no",

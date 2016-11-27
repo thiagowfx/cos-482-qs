@@ -40,7 +40,7 @@
                 aluno_mestrado_entity: function () {
                     return {
                         id: null,
-                        certidadoConclusaoId: null,
+                        certidaoConclusaoId: null,
                         diplomaGraduacaoId: null,
                         certidaoColacaoId: null,
                         alunoId: null
