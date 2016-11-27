@@ -8,7 +8,8 @@
     stateConfig.$inject = ['$stateProvider'];
 
     function stateConfig($stateProvider) {
-        $stateProvider.state('enviar-documento-mestrado', {
+        $stateProvider
+        .state('enviar-documento-mestrado', {
             parent: 'operations',
             url: '/enviar-documento-mestrado',
             data: {
@@ -18,7 +19,7 @@
             views: {
                 'content@': {
                     templateUrl: 'app/operations/enviar-documento-mestrado/enviar-documento-mestrado.html',
-                    // controller: 'EnviarDocumentoMestradoController',
+                    controller: 'EnviarDocumentoMestradoController',
                     controllerAs: 'vm'
                 }
             },
