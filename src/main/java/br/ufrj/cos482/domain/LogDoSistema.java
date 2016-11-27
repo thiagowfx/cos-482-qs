@@ -31,8 +31,8 @@ public class LogDoSistema implements Serializable {
     @Column(name = "funcao")
     private Funcoes funcao;
 
-    @ManyToOne
-    private Usuario usuario;
+    @Column(name = "username")
+    private String username;
 
     public Long getId() {
         return id;
@@ -68,17 +68,17 @@ public class LogDoSistema implements Serializable {
         this.funcao = funcao;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public String getUsername() {
+        return username;
     }
 
-    public LogDoSistema usuario(Usuario usuario) {
-        this.usuario = usuario;
+    public LogDoSistema username(String username) {
+        this.username = username;
         return this;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override
@@ -107,6 +107,7 @@ public class LogDoSistema implements Serializable {
             "id=" + id +
             ", timestampFuncao='" + timestampFuncao + "'" +
             ", funcao='" + funcao + "'" +
+            ", username='" + username + "'" +
             '}';
     }
 }

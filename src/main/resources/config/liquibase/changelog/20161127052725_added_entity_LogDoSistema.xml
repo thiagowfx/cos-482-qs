@@ -16,7 +16,7 @@
     <!--
         Added the entity LogDoSistema.
     -->
-    <changeSet id="20161108204316-1" author="jhipster">
+    <changeSet id="20161127052725-1" author="jhipster">
         <createTable tableName="log_do_sistema">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -29,10 +29,10 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="usuario_id" type="bigint">
+            <column name="username" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-
+            
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
         <dropDefaultValue tableName="log_do_sistema" columnName="timestamp_funcao" columnDataType="datetime"/>

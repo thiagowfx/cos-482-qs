@@ -40,7 +40,7 @@
                         id: null,
                         timestampFuncao: null,
                         funcao: null,
-                        usuarioId: null
+                        username: null
                     };
                 }
             }

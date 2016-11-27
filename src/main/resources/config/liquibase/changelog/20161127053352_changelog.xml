@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="thiago (generated)" id="1480224837760-1">
+      <addColumn tableName="log_do_sistema">
+         <column name="username" type="varchar(255)"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-2">
+      <addForeignKeyConstraint baseColumnNames="declaracao_conclusao_id"
+                               baseTableName="aluno"
+                               constraintName="FK_2d7h8lrsaxgq1hbxy3pkmamme"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="documento_sistema"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-3">
+      <addForeignKeyConstraint baseColumnNames="alunos_id"
+                               baseTableName="aluno_orientador"
+                               constraintName="FK_366ruxp6g1nn1o46t8kg7s14e"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="aluno"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-4">
+      <addForeignKeyConstraint baseColumnNames="historico_gradaucao_id"
+                               baseTableName="aluno"
+                               constraintName="FK_3sf0jdec1slyc7dy2p2ebdt"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="documento_sistema"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-5">
+      <addForeignKeyConstraint baseColumnNames="certidado_conclusao_id"
+                               baseTableName="aluno_mestrado"
+                               constraintName="FK_71nmqv5yugnvi07tqa65ga6ax"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="documento_sistema"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-6">
+      <addForeignKeyConstraint baseColumnNames="passaporte_id"
+                               baseTableName="usuario"
+                               constraintName="FK_a2rx44r2w3uo7m7xig76v7hil"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="documento_identificacao"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-7">
+      <addForeignKeyConstraint baseColumnNames="certidao_colacao_id"
+                               baseTableName="aluno_mestrado"
+                               constraintName="FK_adgj0ywdpwmr9u69xdog7uo6l"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="documento_sistema"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-8">
+      <addForeignKeyConstraint baseColumnNames="cpf_id"
+                               baseTableName="usuario"
+                               constraintName="FK_akw38w2r7qrh34sm8et4ua44"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="documento_identificacao"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-9">
+      <addForeignKeyConstraint baseColumnNames="dispensa_militar_id"
+                               baseTableName="usuario"
+                               constraintName="FK_blc4kdu2wy6mo55ehqr7fbn1m"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="documento_identificacao"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-10">
+      <addForeignKeyConstraint baseColumnNames="aluno_id"
+                               baseTableName="aluno_mestrado"
+                               constraintName="FK_cgvet7ctvsk9ynpe5f95u618t"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="aluno"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-11">
+      <addForeignKeyConstraint baseColumnNames="diploma_graduacao_id"
+                               baseTableName="aluno_mestrado"
+                               constraintName="FK_d4wa74u7opnwohlksd21qltv3"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="documento_sistema"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-12">
+      <addForeignKeyConstraint baseColumnNames="usuario_id"
+                               baseTableName="secretario_academico"
+                               constraintName="FK_fqqwrffbymcx8s4stmtpfqv5q"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="usuario"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-13">
+      <addForeignKeyConstraint baseColumnNames="diploma_mestrado_id"
+                               baseTableName="aluno_doutorado"
+                               constraintName="FK_gee2l8l5ctty5p6ymk466nr6t"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="documento_sistema"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-14">
+      <addForeignKeyConstraint baseColumnNames="system_user_id"
+                               baseTableName="usuario"
+                               constraintName="FK_gob1haw5ck9bloqr2pdc3lexu"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-15">
+      <addForeignKeyConstraint baseColumnNames="aluno_id"
+                               baseTableName="aluno_doutorado"
+                               constraintName="FK_kspgeblfqsdrq2tgtssdrcv68"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="aluno"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-16">
+      <addForeignKeyConstraint baseColumnNames="certidao_conclusao_id"
+                               baseTableName="aluno_doutorado"
+                               constraintName="FK_o1yt8h1glajww71gx3h61dic7"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="documento_sistema"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-17">
+      <addForeignKeyConstraint baseColumnNames="orientadors_id"
+                               baseTableName="aluno_orientador"
+                               constraintName="FK_oa527x86i1h5bvgbi8hn345en"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="professor"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-18">
+      <addForeignKeyConstraint baseColumnNames="usuario_id"
+                               baseTableName="aluno"
+                               constraintName="FK_p3aj1urfrd6mo5m2ycjlae8g7"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="usuario"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-19">
+      <addForeignKeyConstraint baseColumnNames="rg_id"
+                               baseTableName="usuario"
+                               constraintName="FK_qwvy5xcoojlvd3v7pk7ynnq39"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="documento_identificacao"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-20">
+      <addForeignKeyConstraint baseColumnNames="ata_dissertacao_id"
+                               baseTableName="aluno_doutorado"
+                               constraintName="FK_ryli87x8pwqwp2ionrk69d608"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="documento_sistema"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-21">
+      <addForeignKeyConstraint baseColumnNames="titulo_de_eleitor_id"
+                               baseTableName="usuario"
+                               constraintName="FK_s8bw4eq7p90hvrya4nmy6kglw"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="documento_identificacao"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-22">
+      <dropColumn columnName="USUARIO_ID" tableName="LOG_DO_SISTEMA"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-23">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="created_date"
+                        tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-24">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="last_modified_date"
+                        tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-25">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="timestamp_envio"
+                        tableName="documento_sistema"/>
+   </changeSet>
+   <changeSet author="thiago (generated)" id="1480224837760-26">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="timestamp_funcao"
+                        tableName="log_do_sistema"/>
+   </changeSet>
+</databaseChangeLog>

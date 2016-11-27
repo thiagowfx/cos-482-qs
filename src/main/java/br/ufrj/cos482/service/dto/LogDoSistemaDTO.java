@@ -2,8 +2,6 @@ package br.ufrj.cos482.service.dto;
 
 import java.time.ZonedDateTime;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 import br.ufrj.cos482.domain.enumeration.Funcoes;
@@ -19,9 +17,9 @@ public class LogDoSistemaDTO implements Serializable {
 
     private Funcoes funcao;
 
+    private String username;
 
-    private Long usuarioId;
-    
+
     public Long getId() {
         return id;
     }
@@ -43,13 +41,12 @@ public class LogDoSistemaDTO implements Serializable {
     public void setFuncao(Funcoes funcao) {
         this.funcao = funcao;
     }
-
-    public Long getUsuarioId() {
-        return usuarioId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsuarioId(Long usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override
@@ -79,6 +76,7 @@ public class LogDoSistemaDTO implements Serializable {
             "id=" + id +
             ", timestampFuncao='" + timestampFuncao + "'" +
             ", funcao='" + funcao + "'" +
+            ", username='" + username + "'" +
             '}';
     }
 }

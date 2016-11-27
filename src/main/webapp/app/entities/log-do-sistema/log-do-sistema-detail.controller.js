@@ -5,9 +5,9 @@
         .module('cos482App')
         .controller('LogDoSistemaDetailController', LogDoSistemaDetailController);
 
-    LogDoSistemaDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'LogDoSistema', 'Usuario'];
+    LogDoSistemaDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'LogDoSistema'];
 
-    function LogDoSistemaDetailController($scope, $rootScope, $stateParams, previousState, entity, LogDoSistema, Usuario) {
+    function LogDoSistemaDetailController($scope, $rootScope, $stateParams, previousState, entity, LogDoSistema) {
         var vm = this;
 
         vm.logDoSistema = entity;

@@ -5,9 +5,9 @@
         .module('cos482App')
         .controller('CadastrarProfessorController', CadastrarProfessorController);
 
-    CadastrarProfessorController.$inject = ['$window', '$scope', '$state', '$translate', 'professor_entity', 'Professor', 'LogDoSistema', 'log_entity'];
+    CadastrarProfessorController.$inject = ['Principal', '$window', '$scope', '$state', '$translate', 'professor_entity', 'Professor', 'LogDoSistema', 'log_entity'];
 
-    function CadastrarProfessorController ($window, $scope, $state, $translate, professor_entity, Professor, LogDoSistema, log_entity) {
+    function CadastrarProfessorController (Principal, $window, $scope, $state, $translate, professor_entity, Professor, LogDoSistema, log_entity) {
         var vm = this;
 
         vm.clear = clear;
@@ -42,10 +42,12 @@
         }
 
         function LogUseCase() {
-            vm.log.timestampFuncao = new Date();
-            vm.log.funcao = 2;
-            // vm.log.usuarioId = 0; // TODO: get current user
-            LogDoSistema.save(vm.log, function(){}, function(){});
+            Principal.identity().then(function(account) {
+                vm.log.username = account.login;
+                vm.log.timestampFuncao = new Date();
+                vm.log.funcao = 2;
+                LogDoSistema.save(vm.log, function(){}, function(){});
+            });
         }
     }
 })();

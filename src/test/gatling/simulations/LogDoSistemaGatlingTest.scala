@@ -67,7 +67,7 @@ class LogDoSistemaGatlingTest extends Simulation {
             .exec(http("Create new logDoSistema")
             .post("/api/log-do-sistemas")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "timestampFuncao":"2020-01-01T00:00:00.000Z", "funcao":null}""")).asJSON
+            .body(StringBody("""{"id":null, "timestampFuncao":"2020-01-01T00:00:00.000Z", "funcao":null, "username":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_logDoSistema_url"))).exitHereIfFailed
             .pause(10)
