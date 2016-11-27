@@ -5,14 +5,16 @@
         .module('cos482App')
         .controller('DescadastrarSecretarioDetailController', DescadastrarSecretarioDetailController);
 
-    DescadastrarSecretarioDetailController.$inject = ['$window', '$scope', '$state', '$translate', '$rootScope', '$stateParams', 'previousState', 'entity', 'SecretarioAcademico', 'Usuario', 'DocumentoIdentificacao'];
+    DescadastrarSecretarioDetailController.$inject = ['Principal', 'log_entity', 'LogDoSistema', '$window', '$scope', '$state', '$translate', '$rootScope', '$stateParams', 'previousState', 'entity', 'SecretarioAcademico', 'Usuario', 'DocumentoIdentificacao'];
 
-    function DescadastrarSecretarioDetailController($window, $scope, $state, $translate, $rootScope, $stateParams, previousState, entity, SecretarioAcademico, Usuario, DocumentoIdentificacao) {
+    function DescadastrarSecretarioDetailController(Principal, log_entity, LogDoSistema, $window, $scope, $state, $translate, $rootScope, $stateParams, previousState, entity, SecretarioAcademico, Usuario, DocumentoIdentificacao) {
         var vm = this;
 
         vm.secretario = entity;
         vm.previousState = previousState.name;
         vm.deleteSecretario = deleteSecretario;
+
+        vm.log = log_entity;
 
         loadAll();
 
@@ -34,10 +36,11 @@
 
         function deleteSecretario() {
             if($window.confirm($translate.instant('descadastrar-secretario.confirm'))){
+                LogUseCase();
                 vm.secretario.usuario.conta = "INATIVA";
                 vm.isSaving = true;
                 Usuario.update(vm.secretario.usuario, onSaveSuccess, onSaveError);
-            }                 
+            }
         }
 
         function onSaveSuccess (result) {
@@ -50,6 +53,14 @@
             $window.alert($translate.instant('descadastrar-secretario.alert.error'));
             vm.isSaving = false;
             $state.go(vm.previousState);
+        }
+
+        function LogUseCase() {
+            Principal.identity().then(function(account) {
+                vm.log.username = account.login;
+                vm.log.timestampFuncao = new Date();
+                LogDoSistema.save(vm.log, function(){}, function(){});
+            });
         }
     }
 })();

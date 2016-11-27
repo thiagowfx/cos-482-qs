@@ -28,7 +28,15 @@
                 	$translatePartialLoader.addPart('descadastrar-secretario');
                 	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
-                }]
+                }],
+                log_entity: function () {
+                    return {
+                        id: null,
+                        timestampFuncao: null,
+                        funcao: 5,
+                        username: null
+                    };
+                }
             }
         })
         .state('descadastrar-secretario-detail', {
@@ -51,7 +59,7 @@
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }],
-                entity: ['$stateParams', 'SecretarioAcademico', 'Usuario', 'DocumentoIdentificacao',  function($stateParams, SecretarioAcademico, Usuario, DocumentoIdentificacao) {                    
+                entity: ['$stateParams', 'SecretarioAcademico', 'Usuario', 'DocumentoIdentificacao',  function($stateParams, SecretarioAcademico, Usuario, DocumentoIdentificacao) {
                     return SecretarioAcademico.get({id : $stateParams.id}).$promise;
                 }],
                 previousState: ["$state", function ($state) {
@@ -61,7 +69,15 @@
                         url: $state.href($state.current.name, $state.params)
                     };
                     return currentStateData;
-                }]
+                }],
+                log_entity: function () {
+                    return {
+                        id: null,
+                        timestampFuncao: null,
+                        funcao: 5,
+                        username: null
+                    };
+                }
             }
         });
     }
