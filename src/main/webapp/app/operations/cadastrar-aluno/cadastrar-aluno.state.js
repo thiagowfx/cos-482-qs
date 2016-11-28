@@ -50,7 +50,7 @@
                     return {
                         id: null,
                         dre: null,
-                        matricula: null,
+                        matricula: 0,
                         declaracaoConclusaoId: null,
                         historicoGraduacaoId: null,
                         usuarioId: null
