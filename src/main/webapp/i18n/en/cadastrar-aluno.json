@@ -4,10 +4,15 @@
         "type": "*Tipo",
         "type1": "Mestrado",
         "type2": "Doutorado",
+        "login": "Login (username)",
         "email": "*e-mail",
         "name": "*Nome Completo",
         "password": "*Senha",
         "repeat-password": "*Confirmar Senha",
+        "alert": {
+            "success": "Aluno cadastrado com sucesso!",
+            "failure": "Ocorreu um erro ao cadastrar o aluno!"
+        },
         "cpf": "*CPF",
         "rg": "*RG",
         "titulo": "*Título de Eleitor",
