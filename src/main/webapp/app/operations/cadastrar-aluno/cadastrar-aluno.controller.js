@@ -102,6 +102,7 @@
 
         function onSaveSuccess (result) {
             vm.isSaving = false;
+            LogUseCase();
             $window.alert($translate.instant('cadastrar-aluno.alert.success'));
             vm.clear();
         }
