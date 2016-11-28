@@ -5,9 +5,9 @@
         .module('cos482App')
         .controller('CadastrarAlunoController', CadastrarAlunoController);
 
-    CadastrarAlunoController.$inject = ['$window', '$scope', '$state', '$translate', /*'log_entity', 'LogDoSistema', 'Principal',*/ 'aluno_entity', 'aluno_mestrado_entity', 'aluno_doutorado_entity', 'usuario_entity', 'user_entity', 'cpf_entity', 'rg_entity', 'titulo_entity', 'dispensa_entity', 'passaporte_entity', 'Aluno', 'AlunoMestrado', 'AlunoDoutorado', 'User', 'Usuario', 'DocumentoIdentificacao'];
+    CadastrarAlunoController.$inject = ['$window', '$scope', '$state', '$translate', 'log_entity', 'LogDoSistema', 'Principal', 'aluno_entity', 'aluno_mestrado_entity', 'aluno_doutorado_entity', 'usuario_entity', 'user_entity', 'cpf_entity', 'rg_entity', 'titulo_entity', 'dispensa_entity', 'passaporte_entity', 'Aluno', 'AlunoMestrado', 'AlunoDoutorado', 'User', 'Usuario', 'DocumentoIdentificacao'];
 
-    function CadastrarAlunoController ($window, $scope, $state, $translate, /*log_entity, LogDoSistema, Principal,*/ aluno_entity, aluno_mestrado_entity, aluno_doutorado_entity, usuario_entity, user_entity, cpf_entity, rg_entity, titulo_entity, dispensa_entity, passaporte_entity, Aluno, AlunoMestrado, AlunoDoutorado, User, Usuario, DocumentoIdentificacao) {
+    function CadastrarAlunoController ($window, $scope, $state, $translate, log_entity, LogDoSistema, Principal, aluno_entity, aluno_mestrado_entity, aluno_doutorado_entity, usuario_entity, user_entity, cpf_entity, rg_entity, titulo_entity, dispensa_entity, passaporte_entity, Aluno, AlunoMestrado, AlunoDoutorado, User, Usuario, DocumentoIdentificacao) {
         var vm = this;
 
         vm.clear = clear;
@@ -23,7 +23,7 @@
         vm.titulo = titulo_entity;
         vm.dispensa = dispensa_entity;
         vm.passaporte = passaporte_entity;
-        //vm.log = log_entity;
+        vm.log = log_entity;
 
         function clear() {
         	$window.document.getElementById('cadastrar-aluno-type').selectedIndex = -1;
@@ -46,7 +46,7 @@
             vm.titulo = titulo_entity;
             vm.dispensa = dispensa_entity;
             vm.passaporte = passaporte_entity;
-            //vm.log = log_entity;
+            vm.log = log_entity;
         }
 
         function save() {
@@ -111,12 +111,12 @@
             $window.alert($translate.instant('cadastrar-aluno.alert.failure'));
         }
         
-        /*function LogUseCase() {
+        function LogUseCase() {
             Principal.identity().then(function(account) {
                 vm.log.username = account.login;
                 vm.log.timestampFuncao = new Date();
                 LogDoSistema.save(vm.log, function(){}, function(){});
             });
-        }*/
+        }
     }
 })();
