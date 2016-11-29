@@ -18,6 +18,13 @@
 						</select>
 					</div>
 				</div>
+				
+				<div class="form-group">
+            		<label class="control-label col-sm-2" data-translate="cadastrar-aluno.orientador" for="orientador">Orientador</label>
+           			<div class="col-sm-10">
+           				<select class="form-control" id="cadastrar-aluno-orientador" multiple name="orientador" ng-model="vm.aluno.orientadors" ng-options="professor as professor.nome for professor in vm.professors track by professor.nome"></select>
+        			</div>
+        		</div>
 
 				<div class="form-group">
 					<label data-translate="cadastrar-aluno.name"
@@ -27,13 +34,20 @@
 							id="cadastrar-aluno-name" placeholder="ex.: João da Silva">
 					</div>
 				</div>
+				
+				<div class="form-group">
+                    <label data-translate="cadastrar-aluno.login" class="control-label col-sm-2" for="cadastrar-aluno-login"></label>
+                    <div class="col-sm-10">
+                        <input ng-model="vm.user.login" type="text" class="form-control" id="cadastrar-aluno-login" placeholder="joaodasilva">
+                    </div>
+                </div>
 
 				<div class="form-group">
 					<label data-translate="cadastrar-aluno.email"
 						class="control-label col-sm-2" for="email"></label>
 					<div class="col-sm-10">
-						<input type="email" class="form-control"
-							id="cadastrar-aluno-email" placeholder="example@ufrj.br">
+						<input ng-model="vm.user.email" type="email" class="form-control"
+							id="cadastrar-aluno-email" placeholder="joaodasilva@cos.ufrj.br">
 					</div>
 				</div>
 
@@ -59,8 +73,8 @@
 					<label data-translate="cadastrar-aluno.cpf"
 						class="control-label col-sm-2" for="cpf"></label>
 					<div class="col-sm-10">
-						<input ng-model="vm.usuario.cpf" type="text" class="form-control"
-							id="cadastrar-aluno-cpf" placeholder="999999999">
+						<input ng-model="vm.cpf.valor" type="text" class="form-control"
+							id="cadastrar-aluno-cpf" placeholder="2345678901">
 					</div>
 				</div>
 
@@ -68,8 +82,8 @@
 					<label data-translate="cadastrar-aluno.rg"
 						class="control-label col-sm-2" for="rg"></label>
 					<div class="col-sm-10">
-						<input ng-model="vm.usuario.rg" type="text" class="form-control"
-							id="cadastrar-aluno-rg" placeholder="999999999">
+						<input ng-model="vm.rg.valor" type="text" class="form-control"
+							id="cadastrar-aluno-rg" placeholder="123456789">
 					</div>
 				</div>
 
@@ -77,9 +91,9 @@
 					<label data-translate="cadastrar-aluno.titulo"
 						class="control-label col-sm-2" for="titulo"></label>
 					<div class="col-sm-10">
-						<input ng-model="vm.usuario.titulo" type="text"
+						<input ng-model="vm.titulo.valor" type="text"
 							class="form-control" id="cadastrar-aluno-titulo"
-							placeholder="999999999">
+							placeholder="">
 					</div>
 				</div>
 
@@ -87,8 +101,8 @@
 					<label data-translate="cadastrar-aluno.passport"
 						class="control-label col-sm-2" for="passport"></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control"
-							id="cadastrar-aluno-passport" placeholder="999999999">
+						<input ng-model="vm.passaporte.valor" type="text" class="form-control"
+							id="cadastrar-aluno-passport" placeholder="AA123456">
 					</div>
 				</div>
 
@@ -96,8 +110,8 @@
 					<label data-translate="cadastrar-aluno.dispensa"
 						class="control-label col-sm-2" for="dispensa"></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control"
-							id="cadastrar-aluno-dispensa" placeholder="999999999">
+						<input ng-model="vm.dispensa.valor" type="text" class="form-control"
+							id="cadastrar-aluno-dispensa" placeholder="">
 					</div>
 				</div>
 
@@ -105,8 +119,8 @@
 					<label data-translate="cadastrar-aluno.dre"
 						class="control-label col-sm-2" for="dre"></label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="cadastrar-aluno-dre"
-							placeholder="999999999">
+						<input ng-model="vm.aluno.dre" type="text" class="form-control" id="cadastrar-aluno-dre"
+							placeholder="">
 					</div>
 				</div>
 

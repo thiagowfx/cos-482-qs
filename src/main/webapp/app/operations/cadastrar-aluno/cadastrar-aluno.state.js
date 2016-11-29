@@ -50,7 +50,7 @@
                     return {
                         id: null,
                         dre: null,
-                        matricula: null,
+                        matricula: 0,
                         declaracaoConclusaoId: null,
                         historicoGraduacaoId: null,
                         usuarioId: null
@@ -111,6 +111,14 @@
                         id: null,
                         tipo: "PASSAPORTE",
                         valor: null
+                    };
+                },
+                log_entity: function () {
+                    return {
+                        id: null,
+                        timestampFuncao: null,
+                        funcao: 0,
+                        username: null
                     };
                 }
             }

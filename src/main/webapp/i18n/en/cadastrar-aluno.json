@@ -1,18 +1,24 @@
 {
     "cadastrar-aluno" : {
         "subtitle":  "Preencha os dados do(a) aluno(a)",
-        "type": "*Tipo",
+        "type": "Tipo",
+        "orientador": "Orientador",
         "type1": "Mestrado",
         "type2": "Doutorado",
-        "email": "*e-mail",
-        "name": "*Nome Completo",
-        "password": "*Senha",
-        "repeat-password": "*Confirmar Senha",
-        "cpf": "*CPF",
-        "rg": "*RG",
-        "titulo": "*Título de Eleitor",
-        "passport": "*Passaporte",
+        "login": "Login (username)",
+        "email": "e-mail",
+        "name": "Nome Completo",
+        "password": "Senha",
+        "repeat-password": "Confirmar Senha",
+        "alert": {
+            "success": "Aluno cadastrado com sucesso!",
+            "failure": "Ocorreu um erro ao cadastrar o aluno!"
+        },
+        "cpf": "CPF",
+        "rg": "RG",
+        "titulo": "Título de Eleitor",
+        "passport": "Passaporte",
         "dispensa": "Dispensa Militar",
-        "dre": "*DRE"
+        "dre": "DRE"
     }
 }
