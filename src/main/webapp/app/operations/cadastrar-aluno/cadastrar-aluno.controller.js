@@ -5,9 +5,9 @@
         .module('cos482App')
         .controller('CadastrarAlunoController', CadastrarAlunoController);
 
-    CadastrarAlunoController.$inject = ['$window', '$scope', '$state', '$translate', 'log_entity', 'LogDoSistema', 'Principal', 'aluno_entity', 'aluno_mestrado_entity', 'aluno_doutorado_entity', 'usuario_entity', 'user_entity', 'cpf_entity', 'rg_entity', 'titulo_entity', 'dispensa_entity', 'passaporte_entity', 'Aluno', 'AlunoMestrado', 'AlunoDoutorado', 'User', 'Usuario', 'DocumentoIdentificacao'];
+    CadastrarAlunoController.$inject = ['$window', '$scope', '$state', '$translate', 'log_entity', 'LogDoSistema', 'Principal', 'aluno_entity', 'aluno_mestrado_entity', 'aluno_doutorado_entity', 'usuario_entity', 'user_entity', 'cpf_entity', 'rg_entity', 'titulo_entity', 'dispensa_entity', 'passaporte_entity', 'Aluno', 'AlunoMestrado', 'AlunoDoutorado', 'User', 'Usuario', 'DocumentoIdentificacao', 'Professor'];
 
-    function CadastrarAlunoController ($window, $scope, $state, $translate, log_entity, LogDoSistema, Principal, aluno_entity, aluno_mestrado_entity, aluno_doutorado_entity, usuario_entity, user_entity, cpf_entity, rg_entity, titulo_entity, dispensa_entity, passaporte_entity, Aluno, AlunoMestrado, AlunoDoutorado, User, Usuario, DocumentoIdentificacao) {
+    function CadastrarAlunoController ($window, $scope, $state, $translate, log_entity, LogDoSistema, Principal, aluno_entity, aluno_mestrado_entity, aluno_doutorado_entity, usuario_entity, user_entity, cpf_entity, rg_entity, titulo_entity, dispensa_entity, passaporte_entity, Aluno, AlunoMestrado, AlunoDoutorado, User, Usuario, DocumentoIdentificacao, Professor) {
         var vm = this;
 
         vm.clear = clear;
@@ -24,6 +24,7 @@
         vm.dispensa = dispensa_entity;
         vm.passaporte = passaporte_entity;
         vm.log = log_entity;
+        vm.professors = Professor.query();
 
         function clear() {
         	$window.document.getElementById('cadastrar-aluno-type').selectedIndex = -1;
@@ -47,6 +48,7 @@
             vm.dispensa = dispensa_entity;
             vm.passaporte = passaporte_entity;
             vm.log = log_entity;
+            vm.professors = Professor.query();
         }
 
         function save() {

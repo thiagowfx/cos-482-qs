@@ -2,6 +2,7 @@
     "cadastrar-aluno" : {
         "subtitle":  "Preencha os dados do(a) aluno(a)",
         "type": "Tipo",
+        "orientador": "Orientador",
         "type1": "Mestrado",
         "type2": "Doutorado",
         "login": "Login (username)",
