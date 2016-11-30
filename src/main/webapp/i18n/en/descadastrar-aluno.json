@@ -1,6 +1,13 @@
 {
     "descadastrar-aluno" : {
-        "subtitle":  "Insira o DRE do aluno(a)",
-        "dre": "*DRE"
+        "subtitle":  "Selecione um Aluno para ser descadastrado.",
+        "aluno": "Aluno",
+        "name": "Nome Completo",
+        "cpf": "CPF",
+         "alert": {
+            "success": "Aluno descadastrado com sucesso!",
+            "error": "Erro ao descadastrar aluno."
+        },
+        "confirm" : "Deseja descadastrar esse aluno?"
     }
 }

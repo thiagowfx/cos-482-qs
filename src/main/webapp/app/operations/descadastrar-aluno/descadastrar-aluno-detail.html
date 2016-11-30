@@ -1,0 +1,27 @@
+<div>
+    <h2><span data-translate="descadastrar-aluno.aluno"></span> {{vm.aluno.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="descadastrar-aluno.name"></span></dt>
+        <dd>
+            <span>{{vm.aluno.usuario.nome}}</span>
+        </dd>
+        <dt><span data-translate="descadastrar-aluno.cpf"></span></dt>
+        <dd>
+            <span>{{vm.aluno.cpf}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span class="hidden-xs hidden-sm" data-translate="global.common.back"></span>
+    </button>
+
+    <button type="submit"
+            ng-click="vm.deleteAluno()"
+            class="btn btn-danger">
+        <span class="glyphicon glyphicon-remove-circle"></span>
+        <span class="hidden-xs hidden-sm" data-translate="global.common.delete"></span>
+    </button>
+</div>
