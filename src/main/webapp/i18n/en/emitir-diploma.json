@@ -1,0 +1,6 @@
+{
+    "emitir-diploma" : {
+        "subtitle":  "Insira o DRE do aluno(a)",
+        "dre": "*DRE"
+    }
+}

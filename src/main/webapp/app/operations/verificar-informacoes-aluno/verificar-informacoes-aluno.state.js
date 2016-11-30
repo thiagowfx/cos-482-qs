@@ -23,7 +23,8 @@
             },
             resolve: {
                 mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                    $translatePartialLoader.addPart('global');
+                	$translatePartialLoader.addPart('verificar-informacoes');
+                	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
             }

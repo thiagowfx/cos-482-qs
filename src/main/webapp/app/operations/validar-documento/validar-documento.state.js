@@ -17,13 +17,14 @@
             views: {
                 'content@': {
                     templateUrl: 'app/operations/validar-documento/validar-documento.html',
-                    controller: 'ValidarDocumentoController',
+                    //controller: 'ValidarDocumentoController',
                     controllerAs: 'vm'
                 }
             },
             resolve: {
                 mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                    $translatePartialLoader.addPart('global');
+                	$translatePartialLoader.addPart('validar-documento');
+                	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
             }

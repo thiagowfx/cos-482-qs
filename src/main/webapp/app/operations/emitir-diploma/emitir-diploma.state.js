@@ -17,13 +17,14 @@
             views: {
                 'content@': {
                     templateUrl: 'app/operations/emitir-diploma/emitir-diploma.html',
-                    controller: 'EmitirDiplomaController',
+                    //controller: 'EmitirDiplomaController',
                     controllerAs: 'vm'
                 }
             },
             resolve: {
                 mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                    $translatePartialLoader.addPart('global');
+                	$translatePartialLoader.addPart('emitir-diploma');
+                	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
             }

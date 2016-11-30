@@ -1,0 +1,11 @@
+{
+    "verificar-informacoes" : {
+        "subtitle":  "Selecione o(a) aluno(a) desejado(a)",
+        "dre": "Dre",
+        "matricula": "Matricula",
+        "declaracaoConclusao": "Declaracao Conclusao",
+        "historicoGraduacao": "Historico Graduacao",
+        "usuario": "Usuario",
+        "orientador": "Orientador"
+    }
+}
