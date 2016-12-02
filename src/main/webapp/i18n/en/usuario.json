@@ -14,13 +14,13 @@
                 "question": "Are you sure you want to delete Usuario {{ id }}?"
             },
             "detail": {
-                "title": "Usuario"
+                "title": "Usuário"
             },
-            "nome": "Nome",
+            "nome": "Nome Completo",
             "conta": "Conta",
-            "cpf": "Cpf",
-            "rg": "Rg",
-            "tituloDeEleitor": "Titulo De Eleitor",
+            "cpf": "CPF",
+            "rg": "RG",
+            "tituloDeEleitor": "Título De Eleitor",
             "dispensaMilitar": "Dispensa Militar",
             "passaporte": "Passaporte",
             "systemUser": "System User"

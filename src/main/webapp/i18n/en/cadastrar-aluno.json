@@ -1,12 +1,12 @@
 {
     "cadastrar-aluno" : {
-        "subtitle":  "Preencha os dados do(a) aluno(a)",
+        "subtitle":  "Preencha os dados do aluno",
         "type": "Tipo",
-        "orientador": "Orientador",
+        "orientador": "Professor Orientador",
         "type1": "Mestrado",
         "type2": "Doutorado",
         "login": "Login (username)",
-        "email": "e-mail",
+        "email": "Email",
         "name": "Nome Completo",
         "password": "Senha",
         "repeat-password": "Confirmar Senha",
@@ -19,6 +19,7 @@
         "titulo": "Título de Eleitor",
         "passport": "Passaporte",
         "dispensa": "Dispensa Militar",
-        "dre": "DRE"
+        "dre": "DRE",
+        "student-type": "Selecione o tipo de aluno"
     }
 }

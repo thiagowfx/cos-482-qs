@@ -16,12 +16,12 @@
             "detail": {
                 "title": "Aluno"
             },
-            "dre": "Dre",
-            "matricula": "Matricula",
-            "declaracaoConclusao": "Declaracao Conclusao",
-            "historicoGraduacao": "Historico Graduacao",
-            "usuario": "Usuario",
-            "orientador": "Orientador"
+            "dre": "DRE",
+            "matricula": "Matrícula",
+            "declaracaoConclusao": "Declaração de Conclusão",
+            "historicoGraduacao": "Histórico de Graduação",
+            "usuario": "Usuário",
+            "orientador": "Professor Orientador"
         }
     }
 }

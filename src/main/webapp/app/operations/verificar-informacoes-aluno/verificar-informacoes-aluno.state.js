@@ -12,7 +12,8 @@
             parent: 'operations',
             url: '/verificar-informacoes-aluno',
             data: {
-                authorities: ['ROLE_SECRETARIO_ACADEMICO']
+                authorities: ['ROLE_SECRETARIO_ACADEMICO'],
+                pageTitle: 'global.menu.operations.verificar_informacoes_aluno'
             },
             views: {
                 'content@': {
@@ -23,7 +24,7 @@
             },
             resolve: {
                 mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                	$translatePartialLoader.addPart('verificar-informacoes');
+                	$translatePartialLoader.addPart('verificar-informacoes-aluno');
                 	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]

@@ -16,8 +16,8 @@
             "detail": {
                 "title": "Professor"
             },
-            "nome": "Nome",
-            "siape": "Siape"
+            "nome": "Nome Completo",
+            "siape": "Matrícula SIAPE"
         }
     }
 }

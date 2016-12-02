@@ -12,7 +12,7 @@
 
         vm.clear = clear;
         vm.save = save;
-        
+
         vm.alunomestrado = aluno_mestrado_entity;
         vm.alunodoutorado = aluno_doutorado_entity;
         vm.aluno = aluno_entity;
@@ -53,7 +53,7 @@
 
         function save() {
             vm.isSaving = true;
-            
+
             DocumentoIdentificacao.save(vm.cpf, function(){}, function(){}).$promise.then(function(cpf) {
                 vm.usuario.cpfId = cpf.id;
 
@@ -79,7 +79,7 @@
                                             	vm.alunomestrado.alunoId = aluno.id;
                                             	AlunoMestrado.save(vm.alunomestrado, onSaveSuccess, onSaveError);
                                             });
-                                            
+
                                         })
                                     }
                                     else if($window.document.getElementById('cadastrar-aluno-type').selectedIndex === 1) {
@@ -92,7 +92,7 @@
                                         })
                                     }
                                     else {
-                                    	$window.alert('Selecione o tipo de aluno');
+                                    	$window.alert($translate.instant('cadastrar-aluno.student-type'));
                                     }
                                 });
                             });
@@ -113,7 +113,7 @@
             vm.isSaving = false;
             $window.alert($translate.instant('cadastrar-aluno.alert.failure'));
         }
-        
+
         function LogUseCase() {
             Principal.identity().then(function(account) {
                 vm.log.username = account.login;
