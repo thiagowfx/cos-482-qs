@@ -27,7 +27,15 @@
                 	$translatePartialLoader.addPart('verificar-informacoes-aluno');
                 	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
-                }]
+                }],
+                log_entity: function () {
+                    return {
+                        id: null,
+                        timestampFuncao: null,
+                        funcao: 8,
+                        username: null
+                    };
+                }
             }
         });
     }
