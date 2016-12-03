@@ -1,0 +1,45 @@
+<div>
+    <h2><span data-translate="verificar-informacoes-aluno.title">Aluno</span> {{vm.aluno.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="verificar-informacoes-aluno.nome">Nome</span></dt>
+        <dd>
+            <span>{{vm.aluno.usuario.nome}}</span>
+        </dd>
+        <dt><span data-translate="verificar-informacoes-aluno.aluno.conta">Conta</span></dt>
+        <dd>
+            <span>{{vm.aluno.matricula}}</span>
+        </dd>
+        <dt><span data-translate="verificar-informacoes-aluno.aluno.cpf">Cpf</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.aluno.cpfId})">{{vm.aluno.usuario.cpf}}</a>
+        </dd>
+        <dt><span data-translate="verificar-informacoes-aluno.aluno.rg">Rg</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.aluno.rgId})">{{vm.aluno.usuario.rg}}</a>
+        </dd>
+        <dt><span data-translate="verificar-informacoes-aluno.aluno.tituloDeEleitor">Titulo De Eleitor</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.aluno.tituloDeEleitorId})">{{vm.aluno.usuario.tituloDeEleitor}}</a>
+        </dd>
+        <dt><span data-translate="verificar-informacoes-aluno.aluno.dispensaMilitar">Dispensa Militar</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.aluno.dispensaMilitarId})">{{vm.aluno.usuario.dispensaMilitar}}</a>
+        </dd>
+        <dt><span data-translate="verificar-informacoes-aluno.aluno.passaporte">Passaporte</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.aluno.passaporteId})">{{vm.aluno.usuario.passaporte}}</a>
+        </dd>
+        <dt><span data-translate="verificar-informacoes-aluno.aluno.systemUser">System User</span></dt>
+        <dd>
+            {{vm.aluno.usuario.systemUserId}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+</div>
