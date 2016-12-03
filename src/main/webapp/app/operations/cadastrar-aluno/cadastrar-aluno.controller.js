@@ -31,6 +31,7 @@
             $window.document.getElementById('cadastrar-aluno-login').value = "";
             $window.document.getElementById('cadastrar-aluno-email').value = "";
             $window.document.getElementById('cadastrar-aluno-name').value = "";
+            $window.document.getElementById('cadastrar-aluno-dre').value = "";
             $window.document.getElementById('cadastrar-aluno-cpf').value = "";
             $window.document.getElementById('cadastrar-aluno-rg').value = "";
             $window.document.getElementById('cadastrar-aluno-titulo').value = "";
