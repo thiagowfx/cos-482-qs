@@ -7,11 +7,59 @@
         </div>
 
         <div class="col-md-12">
+            <form name="enviar-documento-mestrado-declaracao-conclusao-form" role="form" novalidate class="form-horizontal" ng-submit="vm.saveDiplomaGraduacao()">
+            	<div class="form-group">
+                    <label data-translate="enviar-documento-mestrado.declaracao-conclusao.name" class="control-label col-sm-2" for="enviar-documento-mestrado-declaracao-conclusao"></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="file" id="enviar-documento-mestrado-declaracao-conclusao" accept="application/pdf">
+                    </div>
+                    <button clas="col-sm-2" type="submit" ng-disabled="vm.isSaving" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-upload"></span>&nbsp;<span data-translate="global.common.submit"></span>
+                    </button>
+                </div>
+            </form>
+
+            <form name="enviar-documento-mestrado-historico-graduacao-form" role="form" novalidate class="form-horizontal" ng-submit="vm.saveDiplomaGraduacao()">
+            	<div class="form-group">
+                    <label data-translate="enviar-documento-mestrado.historico-graduacao.name" class="control-label col-sm-2" for="enviar-documento-mestrado-historico-graduacao"></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="file" id="enviar-documento-mestrado-historico-graduacao" accept="application/pdf">
+                    </div>
+                    <button clas="col-sm-2" type="submit" ng-disabled="vm.isSaving" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-upload"></span>&nbsp;<span data-translate="global.common.submit"></span>
+                    </button>
+                </div>
+            </form>
+
             <form name="enviar-documento-mestrado-diploma-graduacao-form" role="form" novalidate class="form-horizontal" ng-submit="vm.saveDiplomaGraduacao()">
             	<div class="form-group">
                     <label data-translate="enviar-documento-mestrado.diploma-graduacao.name" class="control-label col-sm-2" for="enviar-documento-mestrado-diploma-graduacao"></label>
                     <div class="col-sm-8">
                         <input class="form-control" type="file" id="enviar-documento-mestrado-diploma-graduacao" accept="application/pdf">
+                    </div>
+                    <button clas="col-sm-2" type="submit" ng-disabled="vm.isSaving" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-upload"></span>&nbsp;<span data-translate="global.common.submit"></span>
+                    </button>
+                </div>
+            </form>
+
+            <form name="enviar-documento-mestrado-certidao-conclusao-form" role="form" novalidate class="form-horizontal" ng-submit="vm.saveDiplomaGraduacao()">
+            	<div class="form-group">
+                    <label data-translate="enviar-documento-mestrado.certidao-conclusao.name" class="control-label col-sm-2" for="enviar-documento-mestrado-certidao-conclusao"></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="file" id="enviar-documento-mestrado-certidao-conclusao" accept="application/pdf">
+                    </div>
+                    <button clas="col-sm-2" type="submit" ng-disabled="vm.isSaving" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-upload"></span>&nbsp;<span data-translate="global.common.submit"></span>
+                    </button>
+                </div>
+            </form>
+
+            <form name="enviar-documento-mestrado-certidao-colacao-form" role="form" novalidate class="form-horizontal" ng-submit="vm.saveDiplomaGraduacao()">
+            	<div class="form-group">
+                    <label data-translate="enviar-documento-mestrado.certidao-colacao.name" class="control-label col-sm-2" for="enviar-documento-mestrado-certidao-colacao"></label>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="file" id="enviar-documento-mestrado-certidao-colacao" accept="application/pdf">
                     </div>
                     <button clas="col-sm-2" type="submit" ng-disabled="vm.isSaving" class="btn btn-primary">
                         <span class="glyphicon glyphicon-upload"></span>&nbsp;<span data-translate="global.common.submit"></span>

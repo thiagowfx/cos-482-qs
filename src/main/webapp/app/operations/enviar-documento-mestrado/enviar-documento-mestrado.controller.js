@@ -18,6 +18,10 @@
             // console.log(vm.q);
         }
 
+        // TODO: clear function + clear button
+        // TODO: acquire string text from file picker/chooser via angular
+        // TODO: ng-hide + check if null
+
         function LogUseCase() {
             Principal.identity().then(function(account) {
                 vm.log.username = account.login;

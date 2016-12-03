@@ -4,6 +4,18 @@
         "pdf-only": "OBS.: Somente serão aceitos documentos no formato PDF.",
         "diploma-graduacao": {
             "name": "Diploma de Graduação"
+        },
+        "certidao-conclusao": {
+            "name": "Certidão de Conclusão"
+        },
+        "certidao-colacao": {
+            "name": "Certidão de Colação"
+        },
+        "declaracao-conclusao": {
+            "name": "Declaração de Conclusão"
+        },
+        "historico-graduacao": {
+            "name": "Histórico de Graduação"
         }
     }
 }
