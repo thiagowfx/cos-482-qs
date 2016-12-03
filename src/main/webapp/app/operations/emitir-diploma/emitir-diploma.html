@@ -4,22 +4,87 @@
             <h1 data-translate="global.menu.operations.emitir_diploma"></h1>
             <p data-translate="emitir-diploma.subtitle" class="lead"></p>
         </div>
-        <div class="col-md-12">
-            <form class="form-horizontal">
-            
-            	<div class="form-group">
-                    <label data-translate="emitir-diploma.dre" class="control-label col-sm-2" for="dre"></label>
-                    <div class="col-sm-10">
-                    <input type="text" class="form-control" id="dre" placeholder="999999999">
-                    </div>
-                </div>
-             	       
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                    <button data-translate="global.common.submit" type="submit" class="btn btn-default"></button>
-                    </div>
-                </div>
-            </form>
+
+        <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+
+            </div>
         </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="emitir-diploma.dre">Dre</span></th>
+                    <th><span data-translate="emitir-diploma.matricula">Matricula</span></th>
+                    <!--<th><span data-translate="emitir-diploma.tipo">Tipo</span></th>                    -->
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="aluno in vm.alunos track by aluno.id">
+                    <td><a ui-sref="aluno-detail({id:aluno.id})">{{aluno.id}}</a></td>
+                    <td>{{aluno.dre}}</td>
+                    <td data-translate="{{aluno.matricula}}">{{aluno.matricula}}</td>
+                    <td>
+                        <a ui-sref="documento-sistema-detail({id:aluno.declaracaoConclusaoId})">{{aluno.declaracaoConclusaoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="documento-sistema-detail({id:aluno.historicoGraduacaoId})">{{aluno.historicoGraduacaoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="usuario-detail({id:aluno.usuarioId})">{{aluno.usuarioId}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="orientador in aluno.orientadors">
+                            <a class="form-control-static" ui-sref="professor-detail({id: orientador.id})">{{orientador.nome}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="aluno-detail({id:aluno.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <!--<tr ng-repeat="aluno in vm.alunosDoutorado track by aluno.id">
+                    <td><a ui-sref="aluno-detail({id:aluno.id})">{{aluno.id}}</a></td>
+                    <td>{{aluno.dre}}</td>
+                    <td data-translate="{{aluno.matricula}}">{{aluno.matricula}}</td>
+                    <td>
+                        <a ui-sref="documento-sistema-detail({id:aluno.declaracaoConclusaoId})">{{aluno.declaracaoConclusaoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="documento-sistema-detail({id:aluno.historicoGraduacaoId})">{{aluno.historicoGraduacaoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="usuario-detail({id:aluno.usuarioId})">{{aluno.usuarioId}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="orientador in aluno.orientadors">
+                            <a class="form-control-static" ui-sref="professor-detail({id: orientador.id})">{{orientador.nome}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="aluno-detail({id:aluno.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>                -->
+            </tbody>
+        </table>
     </div>
 </div>
