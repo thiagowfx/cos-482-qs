@@ -2,6 +2,7 @@
     "emitir-diploma" : {
         "subtitle":  "Insira o DRE do aluno(a)",
         "dre": "*DRE",
-        "matricula": "Matrícula"
+        "matricula": "Matrícula",
+        "nome": "Nome"
     }
 }
