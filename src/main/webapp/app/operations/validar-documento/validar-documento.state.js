@@ -12,12 +12,13 @@
             parent: 'operations',
             url: '/validar-documento',
             data: {
-                authorities: ['ROLE_SECRETARIO_ACADEMICO']
+                authorities: ['ROLE_SECRETARIO_ACADEMICO'],
+                pageTitle: 'global.menu.operations.validar_documento'
             },
             views: {
                 'content@': {
                     templateUrl: 'app/operations/validar-documento/validar-documento.html',
-                    //controller: 'ValidarDocumentoController',
+                    controller: 'ValidarDocumentoController',
                     controllerAs: 'vm'
                 }
             },
@@ -26,7 +27,15 @@
                 	$translatePartialLoader.addPart('validar-documento');
                 	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
-                }]
+                }],
+                log_entity: function () {
+                    return {
+                        id: null,
+                        timestampFuncao: null,
+                        funcao: 7,
+                        username: null
+                    };
+                }
             }
         });
     }
