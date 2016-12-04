@@ -12,12 +12,13 @@
             parent: 'operations',
             url: '/emitir-diploma',
             data: {
-                authorities: ['ROLE_SECRETARIO_ACADEMICO']
+                authorities: ['ROLE_SECRETARIO_ACADEMICO'],
+                pageTitle: 'global.menu.operations.emitir_diploma'
             },
             views: {
                 'content@': {
                     templateUrl: 'app/operations/emitir-diploma/emitir-diploma.html',
-                    //controller: 'EmitirDiplomaController',
+                    controller: 'EmitirDiplomaController',
                     controllerAs: 'vm'
                 }
             },
@@ -26,7 +27,15 @@
                 	$translatePartialLoader.addPart('emitir-diploma');
                 	$translatePartialLoader.addPart('global');
                     return $translate.refresh();
-                }]
+                }],
+                log_entity: function () {
+                    return {
+                        id: null,
+                        timestampFuncao: null,
+                        funcao: 6,
+                        username: null
+                    };
+                }
             }
         });
     }
