@@ -33,6 +33,7 @@
         vm.diplomamestrado = diplima_mestrado_entity;
         vm.declaracaoconclusao = declaracao_conclusao_entity;
         vm.historicograduacao = historico_graduacao_entity;
+        vm.user.authorities = [];
 
         function clear() {
         	$window.document.getElementById('cadastrar-aluno-type').selectedIndex = -1;
@@ -66,6 +67,7 @@
             vm.diplomamestrado = diplima_mestrado_entity;
             vm.declaracaoconclusao = declaracao_conclusao_entity;
             vm.historicograduacao = historico_graduacao_entity;
+            vm.user.authorities = [];
         }
 
         function save() {
@@ -86,33 +88,41 @@
                             DocumentoIdentificacao.save(vm.passaporte, function(){}, function(){}).$promise.then(function(passaporte) {
                                 vm.usuario.passaporteId = passaporte.id;
 
+                                // set role
+                                if($window.document.getElementById('cadastrar-aluno-type').selectedIndex === 0) {
+                                    vm.user.authorities = ['ROLE_ALUNO_MESTRADO'];
+                                }
+                                else if($window.document.getElementById('cadastrar-aluno-type').selectedIndex === 1) {
+                                    vm.user.authorities = ['ROLE_ALUNO_DOUTORADO'];
+                                }
+
                                 User.save(vm.user, function(){}, function(){}).$promise.then(function(user) {
                                     vm.usuario.systemUserId = user.id;
 
                                     if($window.document.getElementById('cadastrar-aluno-type').selectedIndex === 0) {
                                     	Usuario.save(vm.usuario, function(){}, function(){}).$promise.then(function(usuario) {
                                             vm.aluno.usuarioId = usuario.id;
-                                            
+
                                             DocumentoSistema.save(vm.declaracaoconclusao, function(){}, function(){}).$promise.then(function(declaracaoconclusao) {
                                             	vm.aluno.declaracaoConclusaoId = declaracaoconclusao.id
                                             	DocumentoSistema.save(vm.historicograduacao, function(){}, function(){}).$promise.then(function(historicograduacao) {
                                             		vm.aluno.historicoGraduacaoId = historicograduacao.id
                                             		Aluno.save(vm.aluno, function(){}, function(){}).$promise.then(function(aluno) {
                                                     	vm.alunomestrado.alunoId = aluno.id;
-                                                    	
+
                                                     	DocumentoSistema.save(vm.diplomagraduacao, function(){}, function(){}).$promise.then(function(diplomagraduacao) {
                                                     		vm.alunomestrado.diplomaGraduacaoId = diplomagraduacao.id;
-                                                    		
+
                                                     		DocumentoSistema.save(vm.certidaoconclusao, function(){}, function(){}).$promise.then(function(certidaoconclusao) {
                                                     			vm.alunomestrado.certidaoConclusaoId = certidaoconclusao.id;
-                                                    			
+
                                                     			DocumentoSistema.save(vm.certidaocolacao, function(){}, function(){}).$promise.then(function(certidaocolacao) {
                                                     				vm.alunomestrado.certidaoColacaoId = certidaocolacao.id;
                                                     				AlunoMestrado.save(vm.alunomestrado, onSaveSuccess, onSaveError);
                                                     			});
                                                     		});
                                                     	});
-                                                    });	
+                                                    });
                                             	});
                                             });
                                         })
@@ -120,25 +130,25 @@
                                     else if($window.document.getElementById('cadastrar-aluno-type').selectedIndex === 1) {
                                 		Usuario.save(vm.usuario, function(){}, function(){}).$promise.then(function(usuario) {
                                             vm.aluno.usuarioId = usuario.id;
-                                            
+
                                             DocumentoSistema.save(vm.declaracaoconclusao, function(){}, function(){}).$promise.then(function(declaracaoconclusao) {
                                             	vm.aluno.declaracaoConclusaoId = declaracaoconclusao.id
                                             	DocumentoSistema.save(vm.historicograduacao, function(){}, function(){}).$promise.then(function(historicograduacao) {
                                             		vm.aluno.historicoGraduacaoId = historicograduacao.id
-                                            		
-                                            
+
+
 		                                            Aluno.save(vm.aluno, function(){}, function(){}).$promise.then(function(aluno) {
 		                                            	vm.alunodoutorado.alunoId = aluno.id;
-		                                            	
+
 		                                            	DocumentoSistema.save(vm.atadissertacao, function(){}, function(){}).$promise.then(function(atadissertacao) {
 		                                            		vm.alunodoutorado.ataDissertacaoId = atadissertacao.id;
-		                                            		
+
 		                                            		DocumentoSistema.save(vm.certidaomestrado, function(){}, function(){}).$promise.then(function(certidaomestrado) {
 		                                            			vm.alunodoutorado.certidaoConclusaoId = certidaomestrado.id;
-		                                            			
+
 		                                            			DocumentoSistema.save(vm.diplomamestrado, function(){}, function(){}).$promise.then(function(diplomamestrado) {
 		                                            				vm.alunodoutorado.diplomaMestradoId = diplomamestrado.id;
-		                                            				
+
 		                                            				AlunoDoutorado.save(vm.alunodoutorado, onSaveSuccess, onSaveError);
 		                                            			});
 		                                            		});
