@@ -61,15 +61,15 @@
                             if(m[j].alunoId == vm.aluno.id) {
                                 vm.aluno.tipo = "Mestrado";
                                 vm.aluno.documentos.push({
-                                    "tipo": "Diploma Graduação",
+                                    "tipo": "Diploma de Graduação",
                                     "id": m[j].diplomaGraduacaoId || "Inexistente"
                                 });
                                 vm.aluno.documentos.push({
-                                    "tipo": "Certidão Conclusão",
+                                    "tipo": "Certidão de Conclusão",
                                     "id": m[j].certidaoConclusaoId || "Inexistente"
                                 });
                                 vm.aluno.documentos.push({
-                                    "tipo": "Certidão Colação",
+                                    "tipo": "Certidão de Colação",
                                     "id": m[j].certidaoColacaoId || "Inexistente"
                                 });
                             }
