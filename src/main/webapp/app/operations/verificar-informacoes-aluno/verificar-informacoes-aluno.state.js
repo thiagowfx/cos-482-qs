@@ -8,7 +8,8 @@
     stateConfig.$inject = ['$stateProvider'];
 
     function stateConfig($stateProvider) {
-        $stateProvider.state('verificar-informacoes-aluno', {
+        $stateProvider
+        .state('verificar-informacoes-aluno', {
             parent: 'operations',
             url: '/verificar-informacoes-aluno',
             data: {
@@ -37,6 +38,48 @@
                     };
                 }
             }
-        });
+        })
+        .state('verificar-informacoes-aluno-detail', {
+            parent: 'verificar-informacoes-aluno',
+            url: '/verificar-informacoes-aluno/mestrado/{id}',
+            data: {
+                authorities: ['ROLE_SECRETARIO_ACADEMICO'],
+                pageTitle: 'verificar-informacoes-aluno.secretario'
+            },
+            views: {
+                'content@': {
+                    templateUrl: 'app/operations/verificar-informacoes-aluno/verificar-informacoes-aluno-detail.html',
+                    controller: 'VerificarInformacoesAlunoDetailController',
+                    controllerAs: 'vm'
+                }
+            },
+            resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('verificar-informacoes-aluno');
+                    $translatePartialLoader.addPart('global');
+                    return $translate.refresh();
+                }],
+                entity: ['$stateParams', 'Aluno', 'Usuario', 'DocumentoIdentificacao',  function($stateParams, Aluno, Usuario, DocumentoIdentificacao) {
+                    return Aluno.get({id : $stateParams.id}).$promise;
+                }],
+                previousState: ["$state", function ($state) {
+                    var currentStateData = {
+                        name: $state.current.name || 'verificar-informacoes-aluno',
+                        params: $state.params,
+                        url: $state.href($state.current.name, $state.params)
+                    };
+                    return currentStateData;
+                }],
+                log_entity: function () {
+                    return {
+                        id: null,
+                        timestampFuncao: null,
+                        funcao: 8,
+                        username: null
+                    };
+                }
+            }
+        })
+        ;
     }
 })();

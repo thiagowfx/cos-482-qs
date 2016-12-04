@@ -1,5 +1,17 @@
 {
     "verificar-informacoes-aluno" : {
+        "aluno": {
+            "nome":"Nome",
+            "conta":"Status da Matrícula",
+            "cpf":"CPF",
+            "rg":"RG",
+            "tituloDeEleitor":"Título de Eleitor",
+            "dispensaMilitar":"Dispensa Militar",
+            "passaporte":"Passaporte",
+            "systemUser":"Usuário no sistema"
+        },
+        "title": "Aluno",
+        "nome": "Nome",
         "subtitle":  "Selecione o aluno desejado",
         "dre": "DRE",
         "matricula": "Matrícula",
