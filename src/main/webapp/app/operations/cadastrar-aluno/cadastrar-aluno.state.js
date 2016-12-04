@@ -113,6 +113,72 @@
                         valor: null
                     };
                 },
+                diploma_graduacao_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "DIPLOMA GRADUAÇÃO",
+                        formato: "PDF",
+                        timestamp_envio: null,
+                        status: 0,
+                        escopo: null,
+                        caminho: null
+                    };
+                },
+                certidao_conclusao_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "CERTIDÃO DE CONCLUSÃO",
+                        formato: "PDF",
+                        timestamp_envio: null,
+                        status: 0,
+                        escopo: null,
+                        caminho: null
+                    };
+                },
+                certidao_colacao_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "CERTIDÃO DE COLAÇÃO",
+                        formato: "PDF",
+                        timestamp_envio: null,
+                        status: 0,
+                        escopo: null,
+                        caminho: null
+                    };
+                },
+                ata_dissertacao_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "ATA DISSERTAÇÃO",
+                        formato: "PDF",
+                        timestamp_envio: null,
+                        status: 0,
+                        escopo: null,
+                        caminho: null
+                    };
+                },
+                certidao_mestrado_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "CERTIDÃO MESTRADO",
+                        formato: "PDF",
+                        timestamp_envio: null,
+                        status: 0,
+                        escopo: null,
+                        caminho: null
+                    };
+                },
+                diplima_mestrado_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "DIPLOMA MESTRADO",
+                        formato: "PDF",
+                        timestamp_envio: null,
+                        status: 0,
+                        escopo: null,
+                        caminho: null
+                    };
+                },
                 log_entity: function () {
                     return {
                         id: null,
