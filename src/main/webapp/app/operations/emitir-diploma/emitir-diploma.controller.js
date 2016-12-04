@@ -38,7 +38,7 @@
                                 {
                                     vm.allAlunos[i].usuario = result;
                                     vm.allAlunos[i].indexOnArray = vm.alunos.length;
-                                    vm.alunos.push(vm.allAlunos[i]);                                    
+                                    vm.alunos.push(vm.allAlunos[i]);
                                 }
 
                             }
@@ -51,7 +51,6 @@
 
         function concludeMatricula(id) {
             if($window.confirm($translate.instant('emitir-diploma.confirm'))){
-                LogUseCase();
                 vm.alunos[id].aluno.matricula = "COMPLETADA";
                 vm.isSaving = true;
                 Aluno.update(vm.alunos[id].aluno, onSaveSuccess, onSaveError);
@@ -68,14 +67,6 @@
             $window.alert($translate.instant('emitir-diploma.alert.error'));
             vm.isSaving = false;
             $state.reload();
-        }
-
-        function LogUseCase() {
-            Principal.identity().then(function(account) {
-                vm.log.username = account.login;
-                vm.log.timestampFuncao = new Date();
-                LogDoSistema.save(vm.log, function(){}, function(){});
-            });
         }
     }
 })();
