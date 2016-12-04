@@ -15,22 +15,29 @@
             }
         }])
         .controller('EnviarDocumentoMestradoController', EnviarDocumentoMestradoController);
-
+    
     EnviarDocumentoMestradoController.$inject = ['$window', '$scope', '$state', '$translate', 'DocumentoSistema', 'LogDoSistema', 'log_entity', 'Principal', 'Usuario', 'Aluno', 'AlunoMestrado'];
 
     function EnviarDocumentoMestradoController ($window, $scope, $state, $translate, DocumentoSistema, LogDoSistema, log_entity, Principal, Usuario, Aluno, AlunoMestrado) {
         var vm = this;
         vm.alunoData = {};
         
+        // for enviar-documento
         vm.saveDiplomaGraduacao = saveDiplomaGraduacao;
         vm.saveDeclaracaoConclusao = saveDeclaracaoConclusao;
         vm.saveCertidaoColacao = saveCertidaoColacao;
         vm.saveHistoricoGraduacao = saveHistoricoGraduacao;
         vm.saveCertidaoConclusao = saveCertidaoConclusao;
 
+
+        // for remover-documento
+        vm.deleteDeclaracaoConclusao = deleteDeclaracaoConclusao;
+        vm.deleteHistoricoGraduacao = deleteHistoricoGraduacao;
+        vm.deleteDiplomaGraduacao = deleteDiplomaGraduacao;
+        vm.deleteCertidaoConclusao = deleteCertidaoConclusao; 
+        vm.deleteCertidaoColacao = deleteCertidaoColacao; 
+
         vm.log = log_entity;
-
-
 
         getUserName();
         // getUsuarioId();
@@ -68,43 +75,22 @@
             console.log(vm.diplomaGraduacao.name);
         }
 
-        function filePicker() {
-            var picker = document.getElementById("enviar-documento-mestrado-historico-graduacao");
-            var txt = "";
-            console.log("Here I am!!");
-            if ('files' in picker) {
-                var file = picker.files[0];
-                console.log(JSON.file);
-            //     if (x.files.length == 0) {
-            //         txt = "Select one or more files.";
-            //     } else {
-            //         for (var i = 0; i < x.files.length; i++) {
-            //             txt += "<br><strong>" + (i+1) + ". file</strong><br>";
-            //             var file = x.files[i];
-            //             if ('name' in file) {
-            //                 txt += "name: " + file.name + "<br>";
-            //             }
-            //             if ('size' in file) {
-            //                 txt += "size: " + file.size + " bytes <br>";
-            //             }
-            //         }
-            //     }
-            // } 
-            // else {
-            //     if (x.value == "") {
-            //         txt += "Select one or more files.";
-            //     } else {
-            //         txt += "The files property is not supported by your browser!";
-            //         txt  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
-            //     }
-            // }
-        }
-            
-        }
+
+        function deleteDeclaracaoConclusao() {}
+        function deleteHistoricoGraduacao() {}
+        function deleteDiplomaGraduacao() {}
+        function deleteCertidaoConclusao() {}
+        function deleteCertidaoColacao() {}
+
         function getUserName() {
             var account = {};
             Principal.identity().then(function(account) {
                 vm.alunoData.username = account.login;
+                Usuario.get(
+                    function (result){
+                        console.log(JSON.stringify(result));
+                    }
+                )
                 // Usuario.get(
                 //     {login : vm.alunoData.username},
                 //     function (result) {
