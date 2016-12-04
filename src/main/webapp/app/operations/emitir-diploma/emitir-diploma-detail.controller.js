@@ -5,15 +5,14 @@
         .module('cos482App')
         .controller('EmitirDiplomaDetailController', EmitirDiplomaDetailController);
 
-    EmitirDiplomaDetailController.$inject = ['Principal', 'log_entity', 'LogDoSistema', '$window', '$scope', '$state', '$translate', '$rootScope', '$stateParams', 'previousState', 'entity', 'Aluno'];
+    EmitirDiplomaDetailController.$inject = ['Principal', 'log_entity', 'LogDoSistema', '$window', '$scope', '$state', '$translate', '$rootScope', '$stateParams', 'previousState', 'entity', 'Aluno', 'Usuario'];
 
-
-    function EmitirDiplomaDetailController(Principal, log_entity, LogDoSistema, $window, $scope, $state, $translate, $rootScope, $stateParams, previousState, entity, Aluno) {
+    function EmitirDiplomaDetailController(Principal, log_entity, LogDoSistema, $window, $scope, $state, $translate, $rootScope, $stateParams, previousState, entity, Aluno, Usuario) {
         var vm = this;
 
         vm.aluno = entity;
         vm.previousState = previousState.name;
-        vm.printDiploma = printDiploma;
+        vm.concludeMatricula = concludeMatricula;
 
         vm.log = log_entity;
 
@@ -21,48 +20,33 @@
 
         function loadAll() {
             Usuario.get(
-                {id: vm.secretario.usuarioId},
+                {id: vm.aluno.usuarioId},
                 function (result) {
                     console.log(result.conta);
-                    vm.secretario.usuario = result;
-                    DocumentoIdentificacao.get(
-                        {id: result.cpfId},
-                        function(innerResult) {
-                            vm.secretario.cpf = innerResult.valor;
-                        }
-                    );
+                    vm.aluno.usuario = result;
                 }
             );
         }
 
-        function printDiploma() {
+        function concludeMatricula() {
             if($window.confirm($translate.instant('emitir-diploma.confirm'))){
                 LogUseCase();
                 vm.aluno.matricula = "INATIVA";
                 vm.isSaving = true;
-                Usuario.update(vm.secretario.usuario, onSaveSuccess, onSaveError);
-            }
-        }
-
-        function deleteSecretario() {
-            if($window.confirm($translate.instant('descadastrar-secretario.confirm'))){
-                LogUseCase();
-                vm.secretario.usuario.conta = "INATIVA";
-                vm.isSaving = true;
-                Usuario.update(vm.secretario.usuario, onSaveSuccess, onSaveError);
+                Aluno.update(vm.aluno, onSaveSuccess, onSaveError);
             }
         }
 
         function onSaveSuccess (result) {
-            $window.alert($translate.instant('descadastrar-secretario.alert.success'));
+            $window.alert($translate.instant('emitir-diploma.alert.success'));
             vm.isSaving = false;
-            $state.go(vm.previousState);
+            $state.reload();
         }
 
         function onSaveError () {
-            $window.alert($translate.instant('descadastrar-secretario.alert.error'));
+            $window.alert($translate.instant('emitir-diploma.alert.error'));
             vm.isSaving = false;
-            $state.go(vm.previousState);
+            $state.reload();
         }
 
         function LogUseCase() {

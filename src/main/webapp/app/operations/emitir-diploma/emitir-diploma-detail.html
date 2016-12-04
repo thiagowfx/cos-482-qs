@@ -1,14 +1,14 @@
 <div>
-    <h2><span data-translate="emitir-diploma.diploma"></span> {{vm.aluno.dre}}</h2>
+    <h2><span data-translate="emitir-diploma.diploma"></span></h2>
     <hr>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span data-translate="emitir-diploma.name"></span></dt>
+        <dt><span data-translate="emitir-diploma.nome"></span></dt>
         <dd>
-            <span>{{vm.secretario.usuario.nome}}</span>
+            <span>{{vm.aluno.usuario.nome}}</span>
         </dd>
-        <dt><span data-translate="emitir-diploma.cpf"></span></dt>
+        <dt><span data-translate="emitir-diploma.dre"></span></dt>
         <dd>
-            <span>{{vm.secretario.cpf}}</span>
+            <span>{{vm.aluno.dre}}</span>
         </dd>
     </dl>
 
@@ -19,9 +19,9 @@
     </button>
 
     <button type="submit"
-            ng-click="vm.deleteSecretario()"
+            ng-click="vm.concludeMatricula()"
             class="btn btn-danger">
-        <span class="glyphicon glyphicon-remove-circle"></span>
-        <span class="hidden-xs hidden-sm" data-translate="global.common.delete"></span>
+        <span class="glyphicon glyphicon-print"></span>
+        <span class="hidden-xs hidden-sm" data-translate="emitir-diploma.emitir"></span>
     </button>
 </div>

@@ -1,8 +1,16 @@
 {
     "emitir-diploma" : {
-        "subtitle":  "Insira o DRE do aluno(a)",
-        "dre": "*DRE",
+        "subtitle":  "Selecione o aluno(a)",
+        "dre": "DRE",
         "matricula": "Matrícula",
-        "nome": "Nome"
+        "nome": "Nome",
+        "cpf": "CPF",
+        "diploma": "Diploma",
+        "emitir":"Emitir",
+        "alert": {
+            "success": "Diploma emitido com sucesso!",
+            "error": "Erro ao emitir diploma do aluno."
+        },
+        "confirm" : "Deseja emitir o diploma deste aluno?"
     }
 }
