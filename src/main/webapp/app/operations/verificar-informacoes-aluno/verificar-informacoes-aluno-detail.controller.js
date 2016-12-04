@@ -11,7 +11,16 @@
         var vm = this;
 
         vm.aluno = entity;
-        vm.aluno.documentos = [];
+        vm.aluno.documentos = [
+            {
+                "tipo": "Declaração de Conclusão",
+                "id": entity.declaracaoConclusaoId || "Inexistente"
+            },
+            {
+                "tipo" : "Histórico de Graduação",
+                "id": entity.historicoGraduacaoId || "Inexistente"
+            }
+        ];
         vm.previousState = previousState.name;
 
         vm.log = log_entity;
