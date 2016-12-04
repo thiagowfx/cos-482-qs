@@ -15,6 +15,8 @@
         vm.accept = accept;
         vm.refuse = refuse;
 
+        vm.log = log_entity;
+
         loadAll();
 
         function loadAll() {
@@ -97,7 +99,6 @@
 
         function refuse(id) {
             if($window.confirm($translate.instant('validar-documento.refuse'))){
-                //LogUseCase();
                 DocumentoSistema.get(
                     {id: id},
                     function(d){
@@ -115,7 +116,6 @@
 
         function accept(id) {
             if($window.confirm($translate.instant('validar-documento.accept'))){
-                //LogUseCase();
                 DocumentoSistema.get(
                     {id: id},
                     function(d){
@@ -132,15 +132,24 @@
         }
 
         function onSaveSuccess (result) {
-            $window.alert($translate.instant('validar-documento.alert.success'));
+            $window.alert($translate.instant('validar-documento.success'));
+            LogUseCase();
             vm.isSaving = false;
             $state.reload();
         }
 
         function onSaveError () {
-            $window.alert($translate.instant('validar-documento.alert.error'));
+            $window.alert($translate.instant('validar-documento.error'));
             vm.isSaving = false;
             $state.reload();
+        }
+
+        function LogUseCase() {
+            Principal.identity().then(function(account) {
+                vm.log.username = account.login;
+                vm.log.timestampFuncao = new Date();
+                LogDoSistema.save(vm.log, function(){}, function(){});
+            });
         }
     }
 })();
