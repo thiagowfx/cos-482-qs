@@ -13,7 +13,8 @@
             parent: 'operations',
             url: '/emitir-diploma',
             data: {
-                authorities: ['ROLE_SECRETARIO_ACADEMICO']
+                authorities: ['ROLE_SECRETARIO_ACADEMICO'],
+                pageTitle: 'global.menu.operations.emitir_diploma'
             },
             views: {
                 'content@': {

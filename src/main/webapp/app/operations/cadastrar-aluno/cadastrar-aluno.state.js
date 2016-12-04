@@ -113,6 +113,28 @@
                         valor: null
                     };
                 },
+                declaracao_conclusao_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "DECLARAÇÃO CONCLUSÃO",
+                        formato: "PDF",
+                        timestamp_envio: null,
+                        status: 0,
+                        escopo: null,
+                        caminho: null
+                    };
+                },
+                historico_graduacao_entity: function () {
+                    return {
+                        id: null,
+                        tipo: "HISTORICO GRADUAÇÃO",
+                        formato: "PDF",
+                        timestamp_envio: null,
+                        status: 0,
+                        escopo: null,
+                        caminho: null
+                    };
+                },
                 diploma_graduacao_entity: function () {
                     return {
                         id: null,

@@ -53,7 +53,8 @@
                         passwordHash: null,
                         firstName: null,
                         lastName: null,
-                        email: null
+                        email: null,
+                        authorities: ['ROLE_SECRETARIO_ACADEMICO']
                     };
                 },
                 cpf_entity: function () {
