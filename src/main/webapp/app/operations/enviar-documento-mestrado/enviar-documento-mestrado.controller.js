@@ -48,6 +48,9 @@
 
         function loadAll() {
             console.log(JSON.stringify(vm.alunoData));
+            Usuario.get(function (result) {
+                console.log(JSON.stringify(result));
+            })
         }
 
         function saveDeclaracaoConclusao() {
@@ -86,11 +89,7 @@
             var account = {};
             Principal.identity().then(function(account) {
                 vm.alunoData.username = account.login;
-                Usuario.get(
-                    function (result){
-                        console.log(JSON.stringify(result));
-                    }
-                )
+                
                 // Usuario.get(
                 //     {login : vm.alunoData.username},
                 //     function (result) {
