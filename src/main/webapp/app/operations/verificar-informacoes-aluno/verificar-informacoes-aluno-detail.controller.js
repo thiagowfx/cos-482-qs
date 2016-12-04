@@ -17,6 +17,7 @@
         vm.log = log_entity;
 
         loadAll();
+        LogUseCase();
 
         function loadAll() {
             console.log(vm.aluno);

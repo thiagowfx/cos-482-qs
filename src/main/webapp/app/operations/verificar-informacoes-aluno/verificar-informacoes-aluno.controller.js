@@ -59,13 +59,5 @@
                 }
             });
         }
-
-        function LogUseCase() {
-            Principal.identity().then(function(account) {
-                vm.log.username = account.login;
-                vm.log.timestampFuncao = new Date();
-                LogDoSistema.save(vm.log, function(){}, function(){});
-            });
-        }
     }
 })();
