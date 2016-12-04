@@ -41,7 +41,7 @@
         })
         .state('verificar-informacoes-aluno-detail', {
             parent: 'verificar-informacoes-aluno',
-            url: '/verificar-informacoes-aluno/{id}',
+            url: '/verificar-informacoes-aluno/mestrado/{id}',
             data: {
                 authorities: ['ROLE_SECRETARIO_ACADEMICO'],
                 pageTitle: 'verificar-informacoes-aluno.secretario'

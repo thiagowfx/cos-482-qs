@@ -27,7 +27,7 @@
             <tbody>
                 <tr ng-repeat="alunoM in vm.alunosMestrado track by alunoM.id">
                     <td>
-                        <a ui-sref="verificar-informacoes-aluno-detail({id:alunoM.id})">{{alunoM.usuario.nome}}</a>
+                        <a ui-sref="verificar-informacoes-aluno-detail({id:alunoM.aluno.id})">{{alunoM.usuario.nome}}</a>
                     </td>
                     <td>{{alunoM.aluno.dre}}</td>
                     <td data-translate="{{alunoM.matricula}}">{{alunoM.aluno.matricula}}</td>
@@ -35,7 +35,7 @@
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
-                                    ui-sref="aluno-detail({id:alunoM.id})"
+                                    ui-sref="verificar-informacoes-aluno-detail({id:alunoM.aluno.id})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
@@ -45,7 +45,7 @@
                 </tr>
                 <tr ng-repeat="aluno in vm.alunosDoutorado track by aluno.id">
                     <td>
-                        <a ui-sref="verificar-informacoes-aluno-detail({id:aluno.id})">{{aluno.usuario.nome}}</a>
+                        <a ui-sref="verificar-informacoes-aluno-detail({id:aluno.aluno.id})">{{aluno.usuario.nome}}</a>
                     </td>
                     <td>{{aluno.aluno.dre}}</td>
                     <td data-translate="{{aluno.matricula}}">{{aluno.aluno.matricula}}</td>
@@ -53,7 +53,7 @@
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
-                                    ui-sref="aluno-detail({id:aluno.id})"
+                                    ui-sref="verificar-informacoes-aluno-detail({id:aluno.aluno.id})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>

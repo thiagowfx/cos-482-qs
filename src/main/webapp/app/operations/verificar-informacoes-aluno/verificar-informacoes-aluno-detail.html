@@ -3,6 +3,10 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Tipo</span></dt>
+        <dd>
+            <span>{{vm.aluno.tipo}}</span>
+        </dd>
         <dt><span data-translate="verificar-informacoes-aluno.nome">Nome</span></dt>
         <dd>
             <span>{{vm.aluno.usuario.nome}}</span>
@@ -34,6 +38,12 @@
         <dt><span data-translate="verificar-informacoes-aluno.aluno.systemUser">System User</span></dt>
         <dd>
             {{vm.aluno.usuario.systemUserId}}
+        </dd>
+    </dl>
+    <dl class="dl-horizontal jh-entity-details" ng-repeat="doc in vm.aluno.documentos">
+        <dt><span>{{doc.tipo}}</span></dt>
+        <dd>
+            <a ui-sref="documento-sistema-detail({id:doc.id})">{{doc.id}}</a>
         </dd>
     </dl>
 

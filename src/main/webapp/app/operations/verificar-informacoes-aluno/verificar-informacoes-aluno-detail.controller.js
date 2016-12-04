@@ -5,12 +5,13 @@
         .module('cos482App')
         .controller('VerificarInformacoesAlunoDetailController', VerificarInformacoesAlunoDetailController);
 
-    VerificarInformacoesAlunoDetailController.$inject = ['Principal', 'log_entity', 'LogDoSistema', '$window', '$scope', '$state', '$translate', '$rootScope', '$stateParams', 'previousState', 'entity', 'Aluno', 'Usuario', 'DocumentoIdentificacao', 'DocumentoSistema'];
+    VerificarInformacoesAlunoDetailController.$inject = ['Principal', 'log_entity', 'LogDoSistema', '$window', '$scope', '$state', '$translate', '$rootScope', '$stateParams', 'previousState', 'entity', 'Aluno', 'AlunoMestrado', 'AlunoDoutorado', 'Usuario', 'DocumentoIdentificacao', 'DocumentoSistema'];
 
-    function VerificarInformacoesAlunoDetailController(Principal, log_entity, LogDoSistema, $window, $scope, $state, $translate, $rootScope, $stateParams, previousState, entity, Aluno, Usuario, DocumentoIdentificacao, DocumentoSistema) {
+    function VerificarInformacoesAlunoDetailController(Principal, log_entity, LogDoSistema, $window, $scope, $state, $translate, $rootScope, $stateParams, previousState, entity, Aluno, AlunoMestrado, AlunoDoutorado, Usuario, DocumentoIdentificacao, DocumentoSistema) {
         var vm = this;
 
         vm.aluno = entity;
+        vm.aluno.documentos = [];
         vm.previousState = previousState.name;
 
         vm.log = log_entity;
@@ -41,9 +42,53 @@
                     }
 
                     //Get all DocumentoSistema
+                    var mestrado = [];
+                    var doutorado = [];
+                    var documentos = [];
+                    AlunoMestrado.query(function(m){
+                        console.log(vm.aluno.id);
+                        for(var j = 0; j<m.length; j++){
+                            if(m[j].alunoId == vm.aluno.id) {
+                                vm.aluno.tipo = "Mestrado";
+                                vm.aluno.documentos.push({
+                                    "tipo": "Diploma Graduação",
+                                    "id": m[j].diplomaGraduacaoId || "Inexistente"
+                                });
+                                vm.aluno.documentos.push({
+                                    "tipo": "Certidão Conclusão",
+                                    "id": m[j].certidaoConclusaoId || "Inexistente"
+                                });
+                                vm.aluno.documentos.push({
+                                    "tipo": "Certidão Colação",
+                                    "id": m[j].certidaoColacaoId || "Inexistente"
+                                });
+                            }
+                        }
+                    });
+                    AlunoDoutorado.query(function(m){
+                        console.log(vm.aluno.id);
+                        for(var j = 0; j<m.length; j++){
+                            if(m[j].alunoId == vm.aluno.id) {
+                                vm.aluno.tipo = "Doutorado";
+                                vm.aluno.documentos.push({
+                                    "tipo": "Ata Dissertação",
+                                    "id": m[j].ataDissertacaoId || "Inexistente"
+                                });
+                                vm.aluno.documentos.push({
+                                    "tipo": "Certidão Conclusão",
+                                    "id": m[j].certidaoConclusaoId || "Inexistente"
+                                });
+                                vm.aluno.documentos.push({
+                                    "tipo": "Diploma Mestrado",
+                                    "id": m[j].diplomaMestradoId || "Inexistente"
+                                });
+                            }
+                        }
+                    });
 
                 }
             );
+
         }
 
         function LogUseCase() {
