@@ -2,13 +2,47 @@
     <h2><span data-translate="emitir-diploma.diploma"></span></h2>
     <hr>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span data-translate="emitir-diploma.nome"></span></dt>
+        <dt><span>Tipo</span></dt>
+        <dd>
+            <span>{{vm.aluno.tipo}}</span>
+        </dd>
+        <dt><span data-translate="emitir-diploma.nome">Nome</span></dt>
         <dd>
             <span>{{vm.aluno.usuario.nome}}</span>
         </dd>
-        <dt><span data-translate="emitir-diploma.dre"></span></dt>
+        <dt><span data-translate="emitir-diploma.aluno.conta">Conta</span></dt>
         <dd>
-            <span>{{vm.aluno.dre}}</span>
+            <span>{{vm.aluno.matricula}}</span>
+        </dd>
+        <dt><span data-translate="emitir-diploma.aluno.cpf">Cpf</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.aluno.cpfId})">{{vm.aluno.usuario.cpf}}</a>
+        </dd>
+        <dt><span data-translate="emitir-diploma.aluno.rg">Rg</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.aluno.rgId})">{{vm.aluno.usuario.rg}}</a>
+        </dd>
+        <dt><span data-translate="emitir-diploma.aluno.tituloDeEleitor">Titulo De Eleitor</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.aluno.tituloDeEleitorId})">{{vm.aluno.usuario.tituloDeEleitor}}</a>
+        </dd>
+        <dt><span data-translate="emitir-diploma.aluno.dispensaMilitar">Dispensa Militar</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.aluno.dispensaMilitarId})">{{vm.aluno.usuario.dispensaMilitar}}</a>
+        </dd>
+        <dt><span data-translate="emitir-diploma.aluno.passaporte">Passaporte</span></dt>
+        <dd>
+            <a ui-sref="documento-identificacao-detail({id:vm.aluno.passaporteId})">{{vm.aluno.usuario.passaporte}}</a>
+        </dd>
+        <dt><span data-translate="emitir-diploma.aluno.systemUser">System User</span></dt>
+        <dd>
+            {{vm.aluno.usuario.systemUserId}}
+        </dd>
+    </dl>
+    <dl class="dl-horizontal jh-entity-details" ng-repeat="doc in vm.aluno.documentos">
+        <dt><span>{{doc.tipo}}</span></dt>
+        <dd>
+            <a ui-sref="documento-sistema-detail({id:doc.id})">{{doc.id}}</a>
         </dd>
     </dl>
 

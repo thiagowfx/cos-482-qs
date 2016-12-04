@@ -11,6 +11,22 @@
             "success": "Diploma emitido com sucesso!",
             "error": "Erro ao emitir diploma do aluno."
         },
-        "confirm" : "Deseja emitir o diploma deste aluno?"
+        "confirm" : "Deseja emitir o diploma deste aluno?",
+        "aluno": {
+            "nome":"Nome",
+            "conta":"Status da Matrícula",
+            "cpf":"CPF",
+            "rg":"RG",
+            "tituloDeEleitor":"Título de Eleitor",
+            "dispensaMilitar":"Dispensa Militar",
+            "passaporte":"Passaporte",
+            "systemUser":"Usuário no sistema"
+        },
+        "title": "Aluno",
+        "nome": "Nome",
+        "declaracaoConclusao": "Declaração de Conclusão",
+        "historicoGraduacao": "Histórico de Graduação",
+        "usuario": "Usuário",
+        "orientador": "Professor Orientador"
     }
 }
