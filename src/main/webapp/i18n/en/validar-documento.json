@@ -1,6 +1,17 @@
 {
     "validar-documento" : {
         "subtitle":  "Insira o DRE do aluno(a)",
-        "dre": "*DRE"
+        "dre": "*DRE",
+        "usuario":"Nome do aluno",
+        "declaracaoConclusao":"Declaração de Conclusão",
+        "historicoGraduacao":"Histórico de Graduação",
+        "diplomaGraduacao":"Diploma de Graduação",
+        "certidaoConclusao":"Certidão de Conclusão",
+        "certidaoColacao":"Certidão de Colação",
+        "ataDissertacao":"Ata Dissertação",
+        "diplomaMestrado":"Diploma de Mestrado",
+        "accept":"Deseja aceitar esse documento?",
+        "refuse":"Deseja recusar esse documento?",
+        "notEnviado":"A ação não pode ser realizada pois o documento aind não foi enviado"
     }
 }

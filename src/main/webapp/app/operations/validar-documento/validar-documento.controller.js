@@ -12,6 +12,8 @@
 
         vm.alunosMestrado = [];
         vm.alunosDoutorado = [];
+        vm.accept = accept;
+        vm.refuse = refuse;
 
         loadAll();
 
@@ -91,6 +93,54 @@
                     })(i);
                 }
             });
+        }
+
+        function refuse(id) {
+            if($window.confirm($translate.instant('validar-documento.refuse'))){
+                //LogUseCase();
+                DocumentoSistema.get(
+                    {id: id},
+                    function(d){
+                        if(d.status != "ENVIADO"){
+                            $window.alert($translate.instant('validar-documento.notEnviado'));
+                            return;
+                        }
+                        d.status = "PENDENTE";
+                        vm.isSaving = true;
+                        DocumentoSistema.update(d, onSaveSuccess, onSaveError);
+                    }
+                );
+            }
+        }
+
+        function accept(id) {
+            if($window.confirm($translate.instant('validar-documento.accept'))){
+                //LogUseCase();
+                DocumentoSistema.get(
+                    {id: id},
+                    function(d){
+                        if(d.status != "ENVIADO"){
+                            $window.alert($translate.instant('validar-documento.notEnviado'));
+                            return;
+                        }
+                        d.status = "ACEITO";
+                        vm.isSaving = true;
+                        DocumentoSistema.update(d, onSaveSuccess, onSaveError);
+                    }
+                );
+            }
+        }
+
+        function onSaveSuccess (result) {
+            $window.alert($translate.instant('validar-documento.alert.success'));
+            vm.isSaving = false;
+            $state.reload();
+        }
+
+        function onSaveError () {
+            $window.alert($translate.instant('validar-documento.alert.error'));
+            vm.isSaving = false;
+            $state.reload();
         }
     }
 })();

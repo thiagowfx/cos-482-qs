@@ -29,13 +29,83 @@
             <tbody>
                 <tr ng-repeat="alunoM in vm.alunosMestrado track by alunoM.id">
                     <td>
-                        <a ui-sref="validar-documento-detail({id:alunoM.aluno.id})">{{alunoM.usuario.nome}}</a>
+                        <span>{{alunoM.usuario.nome}}</span>                        
                     </td>
-                    <td>{{alunoM.aluno.declaracaoConclusao}}</td>
-                    <td>{{alunoM.aluno.historicoGraduacao}}</td>
-                    <td>{{alunoM.aluno.diplomaGraduacao}}</td>
-                    <td>{{alunoM.aluno.certidaoConclusao}}</td>
-                    <td>{{alunoM.aluno.certidaoColacao}}</td>
+                    <td>                        
+                        <div class="btn-group flex-btn-group-container">
+                            <span>{{alunoM.aluno.declaracaoConclusao}}</span>
+                            <button type="submit"
+                                    ng-click="vm.accept(alunoM.aluno.declaracaoConclusaoId)"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-ok-circle"></span>
+                            </button>
+                            <button type="submit"
+                                    ng-click="vm.refuse(alunoM.aluno.declaracaoConclusaoId)"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btn-group flex-btn-group-container">
+                            <span>{{alunoM.aluno.historicoGraduacao}}</span>
+                            <button type="submit"
+                                    ng-click="vm.accept(alunoM.aluno.historicoGraduacaoId)"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-ok-circle"></span>
+                            </button>
+                            <button type="submit"
+                                    ng-click="vm.refuse(alunoM.aluno.historicoGraduacaoId)"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btn-group flex-btn-group-container">
+                            <span>{{alunoM.aluno.diplomaGraduacao}}</span>
+                            <button type="submit"
+                                    ng-click="vm.accept(alunoM.aluno.diplomaGraduacaoId)"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-ok-circle"></span>
+                            </button>
+                            <button type="submit"
+                                    ng-click="vm.refuse(alunoM.aluno.diplomaGraduacaoId)"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btn-group flex-btn-group-container">
+                            <span>{{alunoM.aluno.certidaoConclusao}}</span>
+                            <button type="submit"
+                                    ng-click="vm.accept(alunoM.aluno.certidaoConclusaoId)"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-ok-circle"></span>
+                            </button>
+                            <button type="submit"
+                                    ng-click="vm.refuse(alunoM.aluno.certidaoConclusaoId)"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btn-group flex-btn-group-container">
+                            <span>{{alunoM.aluno.certidaoColacao}}</span>
+                            <button type="submit"
+                                    ng-click="vm.accept(alunoM.aluno.certidaoColacaoId)"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-ok-circle"></span>
+                            </button>
+                            <button type="submit"
+                                    ng-click="vm.refuse(alunoM.aluno.certidaoColacaoId)"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </button>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -53,13 +123,83 @@
             <tbody>
                 <tr ng-repeat="alunoD in vm.alunosDoutorado track by alunoD.id">
                     <td>
-                        <a ui-sref="validar-documento-detail({id:alunoD.aluno.id})">{{alunoD.usuario.nome}}</a>
+                        <span>{{alunoD.usuario.nome}}</span>
                     </td>
-                    <td>{{alunoD.aluno.declaracaoConclusao}}</td>
-                    <td>{{alunoD.aluno.historicoGraduacao}}</td>
-                    <td>{{alunoD.aluno.ataDissertacao}}</td>
-                    <td>{{alunoD.aluno.certidaoConclusao}}</td>
-                    <td>{{alunoD.aluno.diplomaMestrado}}</td>
+                    <td>                        
+                        <div class="btn-group flex-btn-group-container">
+                            <span>{{alunoD.aluno.declaracaoConclusao}}</span>
+                            <button type="submit"
+                                    ng-click="vm.accept(alunoD.aluno.declaracaoConclusaoId)"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-ok-circle"></span>
+                            </button>
+                            <button type="submit"
+                                    ng-click="vm.refuse(alunoD.aluno.declaracaoConclusaoId)"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btn-group flex-btn-group-container">
+                            <span>{{alunoD.aluno.historicoGraduacao}}</span>
+                            <button type="submit"
+                                    ng-click="vm.accept(alunoD.aluno.historicoGraduacaoId)"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-ok-circle"></span>
+                            </button>
+                            <button type="submit"
+                                    ng-click="vm.refuse(alunoD.aluno.historicoGraduacaoId)"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btn-group flex-btn-group-container">
+                            <span>{{alunoD.aluno.ataDissertacao}}</span>
+                            <button type="submit"
+                                    ng-click="vm.accept(alunoD.aluno.ataDissertacaoId)"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-ok-circle"></span>
+                            </button>
+                            <button type="submit"
+                                    ng-click="vm.refuse(alunoD.aluno.ataDissertacaoId)"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btn-group flex-btn-group-container">
+                            <span>{{alunoD.aluno.certidaoConclusao}}</span>
+                            <button type="submit"
+                                    ng-click="vm.accept(alunoD.aluno.certidaoConclusaoId)"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-ok-circle"></span>
+                            </button>
+                            <button type="submit"
+                                    ng-click="vm.refuse(alunoD.aluno.certidaoConclusaooId)"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btn-group flex-btn-group-container">
+                            <span>{{alunoD.aluno.diplomaMestrado}}</span>
+                            <button type="submit"
+                                    ng-click="vm.accept(alunoD.aluno.diplomaMestradoId)"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-ok-circle"></span>
+                            </button>
+                            <button type="submit"
+                                    ng-click="vm.refuse(alunoD.aluno.diplomaMestradoId)"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </button>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
