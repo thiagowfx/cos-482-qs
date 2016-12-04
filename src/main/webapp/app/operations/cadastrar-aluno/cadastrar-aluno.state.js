@@ -72,7 +72,7 @@
                     return {
                         id: null,
                         login: null,
-                        passwordHash: null,
+                        passwordHash: "$2a$10$VEjxo0jq2YG9Rbk2HmX9S.k1uZBGYUHdUcid3g/vfiEl7lwWgOH/K",
                         firstName: null,
                         lastName: null,
                         email: null
