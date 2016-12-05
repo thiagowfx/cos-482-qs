@@ -1,8 +1,69 @@
 <div ng-cloak>
     <div class="row">
-        <div class="col-md-4">
-            <h1> Enviar Documento de Doutorado</h1>
-            <p class="lead">Lorem Ipsum</p>
+        <div class="col-md-12">
+            <h1 data-translate="global.menu.operations.enviar_documento_doutorado"></h1>
+            <p data-translate="enviar-documento-doutorado.subtitle" class="lead"></p>
+            <p data-translate="enviar-documento-doutorado.pdf-only"></p>
+        </div>
+
+        <div class="col-md-12">
+
+            <form name="enviar-documento-doutorado-diploma-mestrado-form" role="form" novalidate class="form-horizontal" ng-submit="vm.saveDiplomaMestrado()">
+            	<div class="form-group">
+                    <label data-translate="enviar-documento-doutorado.diploma-mestrado.name" class="control-label col-sm-2" for="enviar-documento-doutorado-diploma-mestrado"></label>
+                    <div class="col-sm-8">
+                        <input fileread="vm.DiplomaMestrado" class="form-control" type="file" id="enviar-documento-doutorado-diploma-mestrado" accept="application/pdf">
+                    </div>
+                    <button clas="col-sm-2" type="submit" ng-disabled="vm.isSaving" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-upload"></span>&nbsp;<span data-translate="global.common.submit"></span>
+                    </button>
+
+                    <button type="submit"
+                            ng-click="vm.deleteDiplomaMestrado()"
+                            class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span>
+                        <span class="hidden-xs hidden-sm" data-translate="global.common.delete"></span>
+                    </button>                    
+                </div>
+            </form>
+
+            <form name="enviar-documento-doutorado-certidao-conclusao-form" role="form" novalidate class="form-horizontal" ng-submit="vm.saveCertidaoConclusao()">
+            	<div class="form-group">
+                    <label data-translate="enviar-documento-doutorado.certidao-conclusao.name" class="control-label col-sm-2" for="enviar-documento-doutorado-certidao-conclusao"></label>
+                    <div class="col-sm-8">
+                        <input fileread="vm.certidaoConclusao" class="form-control" type="file" id="enviar-documento-doutorado-certidao-conclusao" accept="application/pdf">
+                    </div>
+                    <button clas="col-sm-2" type="submit" ng-disabled="vm.isSaving" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-upload"></span>&nbsp;<span data-translate="global.common.submit"></span>
+                    </button>
+
+                    <button type="submit"
+                            ng-click="vm.deleteCertidaoConclusao()"
+                            class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span>
+                        <span class="hidden-xs hidden-sm" data-translate="global.common.delete"></span>
+                    </button>                    
+                </div>
+            </form>
+
+            <form name="enviar-documento-doutorado-ata-colacao-form" role="form" novalidate class="form-horizontal" ng-submit="vm.saveAtaColacao()">
+            	<div class="form-group">
+                    <label data-translate="enviar-documento-doutorado.ata-colacao.name" class="control-label col-sm-2" for="enviar-documento-doutorado-ata-colacao"></label>
+                    <div class="col-sm-8">
+                        <input fileread="vm.AtaColacao" class="form-control" type="file" id="enviar-documento-doutorado-ata-colacao" accept="application/pdf">
+                    </div>
+                    <button clas="col-sm-2" type="submit" ng-disabled="vm.isSaving" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-upload"></span>&nbsp;<span data-translate="global.common.submit"></span>
+                    </button>
+
+                    <button type="submit"
+                            ng-click="vm.deleteAtaColacao()"
+                            class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span>
+                        <span class="hidden-xs hidden-sm" data-translate="global.common.delete"></span>
+                    </button>                    
+                </div>
+            </form>
         </div>
     </div>
 </div>

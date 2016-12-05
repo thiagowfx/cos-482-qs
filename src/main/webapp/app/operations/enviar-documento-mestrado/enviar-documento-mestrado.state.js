@@ -8,8 +8,7 @@
     stateConfig.$inject = ['$stateProvider'];
 
     function stateConfig($stateProvider) {
-        $stateProvider
-        .state('enviar-documento-mestrado', {
+        $stateProvider.state('enviar-documento-mestrado', {
             parent: 'operations',
             url: '/enviar-documento-mestrado',
             data: {

@@ -24,7 +24,7 @@
             },
             resolve: {
                 mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
-                    // $translatePartialLoader.addPart('enviar-documento-doutorado');
+                    $translatePartialLoader.addPart('enviar-documento-doutorado');
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }],

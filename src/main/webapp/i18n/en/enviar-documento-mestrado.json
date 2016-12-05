@@ -3,19 +3,28 @@
         "subtitle":  "Selecione e envie o documento desejado",
         "pdf-only": "OBS.: Somente serão aceitos documentos no formato PDF.",
         "diploma-graduacao": {
-            "name": "Diploma de Graduação"
+            "name": "Diploma de Graduação",
+            "confirm": "Deseja enviar Diploma de Graduação?"
         },
         "certidao-conclusao": {
-            "name": "Certidão de Conclusão"
+            "name": "Certidão de Conclusão",
+            "confirm": "Deseja enviar Certidão de Conclusão?"
         },
         "certidao-colacao": {
-            "name": "Certidão de Colação"
+            "name": "Certidão de Colação",
+            "confirm": "Deseja enviar Certidão de Colação?"
         },
         "declaracao-conclusao": {
-            "name": "Declaração de Conclusão"
+            "name": "Declaração de Conclusão",
+            "confirm": "Deseja enviar Declaração de Conclusão?"
         },
         "historico-graduacao": {
-            "name": "Histórico de Graduação"
+            "name": "Histórico de Graduação",
+            "confirm": "Deseja enviar Histórico de Graduação? "
+        },
+        "alert": {
+            "success": "Documento enviado com sucesso!",
+            "error": "Erro no envio do documento"
         }
     }
 }

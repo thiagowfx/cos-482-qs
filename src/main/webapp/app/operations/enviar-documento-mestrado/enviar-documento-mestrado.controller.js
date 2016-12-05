@@ -3,6 +3,7 @@
 
     angular
         .module('cos482App')
+        .controller('EnviarDocumentoMestradoController', EnviarDocumentoMestradoController)
         .directive("fileread", [function () {
             return {
                 link: function (scope, element, attributes) {
@@ -13,15 +14,18 @@
                     });
                 }
             }
-        }])
-        .controller('EnviarDocumentoMestradoController', EnviarDocumentoMestradoController);
+        }]);       
     
-    EnviarDocumentoMestradoController.$inject = ['$window', '$scope', '$state', '$translate', 'DocumentoSistema', 'LogDoSistema', 'log_entity', 'Principal', 'Usuario', 'Aluno', 'AlunoMestrado'];
+    EnviarDocumentoMestradoController.$inject = ['$window', '$scope', '$state', '$translate', 'DocumentoSistema', 'LogDoSistema', 'log_entity', 'Principal', 'User', 'Usuario', 'Aluno', 'AlunoMestrado'];
 
-    function EnviarDocumentoMestradoController ($window, $scope, $state, $translate, DocumentoSistema, LogDoSistema, log_entity, Principal, Usuario, Aluno, AlunoMestrado) {
+    function EnviarDocumentoMestradoController ($window, $scope, $state, $translate, DocumentoSistema, LogDoSistema, log_entity, Principal, User, Usuario, Aluno, AlunoMestrado) {
         var vm = this;
-        vm.alunoData = {};
-        
+        vm.userName;
+        vm.userId;
+        vm.usuarioId;
+        vm.alunoId;
+        vm.alunoMestrado;
+
         // for enviar-documento
         vm.saveDiplomaGraduacao = saveDiplomaGraduacao;
         vm.saveDeclaracaoConclusao = saveDeclaracaoConclusao;
@@ -39,114 +43,105 @@
 
         vm.log = log_entity;
 
-        getUserName();
-        // getUsuarioId();
-        // getAlunoId();
-        // getAlunoMestradoId();
-
         loadAll();
 
+        // Get alunoMestrado object
+        Principal.identity().then(function(account) {
+            vm.userName = account;
+        });
+        
+        User.get( 
+            {login: vm.userName},
+            function (result) {
+                vm.userId = result.usuarioId;
+            } 
+        );
+        
+        Usuario.get(
+            {userId: vm.userId},
+            function (result) {
+                vm.usuarioId = result.id;
+            }
+        );
+        Aluno.get(
+            {usuarioId: vm.usuarioId},
+            function (result) {
+                vm.alunoId = result.id;
+            }            
+        );
+
+        AlunoMestrado.get(
+            {alunoId: vm.alunoId},
+            function (result) {
+                vm.alunoMestrado = result;
+            }
+        );
+
         function loadAll() {
-            console.log(JSON.stringify(vm.alunoData));
         }
 
         function saveDeclaracaoConclusao() {
-            console.log(vm.declaracaoConclusao);
-            console.log(vm.declaracaoConclusao.name);
+            if($window.confirm($translate.instant('enviar-documento-mestrado.declaracao-conclusao.confirm'))){
+                LogUseCase();
+                vm.alunoMestrado.declaracaoConlcusao = vm.declaracaoConlcusao;
+                vm.isSaving = true;
+                AlunoMestrado.update(vm.alunoMestrado, onSaveSuccess, onSaveError);
+            }
         }
 
         function saveCertidaoColacao() {
-            console.log(vm.certidaoColacao);
-            console.log(vm.certidaoColacao.name);
+            if($window.confirm($translate.instant('enviar-documento-mestrado.certidao-colacao.confirm'))){
+                LogUseCase();
+                vm.alunoMestrado.certidaoColacao = vm.certidaoColacao;
+                vm.isSaving = true;
+                AlunoMestrado.update(vm.alunoMestrado, onSaveSuccess, onSaveError);
+            }
         }
 
         function saveHistoricoGraduacao() {
-            console.log(vm.historicoGraduacao);
-            console.log(vm.historicoGraduacao.name);
+            if($window.confirm($translate.instant('enviar-documento-mestrado.historico-graduacao.confirm'))){
+                LogUseCase();
+                vm.alunoMestrado.historicoGraduacao = vm.historicoGraduacao;
+                vm.isSaving = true;
+                AlunoMestrado.update(vm.alunoMestrado, onSaveSuccess, onSaveError);
+            }
         }
 
         function saveCertidaoConclusao() {
-            console.log(vm.certidaoConclusao);
-            console.log(vm.certidaoConclusao.name);
+            if($window.confirm($translate.instant('enviar-documento-mestrado.certidao-conclusao.confirm'))){
+                LogUseCase();
+                vm.alunoMestrado.certidaoConclusao = vm.certidaoConclusao;
+                vm.isSaving = true;
+                AlunoMestrado.update(vm.alunoMestrado, onSaveSuccess, onSaveError);
+            }
         }
 
         function saveDiplomaGraduacao() {
-            console.log(vm.diplomaGraduacao);
-            console.log(vm.diplomaGraduacao.name);
+            if($window.confirm($translate.instant('enviar-documento-mestrado.diploma-graduacao.confirm'))){
+                LogUseCase();
+                vm.alunoMestrado.diplomaGraduacao = vm.diplomaGraduacao;
+                vm.isSaving = true;
+                AlunoMestrado.update(vm.alunoMestrado, onSaveSuccess, onSaveError);
+            }
         }
 
+        function onSaveSuccess (result) {
+            $window.alert($translate.instant('enviar-documento-doutorado.alert.success'));
+            vm.isSaving = false;
+            $state.go(vm.previousState);
+        }
 
+        function onSaveError () {
+            $window.alert($translate.instant('enviar-documento-doutorado.alert.error'));
+            vm.isSaving = false;
+            $state.go(vm.previousState);
+        }
+        
         function deleteDeclaracaoConclusao() {}
         function deleteHistoricoGraduacao() {}
         function deleteDiplomaGraduacao() {}
         function deleteCertidaoConclusao() {}
         function deleteCertidaoColacao() {}
-
-        function getUserName() {
-            var account = {};
-            Principal.identity().then(function(account) {
-                vm.alunoData.username = account.login;
-                Usuario.get(
-                    function (result){
-                        console.log(JSON.stringify(result));
-                    }
-                )
-                // Usuario.get(
-                //     {login : vm.alunoData.username},
-                //     function (result) {
-                //         console.log(JSON.stringify(vm.alunoData));
-                //         vm.alunoData.usuarioId = result.id;
-                //         console.log(vm.alunoData.usuarioId);
-                //         Aluno.get (
-                //             {usuarioId: vm.alunoData.usuarioId},
-                //             function (result) {
-                //                 vm.alunoData.alunoId = result.id;
-                //                 AlunoMestrado.get (
-                //                     {alunoId: vm.alunoData.alunoId},
-                //                     function (result) {
-                //                         vm.alunoData.alunoMestradoId = result.id;
-                //                     }
-                //                 );                                
-                //             }                        
-                //         );
-                //     }
-                // );
-            }(account));
-            console.log(JSON.stringify(account));
-        }
-
-        function getUsuarioId (){
-            console.log(vm.alunoData.username);
-            Usuario.get(
-                {login: vm.alunoData.username},
-                function (result) {
-                    console.log(result);
-                    vm.alunoData.usuarioId = result.id;
-                }
-            );       
-        }
-
-        function getAlunoId () {
-            Aluno.get (
-                {usuarioId: vm.alunoData.usuarioId},
-                function (result) {
-                    vm.alunoData.alunoId = result.id;
-                }
-            );
-        }
-
-        function getAlunoMestradoId () {
-            AlunoMestrado.get (
-                {alunoId: vm.alunoData.alunoId},
-                function (result) {
-                    vm.alunoData.alunoMestradoId = result.id;
-                }
-            );
-        }
-
-
-        // TODO: clear function + clear button
-        // TODO: ng-hide + check if null
 
         function LogUseCase() {
             Principal.identity().then(function(account) {
